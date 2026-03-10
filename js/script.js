@@ -1,12 +1,22 @@
 /* -------------- Loader ----------------------- */
-window.addEventListener("load", () => {
-    document.querySelector(".main").classList.remove("hidden");
-    document.querySelector(".home-section").classList.add("active");
-    document.querySelector(".page-loader").classList.add("fade-out");
-    setTimeout(() => {
-        document.querySelector(".page-loader").style.display = "none";
-    }, 600);
-});
+const init = () => {
+    const main = document.querySelector(".main");
+    const loader = document.querySelector(".page-loader");
+    if (main && main.classList.contains("hidden")) {
+        main.classList.remove("hidden");
+        document.querySelector(".home-section").classList.add("active");
+        if (loader) {
+            loader.classList.add("fade-out");
+            setTimeout(() => {
+                loader.style.display = "none";
+            }, 600);
+        }
+    }
+};
+
+window.addEventListener("load", init);
+// Fallback: show content after 3 seconds if load event hasn't fired
+setTimeout(init, 3000);
 
 /* -------------- Toggle Navbar ----------------------- */
 const navToggler = document.querySelector(".nav-toggler");
