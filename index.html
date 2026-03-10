@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <title> akhdnn || My Introduction </title>
+      <title> akhdnn || Portfolio </title>
       <link rel="web icon" type="png" href="img/logo.png">
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,10 +10,9 @@
    </head>
    <body>
       <div class="scroll-line"></div>
+      
       <!-- Loader Start -->
       <div class="page-loader">
-         <div></div>
-         <div></div>
          <div></div>
       </div>
       <!-- Loader End -->
@@ -31,6 +30,8 @@
                         <ul>
                            <li><a href="#home" class="nav-item link-item">Home</a></li>
                            <li><a href="#about" class="nav-item link-item">About</a></li>
+                           <li><a href="#services" class="nav-item link-item">Services</a></li>
+                           <li><a href="#portfolio" class="nav-item link-item">Portfolio</a></li>
                            <li><a href="#contact" class="nav-item link-item">Contact</a></li>
                         </ul>
                      </div>
@@ -43,23 +44,24 @@
 
       <!-- Main Start -->
       <div class="main hidden">
+         
          <!-- Home Section Start -->
          <section class="home-section" id="home">
             <div class="container">
                <div class="row align-items-center">
                   <div class="home-text">
-                     <p>Hello, I'm</p>
-                     <h1>AKHDAN</h1>
-                     <h2>Computer and network engineering graduate, passionate about technology, music, and growth.</h2>
+                     <p>My name is</p>
+                     <h1>AKHDAN <span>FADHILILLAH</span> PS</h1>
+                     <h2>High school student in computer and network engineering with a strong interest in system administration and computer networks.</h2>
                      <div class="home-btns">
                         <a href="#about" class="btn link-item">About Me</a>
-                        <a href="website-portfolio/porto.html" class="btn link-item">Portfolio</a>
-                        <a href="spoti-web/spoti.html" class="btn link-item">Spotify</a>
+                        <a href="#portfolio" class="btn link-item">My Work</a>
                      </div>
                   </div>
                   <div class="home-img">
                      <div class="img-box">
-                        <img src="img/profile-img.png" alt="profile-img">
+                        <!-- Using hero.svg if it exists, otherwise profile-img.png. Based on porto.html -->
+                        <img src="website-portfolio/images/hero.svg" alt="profile-img" onerror="this.src='img/profile-img.png'">
                      </div>
                   </div>
                </div>
@@ -71,7 +73,7 @@
          <section class="about-section" id="about">
             <div class="container">
                <div class="section-title">
-                  <h2>About Me</h2>
+                  <h2>About</h2>
                </div>
                <div class="about-row row">
                   <div class="about-img">
@@ -97,6 +99,7 @@
 
                      <div class="about-tabs">
                         <button type="button" class="tab-item active" data-target="#education">Education</button>
+                        <button type="button" class="tab-item" data-target="#experience">Certifications</button>
                      </div>
 
                      <!-- Education Content -->
@@ -120,6 +123,28 @@
                         </div>
                      </div>
 
+                     <!-- Certifications replaced the empty experience tab -->
+                     <div class="tab-content" id="experience">
+                        <div class="timeline">
+                           <div class="timeline-item">
+                              <span class="date">Cisco Networking</span>
+                              <h4>Network Addressing & Basic Troubleshooting</h4>
+                              <p>Troubleshooting basic network connectivity issues, Describe Cisco routers and switches</p>
+                           </div>
+                           <div class="timeline-item">
+                              <span class="date">Saylor Academy</span>
+                              <h4>CS402: Computer Communications and Networks</h4>
+                              <p>Networking Fundamentals, Basics of Protocols, The Application Layer, The Transport Layer (TCP/UDP).</p>
+                           </div>
+                           <div class="timeline-item">
+                              <span class="date">Cisco / NDG</span>
+                              <h4>NDG Linux Unhatced</h4>
+                              <p>Basic installation and configuration of Linux software. Understand the basics of the Linux CLI.</p>
+                           </div>
+                        </div>
+                        <p style="margin-top: 20px; color: var(--accent-color); font-weight: 500;">And 9+ more professional certifications.</p>
+                     </div>
+
                      <div class="about-btns" style="margin-top: 40px;">
                         <a href="cv.pdf" target="_blank" class="btn">Download CV</a>
                         <a href="#contact" class="btn link-item">Contact Me</a>
@@ -130,129 +155,93 @@
          </section>
          <!-- About Section End -->
 
+         <!-- Services Section Start -->
+         <section class="services-section" id="services">
+            <div class="container">
+               <div class="section-title">
+                  <h2>Services</h2>
+               </div>
+               <div class="row">
+                  <div class="service-item">
+                     <div class="service-icon"><i class="fas fa-desktop"></i></div>
+                     <h3>Computer Operational</h3>
+                     <p>Skills in operating computer well, allowing smooth use of various applications and operating systems.</p>
+                  </div>
+                  <div class="service-item">
+                     <div class="service-icon"><i class="fas fa-network-wired"></i></div>
+                     <h3>Network Configuration</h3>
+                     <p>Experience in basic configuration of MikroTik and Cisco devices to manage networks efficiently and securely.</p>
+                  </div>
+                  <div class="service-item">
+                     <div class="service-icon"><i class="fas fa-server"></i></div>
+                     <h3>Server Virtualization</h3>
+                     <p>Knowledge in server virtualization using Debian for flexibility and efficiency of IT infrastructure.</p>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- Services Section End -->
+
          <!-- Portfolio Section Start -->
          <section class="portfolio-section" id="portfolio">
             <div class="container">
                <div class="section-title">
-                  <h2>Recent Work</h2>
+                  <h2>Portfolio</h2>
                </div>
                <div class="row">
-                  <!-- Portfolio Items (Keeping all 6 as requested) -->
-                  <div class="portfolio-item">
+                  <!-- Real Portfolio Items from porto.html -->
+                  <div class="portfolio-item" data-category="blog">
                      <div class="portfolio-item-thumbnail">
-                        <img src="img/portfolio/1.jpg" alt="portfolio item thumb">
+                        <img src="website-portfolio/portfolios/portfolio-1.png" alt="Blogging">
                      </div>
-                     <h3 class="portfolio-item-title">Eduacation Website1</h3>
+                     <h3 class="portfolio-item-title">Blogging (Tajwid)</h3>
                      <div class="portfolio-item-details">
                         <div class="description">
-                           <p>Some random text to tell about your project</p>
+                           <p>Blog "Belajar Tajwid" adalah proyek pribadi pertama yang saya buat untuk pembelajaran diri sendiri dan membantu orang lain memahami ilmu tajwid.</p>
                         </div>
                         <div class="general-info">
                            <ul>
-                              <li>Created <span>04/04/2020</span></li>
-                              <li>Technology <span>HTML</span></li>
-                              <li>Role <span>Developer</span></li>
-                              <li>Link <span><a href="#" target="_blank">github.io1</a></span></li>
+                              <li>Platform <span>Blogger</span></li>
+                              <li>Role <span>Creator</span></li>
+                              <li>Link <span><a href="https://yukkbelajartajwid.blogspot.com/" target="_blank">Visit Blog</a></span></li>
                            </ul>
                         </div>
                      </div>
                   </div>
 
-                  <div class="portfolio-item">
+                  <div class="portfolio-item" data-category="content">
                      <div class="portfolio-item-thumbnail">
-                        <img src="img/portfolio/2.jpg" alt="portfolio item thumb">
+                        <img src="website-portfolio/portfolios/portfolio-2.png" alt="Content Creator">
                      </div>
-                     <h3 class="portfolio-item-title">Eduacation Website2</h3>
+                     <h3 class="portfolio-item-title">Content Creator</h3>
                      <div class="portfolio-item-details">
                         <div class="description">
-                           <p>Some random text to tell about your project</p>
+                           <p>Berbagi tutorial seru seputar dunia Teknik Komputer dan Jaringan (TKJ) melalui kanal YouTube sebagai sarana belajar kembali.</p>
                         </div>
                         <div class="general-info">
                            <ul>
-                              <li>Created <span>04/04/2020</span></li>
-                              <li>Technology <span>HTML</span></li>
-                              <li>Role <span>Developer</span></li>
-                              <li>Link <span><a href="#" target="_blank">github.io2</a></span></li>
+                              <li>Platform <span>YouTube</span></li>
+                              <li>Focus <span>TKJ Tutorial</span></li>
+                              <li>Link <span><a href="https://www.youtube.com/@AkhdaN_Fadhilillah" target="_blank">Visit YouTube</a></span></li>
                            </ul>
                         </div>
                      </div>
                   </div>
 
-                  <div class="portfolio-item">
+                  <div class="portfolio-item" data-category="web">
                      <div class="portfolio-item-thumbnail">
-                        <img src="img/portfolio/3.jpg" alt="portfolio item thumb">
+                        <img src="website-portfolio/portfolios/portfolio-3.png" alt="Web Developer">
                      </div>
-                     <h3 class="portfolio-item-title">Eduacation Website3</h3>
+                     <h3 class="portfolio-item-title">Web Portfolio</h3>
                      <div class="portfolio-item-details">
                         <div class="description">
-                           <p>Some random text to tell about your project</p>
+                           <p>Portofolio digital yang menampilkan hasil perjalanan kreatif dan solusi unik melalui pengembangan web menggunakan HTML, CSS, dan JS.</p>
                         </div>
                         <div class="general-info">
                            <ul>
-                              <li>Created <span>04/04/2020</span></li>
-                              <li>Technology <span>HTML</span></li>
+                              <li>Stack <span>HTML, CSS, JS</span></li>
                               <li>Role <span>Developer</span></li>
-                              <li>Link <span><a href="#" target="_blank">github.io3</a></span></li>
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-
-                  <div class="portfolio-item">
-                     <div class="portfolio-item-thumbnail">
-                        <img src="img/portfolio/4.jpg" alt="portfolio item thumb">
-                     </div>
-                     <h3 class="portfolio-item-title">Eduacation Website4</h3>
-                     <div class="portfolio-item-details">
-                        <div class="description">
-                           <p>Some random text to tell about your project</p>
-                        </div>
-                        <div class="general-info">
-                           <ul>
-                              <li>Created <span>04/04/2020</span></li>
-                              <li>Technology <span>HTML</span></li>
-                              <li>Role <span>Developer</span></li>
-                              <li>Link <span><a href="#" target="_blank">github.io4</a></span></li>
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-
-                  <div class="portfolio-item">
-                     <div class="portfolio-item-thumbnail">
-                        <img src="img/portfolio/5.jpg" alt="portfolio item thumb">
-                     </div>
-                     <h3 class="portfolio-item-title">Eduacation Website5</h3>
-                     <div class="portfolio-item-details">
-                        <div class="description">
-                           <p>Some random text to tell about your project</p>
-                        </div>
-                        <div class="general-info">
-                           <ul>
-                              <li>Created <span>04/04/2020</span></li>
-                              <li>Technology <span>HTML</span></li>
-                              <li>Role <span>Developer</span></li>
-                              <li>Link <span><a href="#" target="_blank">github.io5</a></span></li>
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-
-                  <div class="portfolio-item">
-                     <div class="portfolio-item-thumbnail">
-                        <img src="img/portfolio/6.jpg" alt="portfolio item thumb">
-                     </div>
-                     <h3 class="portfolio-item-title">Eduacation Website6</h3>
-                     <div class="portfolio-item-details">
-                        <div class="description">
-                           <p>Some random text to tell about your project</p>
-                        </div>
-                        <div class="general-info">
-                           <ul>
-                              <li>Created <span>04/04/2020</span></li>
-                              <li>Technology <span>HTML</span></li>
-                              <li>Role <span>Developer</span></li>
-                              <li>Link <span><a href="#" target="_blank">github.io6</a></span></li>
+                              <li>Link <span><a href="#" target="_blank">Live Demo</a></span></li>
                            </ul>
                         </div>
                      </div>
@@ -266,12 +255,35 @@
          <section class="contact-section" id="contact">
             <div class="container">
                <div class="section-title">
-                  <h2>Contact Me</h2>
+                  <h2>Contact</h2>
                </div>
-               <div class="contact-info">
-                  <div class="contact-info-item">
-                     <h3>Let's Connect</h3>
-                     <div class="social-links">
+               <div class="contact-row row">
+                  <div class="contact-form-container">
+                     <form class="contact-form" action="https://formspree.io/f/xrgnyjaq" method="POST">
+                        <div class="input-group">
+                           <input type="text" placeholder="Name" name="name" required>
+                        </div>
+                        <div class="input-group">
+                           <input type="email" placeholder="Email" name="email" required>
+                        </div>
+                        <div class="input-group">
+                           <textarea name="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                     </form>
+                  </div>
+                  <div class="contact-info">
+                     <div class="info-item">
+                        <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <h3>Address</h3>
+                        <p>Cangkudu, Kec Balaraja BANTEN, INDONESIA 15610</p>
+                     </div>
+                     <div class="info-item">
+                        <div class="icon"><i class="fas fa-envelope"></i></div>
+                        <h3>Email</h3>
+                        <p>akhdansutiar@gmail.com</p>
+                     </div>
+                     <div class="social-links-minimal">
                         <a href="https://www.instagram.com/danhmeyy" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.youtube.com/@AkhdaN_Fadhilillah" target="_blank"><i class="fab fa-youtube"></i></a>
                         <a href="https://www.github.com/dnhmyy" target="_blank"><i class="fab fa-github"></i></a>
@@ -281,6 +293,12 @@
             </div>
          </section>
          <!-- Contact Section End -->
+
+         <footer class="footer">
+            <div class="container">
+               <p>&#169; 2024 akhdnn. Made with passion.</p>
+            </div>
+         </footer>
       </div>
       <!-- Main End -->
 

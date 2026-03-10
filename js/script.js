@@ -12,7 +12,7 @@ const init = () => {
             loader.classList.add("fade-out");
             setTimeout(() => {
                 loader.style.display = "none";
-            }, 600);
+            }, 800);
         }
     }
 };
@@ -25,14 +25,18 @@ setTimeout(init, 3000);
 const navToggler = document.querySelector(".nav-toggler");
 const header = document.querySelector(".header");
 
-navToggler.addEventListener("click", () => {
-    header.classList.toggle("active");
-    document.body.classList.toggle("hide-scrolling");
-});
+if (navToggler) {
+    navToggler.addEventListener("click", () => {
+        header.classList.toggle("active");
+        document.body.classList.toggle("hide-scrolling");
+    });
+}
 
 /* -------------- Active Section ----------------------- */
 document.addEventListener("click", (e) => {
     if (e.target.classList.contains("link-item") && e.target.hash !== "") {
+        e.preventDefault();
+        
         // If clicked from nav, close nav first
         if (e.target.classList.contains("nav-item")) {
             header.classList.remove("active");
@@ -41,7 +45,9 @@ document.addEventListener("click", (e) => {
 
         const targetSection = document.querySelector(e.target.hash);
         if (targetSection) {
-            document.querySelector("section.active").classList.remove("active");
+            const currentActive = document.querySelector("section.active");
+            if (currentActive) currentActive.classList.remove("active");
+            
             targetSection.classList.add("active");
             window.scrollTo({
                 top: 0,
@@ -71,14 +77,13 @@ window.addEventListener("scroll", () => {
 
 /* -------------- About Tabs ----------------------- */
 const tabsContainer = document.querySelector(".about-tabs");
-const aboutSection = document.querySelector(".about-section");
-
 if (tabsContainer) {
     tabsContainer.addEventListener("click", (e) => {
         if (e.target.classList.contains("tab-item") && !e.target.classList.contains("active")) {
             tabsContainer.querySelector(".active").classList.remove("active");
             e.target.classList.add("active");
             const target = e.target.getAttribute("data-target");
+            const aboutSection = document.querySelector(".about-section");
             aboutSection.querySelector(".tab-content.active").classList.remove("active");
             aboutSection.querySelector(target).classList.add("active");
         }
@@ -99,7 +104,10 @@ function togglePortfolioPopup() {
     document.body.classList.toggle("hide-scrolling");
 }
 
-document.querySelector(".pp-close").addEventListener("click", togglePortfolioPopup);
+const ppClose = document.querySelector(".pp-close");
+if (ppClose) {
+    ppClose.addEventListener("click", togglePortfolioPopup);
+}
 
 // Hide popup on clicking outside
 document.addEventListener("click", (e) => {
