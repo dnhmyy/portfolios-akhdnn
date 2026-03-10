@@ -58,7 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add("reveal-visible");
-                // observer.unobserve(entry.target); // Optional: reveal only once
             }
         });
     }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
@@ -158,6 +157,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 link.classList.add("active");
             }
         });
+    });
+
+    /* -------------- Parallax Hero Optimization ----------------------- */
+    const heroTitle = document.querySelector(".hero-title");
+    window.addEventListener("scroll", () => {
+        const scrolled = window.scrollY;
+        if (heroTitle && scrolled < 800) {
+            heroTitle.style.transform = `translateY(${scrolled * 0.15}px)`;
+            heroTitle.style.opacity = 1 - (scrolled / 800);
+        }
     });
 
 });
