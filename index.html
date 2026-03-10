@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <title> akhdnn || Portfolio </title>
+      <title> akhdnn | Editorial Portfolio </title>
       <link rel="web icon" type="png" href="img/logo.png">
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,316 +9,336 @@
       <link rel="stylesheet" href="css/style.css">
    </head>
    <body>
-      <div class="scroll-line"></div>
+      <div class="scroll-progress"></div>
       
-      <!-- Loader Start -->
+      <!-- Page Loader -->
       <div class="page-loader">
-         <div></div>
+         <div class="loader-content">
+            <span class="loader-text">AKHDNN</span>
+            <div class="loader-bar"></div>
+         </div>
       </div>
-      <!-- Loader End -->
 
-      <!-- Header Start -->
+      <!-- Navigation Overlay -->
       <header class="header">
-         <div class="header-main">
-            <div class="container">
-               <div class="row items-center">
-                  <button type="button" class="nav-toggler">
-                     <span></span>
-                  </button>
-                  <nav class="nav">
-                     <div class="nav-inner">
-                        <ul>
-                           <li><a href="#home" class="nav-item link-item">Home</a></li>
-                           <li><a href="#about" class="nav-item link-item">About</a></li>
-                           <li><a href="#services" class="nav-item link-item">Services</a></li>
-                           <li><a href="#portfolio" class="nav-item link-item">Portfolio</a></li>
-                           <li><a href="#contact" class="nav-item link-item">Contact</a></li>
-                        </ul>
-                     </div>
-                  </nav>
+         <div class="container container-wide">
+            <div class="header-nav">
+               <div class="logo-area">
+                  <a href="#home" class="logo-link">AKHDNN<span>.</span></a>
                </div>
+               <button type="button" class="nav-toggler" aria-label="Toggle Menu">
+                  <span class="nav-icon"></span>
+               </button>
             </div>
          </div>
+         <nav class="nav-overlay">
+            <div class="nav-container">
+               <ul class="nav-list">
+                  <li><a href="#home" class="nav-link link-item" data-text="01 Home">Home</a></li>
+                  <li><a href="#about" class="nav-link link-item" data-text="02 Story">Story</a></li>
+                  <li><a href="#services" class="nav-link link-item" data-text="03 Services">Services</a></li>
+                  <li><a href="#works" class="nav-link link-item" data-text="04 Works">Works</a></li>
+                  <li><a href="#contact" class="nav-link link-item" data-text="05 Contact">Contact</a></li>
+               </ul>
+               <div class="nav-footer">
+                  <div class="nav-social">
+                     <a href="https://github.com/dnhmyy" target="_blank">GH</a>
+                     <a href="https://instagram.com/danhmeyy" target="_blank">IG</a>
+                     <a href="https://youtube.com/@AkhdaN_Fadhilillah" target="_blank">YT</a>
+                  </div>
+               </div>
+            </div>
+         </nav>
       </header>
-      <!-- Header End -->
 
-      <!-- Main Start -->
-      <div class="main hidden">
+      <main class="main-content hidden">
          
-         <!-- Home Section Start -->
-         <section class="home-section" id="home">
+         <!-- Hero Section -->
+         <section class="section section-hero" id="home">
             <div class="container">
-               <div class="row align-items-center">
-                  <div class="home-text">
-                     <p>My name is</p>
-                     <h1>AKHDAN <span>FADHILILLAH</span> PS</h1>
-                     <h2>High school student in computer and network engineering with a strong interest in system administration and computer networks.</h2>
-                     <div class="home-btns">
-                        <a href="#about" class="btn link-item">About Me</a>
-                        <a href="#portfolio" class="btn link-item">My Work</a>
+               <div class="hero-layout">
+                  <div class="hero-typography reveal">
+                     <p class="hero-sub">Creative Portfolio — 2024</p>
+                     <h1 class="hero-title">AKHDAN<br><span>FADHILILLAH</span></h1>
+                     <div class="hero-description">
+                        <p>High school student in computer and network engineering. System administration enthusiast and IT Network Engineer in the making.</p>
+                        <div class="hero-cta">
+                           <a href="#works" class="cta-link link-item">View Selection</a>
+                        </div>
                      </div>
                   </div>
-                  <div class="home-img">
-                     <div class="img-box">
-                        <!-- Using hero.svg if it exists, otherwise profile-img.png. Based on porto.html -->
-                        <img src="website-portfolio/images/hero.svg" alt="profile-img" onerror="this.src='img/profile-img.png'">
+                  <div class="hero-visual reveal">
+                     <div class="hero-image-wrapper">
+                        <img src="website-portfolio/images/hero.svg" alt="Hero Illustration" class="parallax-img" onerror="this.src='img/profile-img.png'">
+                     </div>
+                  </div>
+                  <div class="hero-footer-links reveal">
+                     <div class="social-minimal">
+                        <a href="https://github.com/dnhmyy" target="_blank">Github</a>
+                        <a href="https://instagram.com/danhmeyy" target="_blank">Instagram</a>
+                        <a href="https://youtube.com/@AkhdaN_Fadhilillah" target="_blank">Youtube</a>
                      </div>
                   </div>
                </div>
             </div>
          </section>
-         <!-- Home Section End -->
 
-         <!-- About Section Start -->
-         <section class="about-section" id="about">
+         <!-- Story & Skills Section -->
+         <section class="section section-story" id="about">
             <div class="container">
-               <div class="section-title">
-                  <h2>About</h2>
-               </div>
-               <div class="about-row row">
-                  <div class="about-img">
-                     <div class="img-box">
-                        <img src="img/about-img.png" alt="about-img">
-                     </div>
+               <div class="editorial-grid">
+                  <div class="grid-side reveal">
+                     <span class="section-index">02.</span>
+                     <h2 class="section-title">THE<br>STORY</h2>
                   </div>
-                  <div class="about-text">
-                     <p>
-                        "Saya adalah lulusan dari SMK Jurusan Teknik Komputer dan Jaringan. Ketertarikan saya terhadap musik dan basket memberi warna pada hari-hari saya di luar ruangan. Saya selalu lapar akan pengetahuan dan senang mengeksplorasi hal-hal baru. Dengan keinginan yang kuat untuk terus berkembang, saya percaya bahwa setiap tantangan adalah kesempatan untuk tumbuh dan mencapai impian saya."
-                     </p>
-                     
-                     <div class="skills">
-                        <div class="skill-item">Mikrotik</div>
-                        <div class="skill-item">GNU / Linux</div>
-                        <div class="skill-item">TCP / IP</div>
-                        <div class="skill-item">Cisco Basic</div>
-                        <div class="skill-item">Quicky Learn</div>
-                        <div class="skill-item">Problem Solving</div>
-                        <div class="skill-item">Computer Networking</div>
-                        <div class="skill-item">Virtualization Machine</div>
+                  <div class="grid-main reveal">
+                     <div class="story-content">
+                        <p class="lead-text">
+                           "Saya adalah lulusan dari SMK Jurusan Teknik Komputer dan Jaringan. Ketertarikan saya terhadap musik dan basket memberi warna pada hari-hari saya di luar ruangan."
+                        </p>
+                        <p class="secondary-text">
+                           Saya selalu lapar akan pengetahuan dan senang mengeksplorasi hal-hal baru. Dengan keinginan yang kuat untuk terus berkembang, saya percaya bahwa setiap tantangan adalah kesempatan untuk tumbuh dan mencapai impian saya.
+                        </p>
                      </div>
-
-                     <div class="about-tabs">
-                        <button type="button" class="tab-item active" data-target="#education">Education</button>
-                        <button type="button" class="tab-item" data-target="#experience">Certifications</button>
-                     </div>
-
-                     <!-- Education Content -->
-                     <div class="tab-content active" id="education">
-                        <div class="timeline">
-                           <div class="timeline-item">
-                              <span class="date">2021 - 2024</span>
-                              <h4>Student - <span>SMKN 9 KAB TANGERANG</span></h4>
-                              <p>High School - Computer Network Engineer</p>
-                           </div>
-                           <div class="timeline-item">
-                              <span class="date">2018 - 2021</span>
-                              <h4>Student - <span>MTSN 2 TANGERANG</span></h4>
-                              <p>Junior High School - Journalist Division</p>
-                           </div>
-                           <div class="timeline-item">
-                              <span class="date">2012 - 2018</span>
-                              <h4>Student - <span>SDN CANKGUDU IV</span></h4>
-                              <p>Elementary School - Student</p>
-                           </div>
-                        </div>
-                     </div>
-
-                     <!-- Certifications replaced the empty experience tab -->
-                     <div class="tab-content" id="experience">
-                        <div class="timeline">
-                           <div class="timeline-item">
-                              <span class="date">Cisco Networking</span>
-                              <h4>Network Addressing & Basic Troubleshooting</h4>
-                              <p>Troubleshooting basic network connectivity issues, Describe Cisco routers and switches</p>
-                           </div>
-                           <div class="timeline-item">
-                              <span class="date">Saylor Academy</span>
-                              <h4>CS402: Computer Communications and Networks</h4>
-                              <p>Networking Fundamentals, Basics of Protocols, The Application Layer, The Transport Layer (TCP/UDP).</p>
-                           </div>
-                           <div class="timeline-item">
-                              <span class="date">Cisco / NDG</span>
-                              <h4>NDG Linux Unhatced</h4>
-                              <p>Basic installation and configuration of Linux software. Understand the basics of the Linux CLI.</p>
-                           </div>
-                        </div>
-                        <p style="margin-top: 20px; color: var(--accent-color); font-weight: 500;">And 9+ more professional certifications.</p>
-                     </div>
-
-                     <div class="about-btns" style="margin-top: 40px;">
-                        <a href="cv.pdf" target="_blank" class="btn">Download CV</a>
-                        <a href="#contact" class="btn link-item">Contact Me</a>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </section>
-         <!-- About Section End -->
-
-         <!-- Services Section Start -->
-         <section class="services-section" id="services">
-            <div class="container">
-               <div class="section-title">
-                  <h2>Services</h2>
-               </div>
-               <div class="row">
-                  <div class="service-item">
-                     <div class="service-icon"><i class="fas fa-desktop"></i></div>
-                     <h3>Computer Operational</h3>
-                     <p>Skills in operating computer well, allowing smooth use of various applications and operating systems.</p>
-                  </div>
-                  <div class="service-item">
-                     <div class="service-icon"><i class="fas fa-network-wired"></i></div>
-                     <h3>Network Configuration</h3>
-                     <p>Experience in basic configuration of MikroTik and Cisco devices to manage networks efficiently and securely.</p>
-                  </div>
-                  <div class="service-item">
-                     <div class="service-icon"><i class="fas fa-server"></i></div>
-                     <h3>Server Virtualization</h3>
-                     <p>Knowledge in server virtualization using Debian for flexibility and efficiency of IT infrastructure.</p>
-                  </div>
-               </div>
-            </div>
-         </section>
-         <!-- Services Section End -->
-
-         <!-- Portfolio Section Start -->
-         <section class="portfolio-section" id="portfolio">
-            <div class="container">
-               <div class="section-title">
-                  <h2>Portfolio</h2>
-               </div>
-               <div class="row">
-                  <!-- Real Portfolio Items from porto.html -->
-                  <div class="portfolio-item" data-category="blog">
-                     <div class="portfolio-item-thumbnail">
-                        <img src="website-portfolio/portfolios/portfolio-1.png" alt="Blogging">
-                     </div>
-                     <h3 class="portfolio-item-title">Blogging (Tajwid)</h3>
-                     <div class="portfolio-item-details">
-                        <div class="description">
-                           <p>Blog "Belajar Tajwid" adalah proyek pribadi pertama yang saya buat untuk pembelajaran diri sendiri dan membantu orang lain memahami ilmu tajwid.</p>
-                        </div>
-                        <div class="general-info">
-                           <ul>
-                              <li>Platform <span>Blogger</span></li>
-                              <li>Role <span>Creator</span></li>
-                              <li>Link <span><a href="https://yukkbelajartajwid.blogspot.com/" target="_blank">Visit Blog</a></span></li>
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-
-                  <div class="portfolio-item" data-category="content">
-                     <div class="portfolio-item-thumbnail">
-                        <img src="website-portfolio/portfolios/portfolio-2.png" alt="Content Creator">
-                     </div>
-                     <h3 class="portfolio-item-title">Content Creator</h3>
-                     <div class="portfolio-item-details">
-                        <div class="description">
-                           <p>Berbagi tutorial seru seputar dunia Teknik Komputer dan Jaringan (TKJ) melalui kanal YouTube sebagai sarana belajar kembali.</p>
-                        </div>
-                        <div class="general-info">
-                           <ul>
-                              <li>Platform <span>YouTube</span></li>
-                              <li>Focus <span>TKJ Tutorial</span></li>
-                              <li>Link <span><a href="https://www.youtube.com/@AkhdaN_Fadhilillah" target="_blank">Visit YouTube</a></span></li>
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-
-                  <div class="portfolio-item" data-category="web">
-                     <div class="portfolio-item-thumbnail">
-                        <img src="website-portfolio/portfolios/portfolio-3.png" alt="Web Developer">
-                     </div>
-                     <h3 class="portfolio-item-title">Web Portfolio</h3>
-                     <div class="portfolio-item-details">
-                        <div class="description">
-                           <p>Portofolio digital yang menampilkan hasil perjalanan kreatif dan solusi unik melalui pengembangan web menggunakan HTML, CSS, dan JS.</p>
-                        </div>
-                        <div class="general-info">
-                           <ul>
-                              <li>Stack <span>HTML, CSS, JS</span></li>
-                              <li>Role <span>Developer</span></li>
-                              <li>Link <span><a href="#" target="_blank">Live Demo</a></span></li>
-                           </ul>
+                     <div class="skills-editorial">
+                        <h3 class="subsection-title">Core Competencies</h3>
+                        <div class="skills-list">
+                           <span class="skill-tag">Mikrotik</span>
+                           <span class="skill-tag">GNU / Linux</span>
+                           <span class="skill-tag">TCP / IP</span>
+                           <span class="skill-tag">Cisco Basic</span>
+                           <span class="skill-tag">Problem Solving</span>
+                           <span class="skill-tag">Computer Networking</span>
+                           <span class="skill-tag">Virtualization Machine</span>
                         </div>
                      </div>
                   </div>
                </div>
             </div>
          </section>
-         <!-- Portfolio Section End -->
 
-         <!-- Contact Section Start -->
-         <section class="contact-section" id="contact">
+         <!-- Services Section -->
+         <section class="section section-services" id="services">
             <div class="container">
-               <div class="section-title">
-                  <h2>Contact</h2>
-               </div>
-               <div class="contact-row row">
-                  <div class="contact-form-container">
-                     <form class="contact-form" action="https://formspree.io/f/xrgnyjaq" method="POST">
-                        <div class="input-group">
-                           <input type="text" placeholder="Name" name="name" required>
-                        </div>
-                        <div class="input-group">
-                           <input type="email" placeholder="Email" name="email" required>
-                        </div>
-                        <div class="input-group">
-                           <textarea name="message" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                     </form>
+               <div class="editorial-grid">
+                  <div class="grid-side reveal">
+                     <span class="section-index">03.</span>
+                     <h2 class="section-title">SERVICES</h2>
                   </div>
-                  <div class="contact-info">
-                     <div class="info-item">
-                        <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
-                        <h3>Address</h3>
-                        <p>Cangkudu, Kec Balaraja BANTEN, INDONESIA 15610</p>
-                     </div>
-                     <div class="info-item">
-                        <div class="icon"><i class="fas fa-envelope"></i></div>
-                        <h3>Email</h3>
-                        <p>akhdansutiar@gmail.com</p>
-                     </div>
-                     <div class="social-links-minimal">
-                        <a href="https://www.instagram.com/danhmeyy" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@AkhdaN_Fadhilillah" target="_blank"><i class="fab fa-youtube"></i></a>
-                        <a href="https://www.github.com/dnhmyy" target="_blank"><i class="fab fa-github"></i></a>
+                  <div class="grid-main">
+                     <div class="services-wrapper">
+                        <div class="service-block reveal">
+                           <span class="service-num">/01</span>
+                           <h3>Computer Operational</h3>
+                           <p>Proficient in operating multiple systems and advanced software suites with professional efficiency.</p>
+                        </div>
+                        <div class="service-block reveal">
+                           <span class="service-num">/02</span>
+                           <h3>Network Configuration</h3>
+                           <p>Specialized in MikroTik and Cisco device management, ensuring network efficiency and security.</p>
+                        </div>
+                        <div class="service-block reveal">
+                           <span class="service-num">/03</span>
+                           <h3>Server Virtualization</h3>
+                           <p>Leveraging virtual technologies on Debian GNU/Linux to enhance IT infrastructure flexibility.</p>
+                        </div>
                      </div>
                   </div>
                </div>
             </div>
          </section>
-         <!-- Contact Section End -->
 
-         <footer class="footer">
+         <!-- Works Section -->
+         <section class="section section-works" id="works">
             <div class="container">
-               <p>&#169; 2024 akhdnn. Made with passion.</p>
+               <div class="editorial-grid">
+                  <div class="grid-side reveal">
+                     <span class="section-index">04.</span>
+                     <h2 class="section-title">SELECTED<br>WORKS</h2>
+                  </div>
+                  <div class="grid-main">
+                     <div class="works-grid">
+                        <!-- Work 1 -->
+                        <div class="work-card reveal" data-id="1">
+                           <div class="work-image">
+                              <img src="website-portfolio/portfolios/portfolio-1.png" alt="Blogging Project">
+                              <div class="work-overlay">
+                                 <span class="work-type">PERSONAL PROJECT — BLOGGER</span>
+                              </div>
+                           </div>
+                           <div class="work-info">
+                              <h3>Blogging System</h3>
+                              <div class="work-details" style="display:none;">
+                                 <p>Blog "Belajar Tajwid" adalah proyek pribadi pertama yang saya buat, menyediakan materi tajwid untuk memudahkan pemahaman ilmu tajwid secara digital.</p>
+                                 <a href="https://yukkbelajartajwid.blogspot.com/" target="_blank" class="work-btn">Explore Case Study</a>
+                              </div>
+                           </div>
+                        </div>
+                        <!-- Work 2 -->
+                        <div class="work-card reveal" data-id="2">
+                           <div class="work-image">
+                              <img src="website-portfolio/portfolios/portfolio-2.png" alt="YouTube Project">
+                              <div class="work-overlay">
+                                 <span class="work-type">EDUCATION — YOUTUBE</span>
+                              </div>
+                           </div>
+                           <div class="work-info">
+                              <h3>Content Creation</h3>
+                              <div class="work-details" style="display:none;">
+                                 <p>Berbagi tutorial dunia Teknik Komputer dan Jaringan (TKJ) sebagai sarana belajar kembali dan membantu sesama pelajar.</p>
+                                 <a href="https://www.youtube.com/@AkhdaN_Fadhilillah" target="_blank" class="work-btn">Visit Channel</a>
+                              </div>
+                           </div>
+                        </div>
+                        <!-- Work 3 -->
+                        <div class="work-card reveal" data-id="3">
+                           <div class="work-image">
+                              <img src="website-portfolio/portfolios/portfolio-3.png" alt="Web Project">
+                              <div class="work-overlay">
+                                 <span class="work-type">WEB DEV — HTML/CSS/JS</span>
+                              </div>
+                           </div>
+                           <div class="work-info">
+                              <h3>Digital Identity</h3>
+                              <div class="work-details" style="display:none;">
+                                 <p>Pengembangan portofolio digital interaktif yang mengutamakan visual kuat dan pengalaman pengguna yang modern.</p>
+                                 <a href="#" target="_blank" class="work-btn">Check Build</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <!-- Credentials Section (Certificates + Education) -->
+         <section class="section section-credentials">
+            <div class="container">
+               <div class="editorial-grid">
+                  <div class="grid-side reveal">
+                     <span class="section-index">05.</span>
+                     <h2 class="section-title">CREDENTIALS</h2>
+                  </div>
+                  <div class="grid-main">
+                     <div class="credentials-flex">
+                        <!-- Education -->
+                        <div class="education-block reveal">
+                           <h3 class="subsection-title">Education</h3>
+                           <div class="timeline-editorial">
+                              <div class="timeline-node">
+                                 <span class="year">2021 — 2024</span>
+                                 <h4>SMKN 9 KAB TANGERANG</h4>
+                                 <p>Computer Network Engineer</p>
+                              </div>
+                              <div class="timeline-node">
+                                 <span class="year">2018 — 2021</span>
+                                 <h4>MTSN 2 TANGERANG</h4>
+                                 <p>Journalist Division</p>
+                              </div>
+                              <div class="timeline-node">
+                                 <span class="year">2012 — 2018</span>
+                                 <h4>SDN CANKGUDU IV</h4>
+                                 <p>Elementary Student</p>
+                              </div>
+                           </div>
+                        </div>
+                        <!-- Certificates -->
+                        <div class="certificates-block reveal">
+                           <h3 class="subsection-title">Certifications</h3>
+                           <div class="cert-grid">
+                              <a href="#" class="cert-item">Network Addressing & Troubleshooting</a>
+                              <a href="#" class="cert-item">CS402: Computer Communications</a>
+                              <a href="#" class="cert-item">Google Analytics Certification</a>
+                              <a href="#" class="cert-item">NDG Linux Unhatched</a>
+                              <a href="#" class="cert-item">Emotional Intelligence</a>
+                              <a href="#" class="cert-item">Network Fundamentals</a>
+                              <a href="#" class="cert-item">Excel for Beginners</a>
+                              <a href="#" class="cert-item">Microsoft Word Specialist</a>
+                              <a href="#" class="cert-item">Canvas & Office 365 LTI</a>
+                              <a href="#" class="cert-item">Web Dev for Beginners</a>
+                              <a href="#" class="cert-item">Building Web Pages HTML/CSS</a>
+                              <a href="#" class="cert-item">Introduction to Programming</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <!-- Contact Section -->
+         <section class="section section-contact" id="contact">
+            <div class="container">
+               <div class="contact-editorial">
+                  <div class="contact-header reveal">
+                     <span class="section-index">06.</span>
+                     <h2 class="footer-title">GET IN TOUCH</h2>
+                     <p>Have a project in mind? Let's build something great together.</p>
+                  </div>
+                  <div class="contact-main row">
+                     <div class="contact-form-side reveal">
+                        <form action="https://formspree.io/f/xrgnyjaq" method="POST" id="contact-form">
+                           <div class="input-editorial">
+                              <label>NAME</label>
+                              <input type="text" name="name" placeholder="John Doe" required>
+                           </div>
+                           <div class="input-editorial">
+                              <label>EMAIL</label>
+                              <input type="email" name="email" placeholder="john@example.com" required>
+                           </div>
+                           <div class="input-editorial">
+                              <label>MESSAGE</label>
+                              <textarea name="message" placeholder="Tell me about your project..." required></textarea>
+                           </div>
+                           <button type="submit" class="submit-editorial">SEND MESSAGE</button>
+                        </form>
+                     </div>
+                     <div class="contact-details-side reveal">
+                        <div class="contact-info-grid">
+                           <div class="info-group">
+                              <label>EMAIL</label>
+                              <a href="mailto:akhdansutiar@gmail.com">akhdansutiar@gmail.com</a>
+                           </div>
+                           <div class="info-group">
+                              <label>ADDRESS</label>
+                              <p>Balaraja BANTEN, INDONESIA 15610</p>
+                           </div>
+                           <div class="info-group">
+                              <label>SOCIAL</label>
+                              <div class="soc-list">
+                                 <a href="https://github.com/dnhmyy" target="_blank">Github</a>
+                                 <a href="https://instagram.com/danhmeyy" target="_blank">Instagram</a>
+                                 <a href="https://youtube.com/@AkhdaN_Fadhilillah" target="_blank">Youtube</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <footer class="site-footer">
+            <div class="container">
+               <div class="footer-bottom">
+                  <p>&copy; 2024 AKHDNN — Editorial Portfolio Remake</p>
+                  <a href="#home" class="back-to-top link-item">BACK TO TOP</a>
+               </div>
             </div>
          </footer>
-      </div>
-      <!-- Main End -->
+      </main>
 
-      <!-- Portfolio Popup Start -->
-      <div class="portfolio-popup">
-         <div class="pp-inner">
-            <div class="pp-content">
-               <div class="pp-header">
-                  <button type="button" class="btn pp-close"><i class="fas fa-times"></i></button>
-                  <div class="pp-thumbnail">
-                     <img src="" alt="pp-thumbnail">
-                  </div>
-                  <h3></h3>
-               </div>
-               <div class="pp-body">
-               </div>
+      <!-- Project Modal -->
+      <div class="project-modal" id="project-modal">
+         <div class="modal-backdrop"></div>
+         <div class="modal-content-wrapper">
+            <button class="modal-close">&times;</button>
+            <div class="modal-body">
+               <!-- Content injected via JS -->
             </div>
          </div>
       </div>
-      <!-- Portfolio Popup End -->
 
       <script src="js/script.js"></script>
    </body>

@@ -1,128 +1,139 @@
-/* -------------- Loader ----------------------- */
-const init = () => {
-    const mainContent = document.querySelector(".main");
-    const loader = document.querySelector(".page-loader");
+/**
+ * Portfolio Remake V2 - Editorial Script
+ */
+
+document.addEventListener("DOMContentLoaded", () => {
     
-    if (mainContent) {
-        mainContent.classList.remove("hidden");
-        const homeSection = document.querySelector(".home-section");
-        if (homeSection) homeSection.classList.add("active");
+    /* -------------- Loader ----------------------- */
+    const initPage = () => {
+        const main = document.querySelector(".main-content");
+        const loader = document.querySelector(".page-loader");
         
-        if (loader) {
-            loader.classList.add("fade-out");
-            setTimeout(() => {
-                loader.style.display = "none";
-            }, 800);
+        if (main) {
+            main.classList.remove("hidden");
+            if (loader) {
+                loader.style.opacity = "0";
+                setTimeout(() => {
+                    loader.style.display = "none";
+                    triggerReveal();
+                }, 800);
+            }
         }
+    };
+
+    window.addEventListener("load", initPage);
+    setTimeout(initPage, 3000); // Fallback
+
+    /* -------------- Navigation ----------------------- */
+    const navToggler = document.querySelector(".nav-toggler");
+    const header = document.querySelector(".header");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    if (navToggler) {
+        navToggler.addEventListener("click", () => {
+            header.classList.toggle("active");
+            document.body.classList.toggle("hide-scrolling");
+        });
     }
-};
 
-window.addEventListener("load", init);
-// Fallback: show content after 3 seconds if load event hasn't fired
-setTimeout(init, 3000);
-
-/* -------------- Toggle Navbar ----------------------- */
-const navToggler = document.querySelector(".nav-toggler");
-const header = document.querySelector(".header");
-
-if (navToggler) {
-    navToggler.addEventListener("click", () => {
-        header.classList.toggle("active");
-        document.body.classList.toggle("hide-scrolling");
-    });
-}
-
-/* -------------- Active Section ----------------------- */
-document.addEventListener("click", (e) => {
-    if (e.target.classList.contains("link-item") && e.target.hash !== "") {
-        e.preventDefault();
-        
-        // If clicked from nav, close nav first
-        if (e.target.classList.contains("nav-item")) {
+    navLinks.forEach(link => {
+        link.addEventListener("click", () => {
             header.classList.remove("active");
             document.body.classList.remove("hide-scrolling");
+        });
+    });
+
+    /* -------------- Scroll Effects ----------------------- */
+    const scrollProgress = document.querySelector(".scroll-progress");
+    
+    window.addEventListener("scroll", () => {
+        // Sticky Header
+        if (window.scrollY > 80) {
+            header.classList.add("header-scrolled");
+        } else {
+            header.classList.remove("header-scrolled");
         }
 
-        const targetSection = document.querySelector(e.target.hash);
-        if (targetSection) {
-            const currentActive = document.querySelector("section.active");
-            if (currentActive) currentActive.classList.remove("active");
+        // Progress Bar
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        if (scrollProgress) scrollProgress.style.width = scrolled + "%";
+
+        // Scroll Reveal
+        triggerReveal();
+    });
+
+    function triggerReveal() {
+        const reveals = document.querySelectorAll(".reveal");
+        reveals.forEach(el => {
+            const windowHeight = window.innerHeight;
+            const revealTop = el.getBoundingClientRect().top;
+            const revealPoint = 100;
+
+            if (revealTop < windowHeight - revealPoint) {
+                el.classList.add("active");
+            }
+        });
+    }
+
+    /* -------------- Portfolio Modal ----------------------- */
+    const workCards = document.querySelectorAll(".work-card");
+    const modal = document.getElementById("project-modal");
+    const modalBody = document.querySelector(".modal-body");
+    const modalClose = document.querySelector(".modal-close");
+
+    workCards.forEach(card => {
+        card.addEventListener("click", () => {
+            const title = card.querySelector("h3").innerText;
+            const details = card.querySelector(".work-details").innerHTML;
+            const img = card.querySelector("img").src;
+
+            modalBody.innerHTML = `
+                <div class="modal-editorial">
+                    <img src="${img}" class="modal-hero-img" style="width:100%; margin-bottom:60px;">
+                    <h2 style="font-size:clamp(2rem, 8vw, 5rem); margin-bottom:30px;">${title}</h2>
+                    <div class="modal-text" style="font-size:1.5rem; color:var(--text-secondary);">
+                        ${details}
+                    </div>
+                </div>
+            `;
             
-            targetSection.classList.add("active");
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-    }
-});
+            modal.style.display = "flex";
+            document.body.classList.add("hide-scrolling");
+        });
+    });
 
-/* -------------- Header Scroll & Progress ----------------------- */
-window.addEventListener("scroll", () => {
-    // Header background
-    if (window.scrollY > 50) {
-        header.classList.add("header-scrolled");
-    } else {
-        header.classList.remove("header-scrolled");
+    if (modalClose) {
+        modalClose.addEventListener("click", () => {
+            modal.style.display = "none";
+            document.body.classList.remove("hide-scrolling");
+        });
     }
 
-    // Scroll progress line
-    const scrollLine = document.querySelector(".scroll-line");
-    if (scrollLine) {
-        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const scrolled = (window.scrollY / scrollHeight) * 100;
-        scrollLine.style.width = scrolled + "%";
-    }
-});
-
-/* -------------- About Tabs ----------------------- */
-const tabsContainer = document.querySelector(".about-tabs");
-if (tabsContainer) {
-    tabsContainer.addEventListener("click", (e) => {
-        if (e.target.classList.contains("tab-item") && !e.target.classList.contains("active")) {
-            tabsContainer.querySelector(".active").classList.remove("active");
-            e.target.classList.add("active");
-            const target = e.target.getAttribute("data-target");
-            const aboutSection = document.querySelector(".about-section");
-            aboutSection.querySelector(".tab-content.active").classList.remove("active");
-            aboutSection.querySelector(target).classList.add("active");
+    window.addEventListener("click", (e) => {
+        if (e.target === modal || e.target.classList.contains("modal-backdrop")) {
+            modal.style.display = "none";
+            document.body.classList.remove("hide-scrolling");
         }
     });
-}
 
-/* -------------- Portfolio Item Popup ----------------------- */
-document.addEventListener("click", (e) => {
-    if (e.target.closest(".portfolio-item")) {
-        const item = e.target.closest(".portfolio-item");
-        portfolioItemDetails(item);
-        togglePortfolioPopup();
-    }
+    /* -------------- Smooth Navigation ----------------------- */
+    const linkItems = document.querySelectorAll(".link-item");
+    linkItems.forEach(item => {
+        item.addEventListener("click", (e) => {
+            const hash = item.getAttribute("href");
+            if (hash && hash.startsWith("#")) {
+                e.preventDefault();
+                const target = document.querySelector(hash);
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: "smooth"
+                    });
+                }
+            }
+        });
+    });
+
 });
-
-function togglePortfolioPopup() {
-    document.querySelector(".portfolio-popup").classList.toggle("open");
-    document.body.classList.toggle("hide-scrolling");
-}
-
-const ppClose = document.querySelector(".pp-close");
-if (ppClose) {
-    ppClose.addEventListener("click", togglePortfolioPopup);
-}
-
-// Hide popup on clicking outside
-document.addEventListener("click", (e) => {
-    if (e.target.classList.contains("pp-inner")) {
-        togglePortfolioPopup();
-    }
-});
-
-function portfolioItemDetails(portfolioItem) {
-    document.querySelector(".pp-thumbnail img").src =
-        portfolioItem.querySelector(".portfolio-item-thumbnail img").src;
-
-    document.querySelector(".pp-header h3").innerHTML =
-        portfolioItem.querySelector(".portfolio-item-title").innerHTML;
-
-    document.querySelector(".pp-body").innerHTML =
-        portfolioItem.querySelector(".portfolio-item-details").innerHTML;
-}
