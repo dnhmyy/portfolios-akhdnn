@@ -8,35 +8,25 @@
       <link rel="stylesheet" href="css/font-awesome.css">
       <link rel="stylesheet" href="css/style.css">
    </head>
-   <!-- PG Start -->
-   <div class="page-loader">
-      <div></div>
-      <div></div>
-      <div></div>
-   </div>
-   <!-- PG End -->
-   <!-- BG Start -->
-   <div class="bg-circles">
-      <div class="circle-1"></div>
-      <div class="circle-2"></div>
-      <div class="circle-3"></div>
-      <div class="circle-4"></div>
-   </div>
-   <!-- BG End -->
-   <!-- Overlay Start -->
-   <div class="overlay"></div>
-   <!-- Overlay End -->
    <body>
-      <!-- Main Start -->
-      <div class="main hidden">
-         <!-- Header Start -->
-         <header class="header">
+      <div class="scroll-line"></div>
+      <!-- Loader Start -->
+      <div class="page-loader">
+         <div></div>
+         <div></div>
+         <div></div>
+      </div>
+      <!-- Loader End -->
+
+      <!-- Header Start -->
+      <header class="header">
+         <div class="main">
             <div class="container">
-               <div class="row flex-end">
+               <div class="row items-center">
                   <button type="button" class="nav-toggler">
-                  <span></span>
+                     <span></span>
                   </button>
-                  <div class="nav">
+                  <nav class="nav">
                      <div class="nav-inner">
                         <ul>
                            <li><a href="#home" class="nav-item link-item">Home</a></li>
@@ -44,22 +34,28 @@
                            <li><a href="#contact" class="nav-item link-item">Contact</a></li>
                         </ul>
                      </div>
-                  </div>
+                  </nav>
                </div>
             </div>
-         </header>
-         <!-- Header End -->
-         <!--Home Section Start -->
-         <section class="home-section align-items-center" id="home">
+         </div>
+      </header>
+      <!-- Header End -->
+
+      <!-- Main Start -->
+      <div class="main hidden">
+         <!-- Home Section Start -->
+         <section class="home-section" id="home">
             <div class="container">
                <div class="row align-items-center">
                   <div class="home-text">
                      <p>Hello, I'm</p>
                      <h1>AKHDAN</h1>
-                     <h2>graduate of a computer and network engineering vocational school</h2>
-                     <a href="#about" class="btn link-item">About Me</a>
-                     <a href="website-portfolio/porto.html" class="btn link-item">Portfolio</a>
-                     <a href="spoti-web/spoti.html" class="btn link-item">Spotify</a>
+                     <h2>Computer and network engineering graduate, passionate about technology, music, and growth.</h2>
+                     <div class="home-btns">
+                        <a href="#about" class="btn link-item">About Me</a>
+                        <a href="website-portfolio/porto.html" class="btn link-item">Portfolio</a>
+                        <a href="spoti-web/spoti.html" class="btn link-item">Spotify</a>
+                     </div>
                   </div>
                   <div class="home-img">
                      <div class="img-box">
@@ -69,16 +65,15 @@
                </div>
             </div>
          </section>
-         <!--Home Section End -->
+         <!-- Home Section End -->
+
          <!-- About Section Start -->
-         <section class="about-section sec-padding" id="about">
+         <section class="about-section" id="about">
             <div class="container">
-               <div class="row">
-                  <div class="section-title">
-                     <h2>About Me</h2>
-                  </div>
+               <div class="section-title">
+                  <h2>About Me</h2>
                </div>
-               <div class="row">
+               <div class="about-row row">
                   <div class="about-img">
                      <div class="img-box">
                         <img src="img/about-img.png" alt="about-img">
@@ -88,7 +83,7 @@
                      <p>
                         "Saya adalah lulusan dari SMK Jurusan Teknik Komputer dan Jaringan. Ketertarikan saya terhadap musik dan basket memberi warna pada hari-hari saya di luar ruangan. Saya selalu lapar akan pengetahuan dan senang mengeksplorasi hal-hal baru. Dengan keinginan yang kuat untuk terus berkembang, saya percaya bahwa setiap tantangan adalah kesempatan untuk tumbuh dan mencapai impian saya."
                      </p>
-                     <h3>Skills</h3>
+                     
                      <div class="skills">
                         <div class="skill-item">Mikrotik</div>
                         <div class="skill-item">GNU / Linux</div>
@@ -99,11 +94,12 @@
                         <div class="skill-item">Computer Networking</div>
                         <div class="skill-item">Virtualization Machine</div>
                      </div>
+
                      <div class="about-tabs">
                         <button type="button" class="tab-item active" data-target="#education">Education</button>
-                        <!-- <button type="button" class="tab-item" data-target="#experience">Experience</button> -->
                      </div>
-                     <!-- Education Section Start -->
+
+                     <!-- Education Content -->
                      <div class="tab-content active" id="education">
                         <div class="timeline">
                            <div class="timeline-item">
@@ -112,210 +108,173 @@
                               <p>High School - Computer Network Engineer</p>
                            </div>
                            <div class="timeline-item">
-                              <span class="date">2018-2021</span>
+                              <span class="date">2018 - 2021</span>
                               <h4>Student - <span>MTSN 2 TANGERANG</span></h4>
                               <p>Junior High School - Journalist Division</p>
                            </div>
                            <div class="timeline-item">
-                              <span class="date">2012-2018</span>
+                              <span class="date">2012 - 2018</span>
                               <h4>Student - <span>SDN CANKGUDU IV</span></h4>
                               <p>Elementary School - Student</p>
                            </div>
                         </div>
                      </div>
-                     <!-- Education Section End -->
-                     <!-- Exp Section Start -->
-                     <div class="tab-content" id="experience">
-                        <div class="timeline">
-                           <div class="timeline-item">
-                              <span class="date">2013 - 2016</span>
-                              <h4>web developer - <span>Quantum Base</span></h4>
-                              <p>Some random text to tell about your job</p>
-                           </div>
-                           <div class="timeline-item">
-                              <span class="date">2013 - 2016</span>
-                              <h4>web developer - <span>Quantum Base</span></h4>
-                              <p>Some random text to tell about your job</p>
-                           </div>
-                           <div class="timeline-item">
-                              <span class="date">2013 - 2016</span>
-                              <h4>web developer - <span>Quantum Base</span></h4>
-                              <p>Some random text to tell about your job</p>
-                           </div>
-                        </div>
+
+                     <div class="about-btns" style="margin-top: 40px;">
+                        <a href="cv.pdf" target="_blank" class="btn">Download CV</a>
+                        <a href="#contact" class="btn link-item">Contact Me</a>
                      </div>
-                     <!-- Exp Section End -->
-                     <a href="cv.pdf" target="_blank" class="btn">Download CV</a>
-                     <a href="#contact" class="btn link-item">Contact Me</a>
                   </div>
                </div>
             </div>
          </section>
          <!-- About Section End -->
+
          <!-- Portfolio Section Start -->
-         <section class="portfolio-section sec-padding" id="portfolio">
+         <section class="portfolio-section" id="portfolio">
             <div class="container">
-               <div class="row">
-                  <div class="section-title">
-                     <h2>Recent Work</h2>
-                  </div>
+               <div class="section-title">
+                  <h2>Recent Work</h2>
                </div>
                <div class="row">
-                  <!-- Portfolio Item Start-->
+                  <!-- Portfolio Items (Keeping all 6 as requested) -->
                   <div class="portfolio-item">
                      <div class="portfolio-item-thumbnail">
                         <img src="img/portfolio/1.jpg" alt="portfolio item thumb">
                      </div>
                      <h3 class="portfolio-item-title">Eduacation Website1</h3>
-                     <button type="button" class="btn view-project-btn">View Project</button>
                      <div class="portfolio-item-details">
                         <div class="description">
                            <p>Some random text to tell about your project</p>
                         </div>
                         <div class="general-info">
                            <ul>
-                              <li>Created - <span>04/04/2020</span></li>
-                              <li>Technology - <span>HTML</span></li>
-                              <li>Role - <span>Developer</span></li>
-                              <li>Learn More - <span><a href="#" target="_blank">www.github.io1</a></span></li>
+                              <li>Created <span>04/04/2020</span></li>
+                              <li>Technology <span>HTML</span></li>
+                              <li>Role <span>Developer</span></li>
+                              <li>Link <span><a href="#" target="_blank">github.io1</a></span></li>
                            </ul>
                         </div>
                      </div>
                   </div>
-                  <!-- Portfolio Item End-->
-                  <!-- Portfolio Item Start-->
+
                   <div class="portfolio-item">
                      <div class="portfolio-item-thumbnail">
                         <img src="img/portfolio/2.jpg" alt="portfolio item thumb">
                      </div>
                      <h3 class="portfolio-item-title">Eduacation Website2</h3>
-                     <button type="button" class="btn view-project-btn">View Project</button>
                      <div class="portfolio-item-details">
                         <div class="description">
                            <p>Some random text to tell about your project</p>
                         </div>
                         <div class="general-info">
                            <ul>
-                              <li>Created - <span>04/04/2020</span></li>
-                              <li>Technology - <span>HTML</span></li>
-                              <li>Role - <span>Developer</span></li>
-                              <li>Learn More - <span><a href="#" target="_blank">www.github.io2</a></span></li>
+                              <li>Created <span>04/04/2020</span></li>
+                              <li>Technology <span>HTML</span></li>
+                              <li>Role <span>Developer</span></li>
+                              <li>Link <span><a href="#" target="_blank">github.io2</a></span></li>
                            </ul>
                         </div>
                      </div>
                   </div>
-                  <!-- Portfolio Item End-->
-                  <!-- Portfolio Item Start-->
+
                   <div class="portfolio-item">
                      <div class="portfolio-item-thumbnail">
                         <img src="img/portfolio/3.jpg" alt="portfolio item thumb">
                      </div>
                      <h3 class="portfolio-item-title">Eduacation Website3</h3>
-                     <button type="button" class="btn view-project-btn">View Project</button>
                      <div class="portfolio-item-details">
                         <div class="description">
                            <p>Some random text to tell about your project</p>
                         </div>
                         <div class="general-info">
                            <ul>
-                              <li>Created - <span>04/04/2020</span></li>
-                              <li>Technology - <span>HTML</span></li>
-                              <li>Role - <span>Developer</span></li>
-                              <li>Learn More - <span><a href="#" target="_blank">www.github.io3</a></span></li>
+                              <li>Created <span>04/04/2020</span></li>
+                              <li>Technology <span>HTML</span></li>
+                              <li>Role <span>Developer</span></li>
+                              <li>Link <span><a href="#" target="_blank">github.io3</a></span></li>
                            </ul>
                         </div>
                      </div>
                   </div>
-                  <!-- Portfolio Item End-->
-                  <!-- Portfolio Item Start-->
+
                   <div class="portfolio-item">
                      <div class="portfolio-item-thumbnail">
                         <img src="img/portfolio/4.jpg" alt="portfolio item thumb">
                      </div>
                      <h3 class="portfolio-item-title">Eduacation Website4</h3>
-                     <button type="button" class="btn view-project-btn">View Project</button>
                      <div class="portfolio-item-details">
                         <div class="description">
                            <p>Some random text to tell about your project</p>
                         </div>
                         <div class="general-info">
                            <ul>
-                              <li>Created - <span>04/04/2020</span></li>
-                              <li>Technology - <span>HTML</span></li>
-                              <li>Role - <span>Developer</span></li>
-                              <li>Learn More - <span><a href="#" target="_blank">www.github.io4</a></span></li>
+                              <li>Created <span>04/04/2020</span></li>
+                              <li>Technology <span>HTML</span></li>
+                              <li>Role <span>Developer</span></li>
+                              <li>Link <span><a href="#" target="_blank">github.io4</a></span></li>
                            </ul>
                         </div>
                      </div>
                   </div>
-                  <!-- Portfolio Item End-->
-                  <!-- Portfolio Item Start-->
+
                   <div class="portfolio-item">
                      <div class="portfolio-item-thumbnail">
                         <img src="img/portfolio/5.jpg" alt="portfolio item thumb">
                      </div>
                      <h3 class="portfolio-item-title">Eduacation Website5</h3>
-                     <button type="button" class="btn view-project-btn">View Project</button>
                      <div class="portfolio-item-details">
                         <div class="description">
                            <p>Some random text to tell about your project</p>
                         </div>
                         <div class="general-info">
                            <ul>
-                              <li>Created - <span>04/04/2020</span></li>
-                              <li>Technology - <span>HTML</span></li>
-                              <li>Role - <span>Developer</span></li>
-                              <li>Learn More - <span><a href="#" target="_blank">www.github.io5</a></span></li>
+                              <li>Created <span>04/04/2020</span></li>
+                              <li>Technology <span>HTML</span></li>
+                              <li>Role <span>Developer</span></li>
+                              <li>Link <span><a href="#" target="_blank">github.io5</a></span></li>
                            </ul>
                         </div>
                      </div>
                   </div>
-                  <!-- Portfolio Item End-->
-                  <!-- Portfolio Item Start-->
+
                   <div class="portfolio-item">
                      <div class="portfolio-item-thumbnail">
                         <img src="img/portfolio/6.jpg" alt="portfolio item thumb">
                      </div>
                      <h3 class="portfolio-item-title">Eduacation Website6</h3>
-                     <button type="button" class="btn view-project-btn">View Project</button>
                      <div class="portfolio-item-details">
                         <div class="description">
                            <p>Some random text to tell about your project</p>
                         </div>
                         <div class="general-info">
                            <ul>
-                              <li>Created - <span>04/04/2020</span></li>
-                              <li>Technology - <span>HTML</span></li>
-                              <li>Role - <span>Developer</span></li>
-                              <li>Learn More - <span><a href="#" target="_blank">www.github.io6</a></span></li>
+                              <li>Created <span>04/04/2020</span></li>
+                              <li>Technology <span>HTML</span></li>
+                              <li>Role <span>Developer</span></li>
+                              <li>Link <span><a href="#" target="_blank">github.io6</a></span></li>
                            </ul>
                         </div>
                      </div>
                   </div>
-                  <!-- Portfolio Item End-->
                </div>
             </div>
          </section>
          <!-- Portfolio Section End -->
+
          <!-- Contact Section Start -->
-         <section class="contact-section sec-padding" id="contact">
+         <section class="contact-section" id="contact">
             <div class="container">
-               <div class="row">
-                  <div class="section-title">
-                     <h2><a href="https://dnhmyy.github.io/portfolios-akhdnn/website-portfolio/porto.html#contact">Contact Me</a></h2>
-                  </div>
+               <div class="section-title">
+                  <h2>Contact Me</h2>
                </div>
-               <div class="row">
-                  <div class="contact-info">
-                     <div class="contact-info-item">
-                     </div>
-                     <div class="contact-info-item">
-                        <h3>Follow Me</h3>
-                        <div class="social-links">
-                           <a href="https://www.instagram.com/danhmeyy" target="_blank"><i class="fab fa-instagram"></i></a>
-                           <a href="https://www.youtube.com/@AkhdaN_Fadhilillah" target="_blank"><i class="fab fa-youtube"></i></a>
-                           <a href="https://www.github.com/dnhmyy" target="_blank"><i class="fab fa-github"></i></a>
-                        </div>
+               <div class="contact-info">
+                  <div class="contact-info-item">
+                     <h3>Let's Connect</h3>
+                     <div class="social-links">
+                        <a href="https://www.instagram.com/danhmeyy" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@AkhdaN_Fadhilillah" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.github.com/dnhmyy" target="_blank"><i class="fab fa-github"></i></a>
                      </div>
                   </div>
                </div>
@@ -324,14 +283,15 @@
          <!-- Contact Section End -->
       </div>
       <!-- Main End -->
-      <!-- Portfolio Item Details Popup Start -->
+
+      <!-- Portfolio Popup Start -->
       <div class="portfolio-popup">
          <div class="pp-inner">
             <div class="pp-content">
                <div class="pp-header">
                   <button type="button" class="btn pp-close"><i class="fas fa-times"></i></button>
                   <div class="pp-thumbnail">
-                     <img src="img/portfolio/1.jpg" alt="pp-thumbnail">
+                     <img src="" alt="pp-thumbnail">
                   </div>
                   <h3></h3>
                </div>
@@ -340,7 +300,8 @@
             </div>
          </div>
       </div>
-      <!-- Portfolio Item Details Popup Start -->
+      <!-- Portfolio Popup End -->
+
       <script src="js/script.js"></script>
    </body>
 </html>
