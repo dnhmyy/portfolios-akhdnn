@@ -1,10 +1,13 @@
 /* -------------- Loader ----------------------- */
 const init = () => {
-    const main = document.querySelector(".main");
+    const mainContent = document.querySelector(".main");
     const loader = document.querySelector(".page-loader");
-    if (main && main.classList.contains("hidden")) {
-        main.classList.remove("hidden");
-        document.querySelector(".home-section").classList.add("active");
+    
+    if (mainContent) {
+        mainContent.classList.remove("hidden");
+        const homeSection = document.querySelector(".home-section");
+        if (homeSection) homeSection.classList.add("active");
+        
         if (loader) {
             loader.classList.add("fade-out");
             setTimeout(() => {
