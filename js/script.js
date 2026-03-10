@@ -1,12 +1,11 @@
 /**
- * ELITE UI/UX INTERACTION LOGIC
- * GSAP-Equivalent Smooth Motion & Smart Gallery
+ * INTERACTIVE SCROLL-DRIVEN MOTION ENGINE
  */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* -------------- Elite Navbar Scroll Effect ----------------------- */
-    const navbar = document.querySelector(".navbar-elite");
+    /* -------------- Navbar Scroll Dynamics ----------------------- */
+    const navbar = document.querySelector(".navbar-motion");
     window.addEventListener("scroll", () => {
         if (window.scrollY > 80) {
             navbar.classList.add("scrolled");
@@ -15,33 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    /* -------------- Active Nav Watcher ----------------------- */
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".nav-link");
-
-    const scrollWatcher = () => {
-        let active = "";
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (window.scrollY >= (sectionTop - 150)) {
-                active = section.getAttribute("id");
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove("active");
-            if (link.getAttribute("href").includes(active)) {
-                link.classList.add("active");
-            }
-        });
-    };
-
-    window.addEventListener("scroll", scrollWatcher);
-
-    /* -------------- Intersection Observer (Elite Reveals) ----------------------- */
-    const observeOptions = {
-        threshold: 0.15,
+    /* -------------- Reveal Scroll Observer ----------------------- */
+    const observerOptions = {
+        threshold: 0.1,
         rootMargin: "0px 0px -50px 0px"
     };
 
@@ -49,61 +24,84 @@ document.addEventListener("DOMContentLoaded", () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add("visible");
-                sectionObserver.unobserve(entry.target);
+                sectionObserver.unobserve(entry.target); // Reveal once
             }
         });
-    }, observeOptions);
+    }, observerOptions);
 
-    sections.forEach(section => {
+    document.querySelectorAll("section").forEach(section => {
         sectionObserver.observe(section);
     });
 
-    /* -------------- Smart Gallery: Certification Toggle ----------------------- */
-    const certGrid = id("cert-grid");
-    const toggleBtn = id("toggle-certs");
+    /* -------------- Active Nav Tracker ----------------------- */
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-link");
 
-    if (toggleBtn) {
-        toggleBtn.addEventListener("click", () => {
-            certGrid.classList.toggle("expanded");
-            if (certGrid.classList.contains("expanded")) {
-                toggleBtn.textContent = "Show Less";
-            } else {
-                toggleBtn.textContent = "Show All 12+ Certificates";
-                // Smooth scroll back to section top if scrolling past
-                id("credentials").scrollIntoView({ behavior: 'smooth' });
+    window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (window.scrollY >= (sectionTop - 150)) {
+                current = section.getAttribute("id");
             }
         });
-    }
 
-    /* -------------- Certificate Lightbox Logic ----------------------- */
-    const masks = document.querySelectorAll(".cert-mask");
-    const overlay = id("cert-overlay");
-    const overlayImg = id("full-cert-img");
-    const closeBtn = document.querySelector(".overlay-close");
-
-    masks.forEach(mask => {
-        mask.addEventListener("click", function() {
-            const thumbSrc = this.parentElement.querySelector("img").src;
-            overlayImg.src = thumbSrc; // In production, use high-res source
-            overlay.classList.add("active");
-            document.body.style.overflow = "hidden"; // Prevent body scroll
+        navLinks.forEach(link => {
+            link.classList.remove("active");
+            if (link.getAttribute("href").includes(current)) {
+                link.classList.add("active");
+            }
         });
     });
 
-    if (closeBtn) {
-        closeBtn.addEventListener("click", () => {
-            overlay.classList.remove("active");
-            document.body.style.overflow = "auto";
-        });
-    }
+    /* -------------- Parallax Text Effect (Subtle) ----------------------- */
+    const parallaxText = document.querySelector(".parallax-txt");
+    window.addEventListener("scroll", () => {
+        const scrolled = window.scrollY;
+        const depth = parallaxText.dataset.depth || 0.1;
+        const movement = scrolled * depth;
+        parallaxText.style.backgroundPositionX = `${movement}px`;
+        parallaxText.style.transform = `translateX(${movement * 0.2}px)`;
+    });
 
-    // Close on background click
-    overlay.addEventListener("click", (e) => {
-        if (e.target === overlay) {
-            overlay.classList.remove("active");
+    /* -------------- Interactive Certification Strip ----------------------- */
+    const certLightbox = document.getElementById("cert-lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeLightbox = document.querySelector(".lightbox-close");
+
+    document.querySelectorAll(".cert-strip-item").forEach(item => {
+        item.addEventListener("click", () => {
+            const fullImg = item.dataset.full;
+            lightboxImg.src = fullImg;
+            certLightbox.classList.add("active");
+            document.body.style.overflow = "hidden"; // Lock scroll
+        });
+    });
+
+    closeLightbox.addEventListener("click", () => {
+        certLightbox.classList.remove("active");
+        document.body.style.overflow = "auto";
+    });
+
+    certLightbox.addEventListener("click", (e) => {
+        if (e.target === certLightbox) {
+            certLightbox.classList.remove("active");
             document.body.style.overflow = "auto";
         }
     });
+
+    /* -------------- Horizontal Scroll Hints ----------------------- */
+    const scroller = document.getElementById("cert-scroller");
+    if (scroller) {
+        scroller.addEventListener("scroll", () => {
+            const hint = document.querySelector(".gallery-hint");
+            if (scroller.scrollLeft > 100) {
+                hint.style.opacity = "0.2";
+            } else {
+                hint.style.opacity = "0.5";
+            }
+        });
+    }
 
     /* -------------- Smooth Internal Scroll ----------------------- */
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -113,16 +111,13 @@ document.addEventListener("DOMContentLoaded", () => {
             const targetElement = document.querySelector(targetId);
             
             if (targetElement) {
-                const navHeight = 80;
+                const headerOffset = 80;
                 window.scrollTo({
-                    top: targetElement.offsetTop - navHeight,
+                    top: targetElement.offsetTop - headerOffset,
                     behavior: "smooth"
                 });
             }
         });
     });
-
-    /* -------------- Helper: ID Selector ----------------------- */
-    function id(name) { return document.getElementById(name); }
 
 });
