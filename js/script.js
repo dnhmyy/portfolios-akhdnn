@@ -1,157 +1,101 @@
-/**
- * THE ULTIMATE KINETIC UX ENGINE
- */
+/* --------------------------------------------------------------------------
+   THE HARMONIOUS ARCHITECT - CORE LOGIC
+-------------------------------------------------------------------------- */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* -------------- Elite Particle System ----------------------- */
-    const initParticles = () => {
-        const container = document.getElementById("particles-js");
-        if (!container) return;
-        
-        const count = 40;
-        for (let i = 0; i < count; i++) {
-            const p = document.createElement("div");
-            p.classList.add("particle");
-            
-            const x = Math.random() * 100;
-            const y = Math.random() * 100;
-            const size = Math.random() * 2 + 1;
-            const speed = Math.random() * 15 + 15;
-            
-            p.style.cssText = `
-                left: ${x}%;
-                top: ${y}%;
-                width: ${size}px;
-                height: ${size}px;
-                opacity: ${Math.random() * 0.3};
-            `;
-            
-            p.animate([
-                { transform: 'translate(0, 0)' },
-                { transform: `translate(${Math.random() * 60 - 30}px, ${Math.random() * 60 - 30}px)` }
-            ], {
-                duration: speed * 1000,
-                iterations: Infinity,
-                direction: 'alternate',
-                easing: 'ease-in-out'
-            });
-            
-            container.appendChild(p);
-        }
-    };
-
-    initParticles();
-
-    /* -------------- Performance Navigation ----------------------- */
-    const navbar = document.querySelector(".navbar-elite");
+    /* -------------- Navigation Header ----------------------- */
+    const navbar = document.getElementById("navbar");
     window.addEventListener("scroll", () => {
-        if (window.scrollY > 80) {
+        if (window.scrollY > 50) {
             navbar.classList.add("scrolled");
         } else {
             navbar.classList.remove("scrolled");
         }
     });
 
-    /* -------------- Unified Scroll Reveal ----------------------- */
-    const observer = new IntersectionObserver((entries) => {
+    /* -------------- Particles Engine ----------------------- */
+    const particleField = document.getElementById("particles");
+    const createParticles = () => {
+        for (let i = 0; i < 20; i++) {
+            const p = document.createElement("div");
+            p.className = "particle";
+            const size = Math.random() * 8 + 4;
+            p.style.width = `${size}px`;
+            p.style.height = `${size}px`;
+            p.style.left = `${Math.random() * 100}%`;
+            p.style.top = `${Math.random() * 100}%`;
+            p.style.animation = `floatParticle ${Math.random() * 10 + 10}s infinite linear`;
+            particleField.appendChild(p);
+        }
+    };
+    createParticles();
+
+    /* -------------- Scroll Reveal Observer ----------------------- */
+    const revealElements = document.querySelectorAll(".reveal-up");
+    const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add("reveal-visible");
             }
         });
-    }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+    }, { threshold: 0.15 });
 
-    document.querySelectorAll("section").forEach(s => observer.observe(s));
-    document.querySelectorAll(".reveal-up, .reveal-left").forEach(el => observer.observe(el));
+    revealElements.forEach(el => revealObserver.observe(el));
 
-    /* -------------- Elite Merit Slider ----------------------- */
-    const slider = document.getElementById("main-slider");
-    const prevBtn = document.getElementById("slider-prev");
-    const nextBtn = document.getElementById("slider-next");
-    const dotsContainer = document.getElementById("slider-dots");
+    /* -------------- Merritt Slider (Certificates) ----------------------- */
+    const slider = document.querySelector(".merit-slider");
     const slides = document.querySelectorAll(".merit-slide");
+    const nextBtn = document.querySelector(".slider-arrow.next");
+    const prevBtn = document.querySelector(".slider-arrow.prev");
+    const pagination = document.querySelector(".slider-pagination");
 
     if (slider) {
-        // Generate Pagination
+        // Create Dots
         slides.forEach((_, i) => {
             const dot = document.createElement("div");
-            dot.classList.add("dot");
-            if (i === 0) dot.classList.add("active");
+            dot.className = `dot ${i === 0 ? "active" : ""}`;
             dot.addEventListener("click", () => {
                 slider.scrollTo({
                     left: slides[i].offsetLeft - slider.offsetLeft,
                     behavior: "smooth"
                 });
             });
-            dotsContainer.appendChild(dot);
+            pagination.appendChild(dot);
         });
 
-        // Sync Dots on Scroll
+        // Sync Dots with scroll
         slider.addEventListener("scroll", () => {
             const index = Math.round(slider.scrollLeft / slides[0].offsetWidth);
-            const dots = dotsContainer.querySelectorAll(".dot");
-            dots.forEach(d => d.classList.remove("active"));
-            if (dots[index]) dots[index].classList.add("active");
+            document.querySelectorAll(".dot").forEach((dot, i) => {
+                dot.classList.toggle("active", i === index);
+            });
         });
 
         // Arrow Controls
-        nextBtn.addEventListener("click", () => slider.scrollBy({ left: 410, behavior: "smooth" }));
-        prevBtn.addEventListener("click", () => slider.scrollBy({ left: -410, behavior: "smooth" }));
+        nextBtn.addEventListener("click", () => {
+            slider.scrollBy({ left: slides[0].offsetWidth + 30, behavior: "smooth" });
+        });
+        prevBtn.addEventListener("click", () => {
+            slider.scrollBy({ left: -(slides[0].offsetWidth + 30), behavior: "smooth" });
+        });
     }
 
-    /* -------------- Merit Full Detail (Lightbox) ----------------------- */
-    const modal = document.getElementById("merit-modal");
-    const modalImg = modal?.querySelector(".lightbox-img");
-    const closeBtn = modal?.querySelector(".lightbox-close");
+    /* -------------- Active Nav Link Sync ----------------------- */
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-link");
 
-    slides.forEach(slide => {
-        slide.addEventListener("click", () => {
-            if (modal && modalImg) {
-                modalImg.src = slide.dataset.full;
-                modal.classList.add("active");
-                document.body.style.overflow = "hidden";
-            }
-        });
-    });
-
-    closeBtn?.addEventListener("click", () => {
-        modal?.classList.remove("active");
-        document.body.style.overflow = "auto";
-    });
-
-    modal?.addEventListener("click", (e) => {
-        if (e.target === modal) {
-            modal.classList.remove("active");
-            document.body.style.overflow = "auto";
-        }
-    });
-
-    /* -------------- Smooth Internal Links ----------------------- */
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                window.scrollTo({
-                    top: target.offsetTop - 90,
-                    behavior: "smooth"
-                });
-            }
-        });
-    });
-
-    /* -------------- Active Nav Highlight ----------------------- */
     window.addEventListener("scroll", () => {
         let current = "";
-        document.querySelectorAll("section").forEach(section => {
-            const top = section.offsetTop;
-            if (window.scrollY >= (top - 150)) {
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.scrollY >= sectionTop - 150) {
                 current = section.getAttribute("id");
             }
         });
 
-        document.querySelectorAll(".nav-link").forEach(link => {
+        navLinks.forEach(link => {
             link.classList.remove("active");
             if (link.getAttribute("href").includes(current)) {
                 link.classList.add("active");
@@ -159,14 +103,16 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    /* -------------- Parallax Hero Optimization ----------------------- */
-    const heroTitle = document.querySelector(".hero-title");
-    window.addEventListener("scroll", () => {
-        const scrolled = window.scrollY;
-        if (heroTitle && scrolled < 800) {
-            heroTitle.style.transform = `translateY(${scrolled * 0.15}px)`;
-            heroTitle.style.opacity = 1 - (scrolled / 800);
-        }
-    });
-
 });
+
+// Global Styles for Particles (JS-injected)
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes floatParticle {
+        0% { transform: translateY(0) rotate(0); opacity: 0; }
+        10% { opacity: 0.15; }
+        90% { opacity: 0.15; }
+        100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+    }
+`;
+document.head.appendChild(style);
