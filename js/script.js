@@ -1,64 +1,111 @@
 /**
- * REFINED PORTFOLIO SCRIPT
- * High-performance scroll observers & active-link logic
+ * ELITE UI/UX INTERACTION LOGIC
+ * GSAP-Equivalent Smooth Motion & Smart Gallery
  */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* -------------- Navbar Scroll Optimization ----------------------- */
-    const navbar = document.querySelector(".navbar-v5");
+    /* -------------- Elite Navbar Scroll Effect ----------------------- */
+    const navbar = document.querySelector(".navbar-elite");
     window.addEventListener("scroll", () => {
-        if (window.scrollY > 100) {
+        if (window.scrollY > 80) {
             navbar.classList.add("scrolled");
         } else {
             navbar.classList.remove("scrolled");
         }
     });
 
-    /* -------------- Active Section Highlighting ----------------------- */
+    /* -------------- Active Nav Watcher ----------------------- */
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(".nav-link");
 
-    const highlightActiveSection = () => {
-        let current = "";
+    const scrollWatcher = () => {
+        let active = "";
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
             if (window.scrollY >= (sectionTop - 150)) {
-                current = section.getAttribute("id");
+                active = section.getAttribute("id");
             }
         });
 
         navLinks.forEach(link => {
             link.classList.remove("active");
-            if (link.getAttribute("href").includes(current)) {
+            if (link.getAttribute("href").includes(active)) {
                 link.classList.add("active");
             }
         });
     };
 
-    window.addEventListener("scroll", highlightActiveSection);
+    window.addEventListener("scroll", scrollWatcher);
 
-    /* -------------- Reveal-on-Scroll Observer ----------------------- */
-    const observerOptions = {
-        threshold: 0.1,
+    /* -------------- Intersection Observer (Elite Reveals) ----------------------- */
+    const observeOptions = {
+        threshold: 0.15,
         rootMargin: "0px 0px -50px 0px"
     };
 
     const sectionObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add("active");
+                entry.target.classList.add("visible");
                 sectionObserver.unobserve(entry.target);
             }
         });
-    }, observerOptions);
+    }, observeOptions);
 
     sections.forEach(section => {
         sectionObserver.observe(section);
     });
 
-    /* -------------- Smooth Internal Navigation ----------------------- */
+    /* -------------- Smart Gallery: Certification Toggle ----------------------- */
+    const certGrid = id("cert-grid");
+    const toggleBtn = id("toggle-certs");
+
+    if (toggleBtn) {
+        toggleBtn.addEventListener("click", () => {
+            certGrid.classList.toggle("expanded");
+            if (certGrid.classList.contains("expanded")) {
+                toggleBtn.textContent = "Show Less";
+            } else {
+                toggleBtn.textContent = "Show All 12+ Certificates";
+                // Smooth scroll back to section top if scrolling past
+                id("credentials").scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
+
+    /* -------------- Certificate Lightbox Logic ----------------------- */
+    const masks = document.querySelectorAll(".cert-mask");
+    const overlay = id("cert-overlay");
+    const overlayImg = id("full-cert-img");
+    const closeBtn = document.querySelector(".overlay-close");
+
+    masks.forEach(mask => {
+        mask.addEventListener("click", function() {
+            const thumbSrc = this.parentElement.querySelector("img").src;
+            overlayImg.src = thumbSrc; // In production, use high-res source
+            overlay.classList.add("active");
+            document.body.style.overflow = "hidden"; // Prevent body scroll
+        });
+    });
+
+    if (closeBtn) {
+        closeBtn.addEventListener("click", () => {
+            overlay.classList.remove("active");
+            document.body.style.overflow = "auto";
+        });
+    }
+
+    // Close on background click
+    overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) {
+            overlay.classList.remove("active");
+            document.body.style.overflow = "auto";
+        }
+    });
+
+    /* -------------- Smooth Internal Scroll ----------------------- */
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -66,27 +113,16 @@ document.addEventListener("DOMContentLoaded", () => {
             const targetElement = document.querySelector(targetId);
             
             if (targetElement) {
-                const headerOffset = 100;
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
+                const navHeight = 80;
                 window.scrollTo({
-                    top: offsetPosition,
+                    top: targetElement.offsetTop - navHeight,
                     behavior: "smooth"
                 });
             }
         });
     });
 
-    /* -------------- Minimalist Form Submission ----------------------- */
-    const refinementForm = document.querySelector(".form-v5-refined");
-    if (refinementForm) {
-        refinementForm.addEventListener("submit", function() {
-            const btn = this.querySelector(".btn-submit-v5");
-            btn.innerHTML = 'Sending... <i class="fas fa-circle-notch fa-spin"></i>';
-            btn.disabled = true;
-            btn.style.opacity = "0.7";
-        });
-    }
+    /* -------------- Helper: ID Selector ----------------------- */
+    function id(name) { return document.getElementById(name); }
 
 });
