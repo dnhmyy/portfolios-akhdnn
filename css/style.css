@@ -105,20 +105,28 @@ a { text-decoration: none; color: inherit; transition: var(--trans-elite); }
 .section-header h2 { font-size: 3.2rem; letter-spacing: -0.04em; }
 .section-header h2 span { color: var(--accent); }
 
-.professional-timeline { display: grid; gap: 50px; max-width: 1000px; }
-.timeline-card {
-    background: var(--bg-surface); border: 1px solid var(--border); padding: 50px; border-radius: 16px; transition: var(--trans-elite);
+.professional-timeline { position: relative; padding-left: 30px; max-width: 900px; }
+.professional-timeline::before {
+    content: ''; position: absolute; left: 0; top: 0; width: 1px; height: 100%;
+    background: linear-gradient(180deg, var(--accent), transparent);
 }
-.timeline-card:hover { border-color: var(--accent); transform: translateX(10px); }
 
-.tm-meta { margin-bottom: 30px; }
+.timeline-item { position: relative; padding-bottom: 70px; }
+.timeline-item:last-child { padding-bottom: 0; }
+.tm-marker {
+    position: absolute; left: -35px; top: 12px; width: 10px; height: 10px;
+    background: var(--accent); border-radius: 50%; box-shadow: 0 0 15px var(--accent);
+}
+
+.tm-header { margin-bottom: 25px; }
 .tm-year { font-weight: 800; font-size: 0.9rem; color: var(--accent); display: block; margin-bottom: 10px; }
-.tm-meta h3 { font-size: 1.8rem; margin-bottom: 8px; }
-.tm-location { font-weight: 700; color: var(--text-dim); font-size: 1rem; }
+.tm-header h3 { font-size: 1.8rem; margin-bottom: 8px; }
+.tm-org { font-weight: 700; color: var(--text-dim); font-size: 1rem; }
 
 .tm-list { list-style: none; }
-.tm-list li { position: relative; padding-left: 30px; margin-bottom: 18px; color: var(--text-dim); font-size: 1.05rem; }
-.tm-list li::before { content: '—'; position: absolute; left: 0; color: var(--accent); font-weight: 900; }
+.tm-list li { position: relative; padding-left: 30px; margin-bottom: 18px; color: var(--text-dim); font-size: 1.05rem; transition: 0.3s; }
+.tm-list li:hover { color: #fff; transform: translateX(5px); }
+.tm-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-weight: 900; }
 
 /* --- Elegant Cert Slider --- */
 .slider-wrapper-premium { position: relative; margin-top: 50px; padding: 0 60px; }
