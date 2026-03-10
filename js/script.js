@@ -96,8 +96,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         // Arrow Controls
-        nextBtn.addEventListener("click", () => slider.scrollBy({ left: 430, behavior: "smooth" }));
-        prevBtn.addEventListener("click", () => slider.scrollBy({ left: -430, behavior: "smooth" }));
+        nextBtn.addEventListener("click", () => slider.scrollBy({ left: 410, behavior: "smooth" }));
+        prevBtn.addEventListener("click", () => slider.scrollBy({ left: -410, behavior: "smooth" }));
     }
 
     /* -------------- Merit Full Detail (Lightbox) ----------------------- */
