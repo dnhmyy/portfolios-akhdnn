@@ -1,12 +1,12 @@
 /**
- * V5 - ADVANCED TECH SCRIPT
- * GSAP-inspired smooth interaction logic
+ * REFINED PORTFOLIO SCRIPT
+ * High-performance scroll observers & active-link logic
  */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* -------------- Navbar Scroll Effect ----------------------- */
-    const navbar = document.querySelector(".v5-navbar");
+    /* -------------- Navbar Scroll Optimization ----------------------- */
+    const navbar = document.querySelector(".navbar-v5");
     window.addEventListener("scroll", () => {
         if (window.scrollY > 100) {
             navbar.classList.add("scrolled");
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(".nav-link");
 
-    const highlightNav = () => {
+    const highlightActiveSection = () => {
         let current = "";
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
@@ -37,18 +37,18 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
-    window.addEventListener("scroll", highlightNav);
+    window.addEventListener("scroll", highlightActiveSection);
 
-    /* -------------- Intersection Observer for Animations ----------------------- */
+    /* -------------- Reveal-on-Scroll Observer ----------------------- */
     const observerOptions = {
-        threshold: 0.15,
+        threshold: 0.1,
         rootMargin: "0px 0px -50px 0px"
     };
 
     const sectionObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
+                entry.target.classList.add("active");
                 sectionObserver.unobserve(entry.target);
             }
         });
@@ -58,20 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
         sectionObserver.observe(section);
     });
 
-    /* -------------- Staggered Child Reveal ----------------------- */
-    // This adds the "visible" class to the section, which triggers CSS animations
-    // for all children with 'reveal-up' or 'reveal-fade' classes.
-
-    /* -------------- Mobile Menu Concept ----------------------- */
-    const mobileToggle = document.querySelector(".mobile-toggle");
-    if (mobileToggle) {
-        mobileToggle.addEventListener("click", () => {
-            // Simplified toggle - in a production app, we'd add a modal/overlay here
-            alert("V5 Mobile Navigation Under Construction");
-        });
-    }
-
-    /* -------------- Smooth Internal Links ----------------------- */
+    /* -------------- Smooth Internal Navigation ----------------------- */
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -91,14 +78,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    /* -------------- Form Submission Enhancement ----------------------- */
-    const v5Form = document.querySelector(".v5-form");
-    if (v5Form) {
-        v5Form.addEventListener("submit", function() {
-            const btn = this.querySelector(".form-btn");
-            btn.innerHTML = 'Sending Systems... <i class="fas fa-spinner fa-spin"></i>';
-            btn.style.opacity = "0.7";
+    /* -------------- Minimalist Form Submission ----------------------- */
+    const refinementForm = document.querySelector(".form-v5-refined");
+    if (refinementForm) {
+        refinementForm.addEventListener("submit", function() {
+            const btn = this.querySelector(".btn-submit-v5");
+            btn.innerHTML = 'Sending... <i class="fas fa-circle-notch fa-spin"></i>';
             btn.disabled = true;
+            btn.style.opacity = "0.7";
         });
     }
 
