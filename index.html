@@ -3,183 +3,273 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akhdan Fadhilillah | Professional Portfolio</title>
+    <title>Akhdan Fadhilillah | IT Infrastructure & Network Engineer</title>
     
-    <!-- Fonts: Playfair Display for Serifs, Inter for Sans-Serif -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <!-- Modern Geometric Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome for minimalist icons -->
+    <!-- Official Tech Icons (Devicon) & Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- Minimalist Navigation -->
-    <nav class="navbar">
-        <div class="container nav-container">
-            <a href="#home" class="logo">AF<span>.</span></a>
-            <ul class="nav-links">
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#works" class="nav-link">Works</a></li>
-                <li><a href="#credentials" class="nav-link">Credentials</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-tracker"></div>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="container flex-nav">
+            <a href="#home" class="brand">AKHDNN<span>_</span></a>
+            <nav class="desktop-nav">
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#stack" class="nav-link">Stack</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#credentials" class="nav-link">Credentials</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-toggle" id="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
-    </nav>
+    </header>
 
     <main>
-        <!-- Hero: Bold Typography Focus -->
-        <section id="home" class="hero">
-            <div class="container hero-content">
-                <p class="hero-intro reveal">IT Network Engineer & System Administrator</p>
-                <h1 class="hero-title reveal">Building robust <span>digital infrastructures</span> with precision.</h1>
-                <div class="hero-actions reveal">
-                    <a href="#works" class="btn btn-primary">Selected Works</a>
-                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+        <!-- Hero Section: Modern Intro -->
+        <section id="home" class="hero-v4">
+            <div class="container hero-grid">
+                <div class="hero-text animate-up">
+                    <span class="badge">Available for Projects</span>
+                    <h1>Engineering Resilient <span>Digital Networks</span>.</h1>
+                    <p>High school graduate specializing in Computer & Network Engineering. Focused on Linux system administration, Cisco/MikroTik environments, and server virtualization.</p>
+                    <div class="hero-btns">
+                        <a href="#projects" class="btn-main">View Portfolio</a>
+                        <a href="#contact" class="btn-alt">Contact Me</a>
+                    </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- About: Clean Profile Identity -->
-        <section id="about" class="about">
-            <div class="container grid-layout">
-                <div class="section-heading reveal">
-                    <span class="index">01</span>
-                    <h2>The Story</h2>
-                </div>
-                <div class="content-area reveal">
-                    <p class="lead">Lulusan Teknik Komputer dan Jaringan dengan dedikasi tinggi pada efisiensi sistem dan keamanan jaringan.</p>
-                    <p>Saya percaya bahwa infrastruktur teknologi yang kuat adalah fondasi dari setiap inovasi digital. Dengan latar belakang pendidikan teknis, saya fokus pada administrasi sistem GNU/Linux, konfigurasi perangkat MikroTik/Cisco, dan virtualisasi server.</p>
-                    
-                    <div class="skills-grid">
-                        <div class="skill-group">
-                            <h4>Networking</h4>
-                            <ul>
-                                <li>MikroTik Certified</li>
-                                <li>Cisco Networking</li>
-                                <li>TCP/IP Protocols</li>
-                            </ul>
-                        </div>
-                        <div class="skill-group">
-                            <h4>Systems</h4>
-                            <ul>
-                                <li>GNU/Linux Admin</li>
-                                <li>Server Virtualization</li>
-                                <li>Proxmox & Debian</li>
-                            </ul>
-                        </div>
+                <div class="hero-stat animate-up">
+                    <div class="stat-card">
+                        <span class="stat-num">12+</span>
+                        <span class="stat-label">Certifications</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-num">3+</span>
+                        <span class="stat-label">Core Projects</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Works: Minimalist Project Showcase -->
-        <section id="works" class="works">
+        <!-- Tech Stack: Official Iconography -->
+        <section id="stack" class="stack-section">
             <div class="container">
-                <div class="section-heading reveal">
-                    <span class="index">02</span>
+                <div class="section-title">
+                    <span class="sub-title">Expertise</span>
+                    <h2>Technical Proficiency</h2>
+                </div>
+                <div class="stack-grid animate-fade">
+                    <div class="stack-item" title="Linux">
+                        <i class="devicon-linux-plain"></i>
+                        <span>Linux</span>
+                    </div>
+                    <div class="stack-item" title="Debian">
+                        <i class="devicon-debian-plain colored"></i>
+                        <span>Debian</span>
+                    </div>
+                    <div class="stack-item" title="Networking">
+                        <i class="fas fa-network-wired"></i>
+                        <span>Cisco/MikroTik</span>
+                    </div>
+                    <div class="stack-item" title="Virtualization">
+                        <i class="fas fa-server"></i>
+                        <span>Virtualization</span>
+                    </div>
+                    <div class="stack-item" title="HTML5">
+                        <i class="devicon-html5-plain colored"></i>
+                        <span>HTML5</span>
+                    </div>
+                    <div class="stack-item" title="CSS3">
+                        <i class="devicon-css3-plain colored"></i>
+                        <span>CSS3</span>
+                    </div>
+                    <div class="stack-item" title="JavaScript">
+                        <i class="devicon-javascript-plain colored"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="stack-item" title="GitHub">
+                        <i class="devicon-github-original"></i>
+                        <span>GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section: Technical Showcase -->
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <div class="section-title">
+                    <span class="sub-title">Work</span>
                     <h2>Selected Projects</h2>
                 </div>
-                <div class="works-grid">
+                <div class="project-grid">
                     <!-- Project 1 -->
-                    <article class="work-item reveal">
-                        <div class="work-img">
-                            <img src="website-portfolio/portfolios/portfolio-1.png" alt="Blogging System" onerror="this.src='img/portfolio/1.jpg'">
+                    <article class="project-card animate-up">
+                        <div class="project-thumb">
+                            <img src="website-portfolio/portfolios/portfolio-1.png" alt="Tajwid Blog" onerror="this.src='img/portfolio/1.jpg'">
+                            <div class="project-tags">
+                                <span>Blogger</span>
+                                <span>Content</span>
+                            </div>
                         </div>
-                        <div class="work-info">
-                            <h3>Blogging Architecture</h3>
-                            <p>Designing digital content platforms for information management.</p>
-                            <a href="https://yukkbelajartajwid.blogspot.com/" target="_blank" class="work-link">Case Study <i class="fas fa-arrow-right"></i></a>
+                        <div class="project-body">
+                            <h3>Blogging: Belajar Tajwid</h3>
+                            <p>Proyek pribadi pertama untuk membantu sesama memahami ilmu tajwid secara digital dan terstruktur.</p>
+                            <div class="project-links">
+                                <a href="https://yukkbelajartajwid.blogspot.com/" target="_blank"><i class="fas fa-external-link-alt"></i> External Link</a>
+                                <a href="https://github.com/dnhmyy" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
                         </div>
                     </article>
                     <!-- Project 2 -->
-                    <article class="work-item reveal">
-                        <div class="work-img">
-                            <img src="website-portfolio/portfolios/portfolio-2.png" alt="Education Content" onerror="this.src='img/portfolio/2.jpg'">
+                    <article class="project-card animate-up">
+                        <div class="project-thumb">
+                            <img src="website-portfolio/portfolios/portfolio-2.png" alt="YouTube TKJ" onerror="this.src='img/portfolio/2.jpg'">
+                            <div class="project-tags">
+                                <span>Training</span>
+                                <span>YouTube</span>
+                            </div>
                         </div>
-                        <div class="work-info">
-                            <h3>Educational Media</h3>
-                            <p>Curating technical tutorials for network engineering transition.</p>
-                            <a href="https://www.youtube.com/@AkhdaN_Fadhilillah" target="_blank" class="work-link">Watch Tutorial <i class="fas fa-arrow-right"></i></a>
+                        <div class="project-body">
+                            <h3>TKJ Tutorial Series</h3>
+                            <p>Channel edukasi yang membahas administrasi server dan konfigurasi jaringan untuk pelajar TKJ.</p>
+                            <div class="project-links">
+                                <a href="https://www.youtube.com/@AkhdaN_Fadhilillah" target="_blank"><i class="fab fa-youtube"></i> YouTube Channel</a>
+                                <a href="https://github.com/dnhmyy" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
                         </div>
                     </article>
                     <!-- Project 3 -->
-                    <article class="work-item reveal">
-                        <div class="work-img">
-                            <img src="website-portfolio/portfolios/portfolio-3.png" alt="Digital Brand" onerror="this.src='img/portfolio/3.jpg'">
+                    <article class="project-card animate-up">
+                        <div class="project-thumb">
+                            <img src="website-portfolio/portfolios/portfolio-3.png" alt="Web Portfolio" onerror="this.src='img/portfolio/3.jpg'">
+                            <div class="project-tags">
+                                <span>Web Dev</span>
+                                <span>UI/UX</span>
+                            </div>
                         </div>
-                        <div class="work-info">
-                            <h3>Identity Design</h3>
-                            <p>Developing professional web presence with modern UI/UX principles.</p>
-                            <a href="#" class="work-link">Live Preview <i class="fas fa-arrow-right"></i></a>
+                        <div class="project-body">
+                            <h3>Digital Identity Build</h3>
+                            <p>Pengembangan portofolio modern yang responsif dan berfokus pada interaktivitas visual yang elegan.</p>
+                            <div class="project-links">
+                                <a href="#" target="_blank"><i class="fas fa-play"></i> Live Demo</a>
+                                <a href="https://github.com/dnhmyy" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
                         </div>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- Credentials: Elegant Achievements List -->
-        <section id="credentials" class="credentials">
-            <div class="container grid-layout">
-                <div class="section-heading reveal">
-                    <span class="index">03</span>
-                    <h2>Credentials</h2>
+        <!-- Credentials: Prominent Merit Grid -->
+        <section id="credentials" class="creds-section">
+            <div class="container">
+                <div class="section-title">
+                    <span class="sub-title">Recognition</span>
+                    <h2>Credentials & Certificates</h2>
                 </div>
-                <div class="content-area">
-                    <div class="credentials-list">
-                        <div class="cred-item reveal">
-                            <span class="cred-cat">Education</span>
-                            <h4>SMKN 9 KAB TANGERANG</h4>
-                            <p>Computer Network Engineering Graduate (2021—2024)</p>
-                        </div>
-                        <div class="cred-item reveal">
-                            <span class="cred-cat">Professional</span>
+                <div class="creds-grid animate-fade">
+                    <div class="cred-card">
+                        <i class="fas fa-certificate cred-icon"></i>
+                        <div class="cred-info">
                             <h4>Network Addressing & Troubleshooting</h4>
                             <p>Cisco Networking Academy</p>
                         </div>
-                        <div class="cred-item reveal">
-                            <span class="cred-cat">Professional</span>
-                            <h4>CS402: Computer Communications</h4>
-                            <p>Saylor Academy Certification</p>
-                        </div>
-                        <div class="cred-item reveal">
-                            <span class="cred-cat">Technical</span>
-                            <h4>NDG Linux Unhatched</h4>
-                            <p>Linux Professional Institute Associate</p>
+                    </div>
+                    <div class="cred-card">
+                        <i class="fas fa-certificate cred-icon"></i>
+                        <div class="cred-info">
+                            <h4>Saylor CS402: Computer Networks</h4>
+                            <p>Saylor Academy</p>
                         </div>
                     </div>
-                    <p class="more-certs reveal">And 9+ additional professional certifications in IT and Soft Skills.</p>
+                    <div class="cred-card">
+                        <i class="fas fa-certificate cred-icon"></i>
+                        <div class="cred-info">
+                            <h4>NDG Linux Unhatched</h4>
+                            <p>Linux Professional Institute</p>
+                        </div>
+                    </div>
+                    <div class="cred-card">
+                        <i class="fas fa-certificate cred-icon"></i>
+                        <div class="cred-info">
+                            <h4>Google Analytics Individual</h4>
+                            <p>Google</p>
+                        </div>
+                    </div>
+                    <div class="cred-card">
+                        <i class="fas fa-certificate cred-icon"></i>
+                        <div class="cred-info">
+                            <h4>Introduction to Programming</h4>
+                            <p>Saylor Academy</p>
+                        </div>
+                    </div>
+                    <div class="cred-card">
+                        <i class="fas fa-certificate cred-icon"></i>
+                        <div class="cred-info">
+                            <h4>Microsoft Word Specialist</h4>
+                            <p>Certification</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="creds-footer">
+                    <p>+9 Sertifikat lainnya termasuk Soft Skills, Emotional Intelligence, dan Cloud Basics.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Contact: Minimalist Footer & Socials -->
-        <section id="contact" class="contact">
-            <div class="container">
-                <div class="contact-card reveal">
-                    <h2 class="contact-title">Let's collaborate on your next network infrastructure project.</h2>
-                    <form action="https://formspree.io/f/xrgnyjaq" method="POST" class="contact-form">
-                        <div class="form-row">
-                            <input type="text" name="name" placeholder="Name" required>
-                            <input type="email" name="email" placeholder="Email" required>
-                        </div>
-                        <textarea name="message" placeholder="Message" rows="5" required></textarea>
-                        <button type="submit" class="btn btn-primary">Send Inquiry</button>
-                    </form>
-                    
-                    <div class="social-footer">
-                        <div class="social-links">
-                            <a href="https://github.com/dnhmyy" target="_blank">Github</a>
-                            <a href="https://instagram.com/danhmeyy" target="_blank">Instagram</a>
-                            <a href="https://youtube.com/@AkhdaN_Fadhilillah" target="_blank">Youtube</a>
-                        </div>
-                        <p class="copyright">&copy; 2024 Akhdan Fadhilillah. All rights reserved.</p>
+        <!-- Contact Section -->
+        <section id="contact" class="contact-v4">
+            <div class="container contact-grid">
+                <div class="contact-text animate-up">
+                    <h2>Let's build something<br><span>meaningful</span> together.</h2>
+                    <p>Terhubung untuk kolaborasi proyek jaringan, administrasi server, atau sekadar bertukar ide teknologi.</p>
+                    <div class="social-v4">
+                        <a href="https://github.com/dnhmyy" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://instagram.com/danhmeyy" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/@AkhdaN_Fadhilillah" target="_blank"><i class="fab fa-youtube"></i></a>
                     </div>
+                </div>
+                <div class="contact-form-area animate-up">
+                    <form action="https://formspree.io/f/xrgnyjaq" method="POST" class="form-v4">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Project details or message..." rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
+                    </form>
                 </div>
             </div>
         </section>
     </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <p>&copy; 2024 AKHDNN. Designed for high performance.</p>
+            <div class="footer-meta">
+                <span>Network Engineering Portfolio V4</span>
+            </div>
+        </div>
+    </footer>
 
     <script src="js/script.js"></script>
 </body>
