@@ -15,17 +15,16 @@
 
     <!-- OpenGraph untuk Media Sosial -->
     <meta property="og:title" content="Akhdan Fadhilillah Ps | IT Support & Infrastructure Engineer">
-    <meta property="og:description"
-        content="Evolving from a Networking and Sysadmin enthusiast into a DevOps professional.">
+    <meta property="og:description" content="Evolving from a Networking and Sysadmin enthusiast into a DevOps professional.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://akhdnn.pages.dev/">
     <meta property="og:image" content="website-portfolio/portfolios/portfolio-1.png">
 
-    <!-- Tipografi Vanguard: Unbounded untuk Dampak Visual, Space Grotesk untuk Body, JetBrains untuk Teknis -->
+    <!-- Tipografi: Unbounded untuk Judul, Space Grotesk untuk Body, JetBrains untuk Teknis -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
         rel="stylesheet">
 
     <!-- Aset Visual -->
@@ -36,24 +35,13 @@
 
 <body>
 
-    <!-- Atmosfer Dinamis -->
-    <div class="bg-system">
-        <div class="atmosphere">
-            <div class="aura aura-1"></div>
-            <div class="aura aura-2"></div>
-            <div class="aura aura-3"></div>
-            <div class="aura aura-4"></div>
-            <div class="aura aura-5"></div>
-        </div>
-        <div class="mouselight" id="mouselight"></div>
-        <div class="particle-field" id="particles"></div>
-        <div class="glass-overlay"></div>
-    </div>
+    <!-- Sorotan Kursor Mouse -->
+    <div id="mouselight"></div>
 
     <!-- Navigasi -->
     <nav class="nav-elite" id="navbar">
         <div class="container nav-content">
-            <div class="logo">A<span>F.</span></div>
+            <div class="logo">A <span>F.</span></div>
             <ul class="nav-links">
                 <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
@@ -70,41 +58,68 @@
                 </button>
             </div>
         </div>
+        <!-- Menu Mobile -->
+        <div class="nav-mobile-menu" id="mobileMenu">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#certificates" class="nav-link">Certificates</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
     </nav>
 
     <main>
-        <!-- Bagian Hero -->
-        <section class="section hero-section" id="home">
-            <div class="container">
-                <div class="hero-content reveal-up">
-                    <span class="hero-badge">Available for Projects</span>
-                    <h1 class="hero-title">Akhdan <span class="accent-txt">Fadhilillah Ps</span></h1>
-                    <p class="hero-sub">Evolving from a Networking and Sysadmin enthusiast into a DevOps professional.
-                        Currently a first-year IT student dedicated to architecting automated, scalable, and resilient
-                        digital infrastructures.</p>
+        <!-- ============================================================
+             HERO SECTION
+        ============================================================ -->
+        <section class="hero-section" id="home">
+            <!-- Canvas partikel bergerak (IT Network Feel) -->
+            <canvas id="hero-canvas"></canvas>
+
+            <!-- Bola pencahayaan latar -->
+            <div class="hero-orb hero-orb-1"></div>
+            <div class="hero-orb hero-orb-2"></div>
+
+            <!-- Konten utama hero -->
+            <div class="hero-inner">
+                <span class="hero-badge">System Infrastructure Engineer</span>
+
+                <h1 class="hero-title">
+                    The Harmonious <span class="accent-txt">Architect</span>
+                </h1>
+
+                <p class="hero-sub">
+                    Evolving from a Networking and Sysadmin enthusiast into a DevOps professional.
+                    I design, deploy, and optimize scalable IT ecosystems.
+                </p>
+
+                <div class="hero-btns">
+                    <a href="#contact" class="btn-primary">Get in Touch</a>
+                    <a href="#projects" class="btn-outline">View Projects</a>
                 </div>
             </div>
         </section>
 
-        <!-- Bagian Pengalaman (Jalur Profesional) -->
-        <section class="section experience-section" id="experience">
+        <!-- ============================================================
+             EXPERIENCE (TIMELINE)
+        ============================================================ -->
+        <section class="section section-alt" id="experience">
             <div class="container">
-                <div class="section-title reveal-up">
-                    <span class="label">Journey</span>
-                    <h2>Professional <span>Path</span></h2>
+                <div class="reveal-up">
+                    <h2 class="section-heading">Experience</h2>
                 </div>
 
                 <div class="path-timeline">
+
                     <!-- IT Support -->
                     <div class="path-item reveal-up">
                         <div class="path-marker"></div>
                         <div class="path-content">
+                            <div class="path-meta">Jun 2024 — Present</div>
                             <div class="path-header">
                                 <h3>IT Support Specialist</h3>
-                                <div class="path-meta">
-                                    <span class="company">CV. Roti Kebanggaan Gading Serpong</span>
-                                    <span class="date">Jun 2024 - Present</span>
-                                </div>
+                                <span class="company">CV. Roti Kebanggaan Gading Serpong</span>
                             </div>
                             <ul class="path-details">
                                 <li>Technical support for hardware, software, and POS systems across outlets.</li>
@@ -119,12 +134,10 @@
                     <div class="path-item reveal-up">
                         <div class="path-marker"></div>
                         <div class="path-content">
+                            <div class="path-meta">2022 — Present</div>
                             <div class="path-header">
                                 <h3>Fullstack Developer & System Admin</h3>
-                                <div class="path-meta">
-                                    <span class="company">Independent Projects</span>
-                                    <span class="date">2022 - Present</span>
-                                </div>
+                                <span class="company">Independent Projects</span>
                             </div>
                             <ul class="path-details">
                                 <li>Building scalable infrastructure using Proxmox and Docker virtualization.</li>
@@ -133,16 +146,18 @@
                             </ul>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- Bagian Proyek -->
-        <section class="section projects-section" id="projects">
+        <!-- ============================================================
+             PROJECTS
+        ============================================================ -->
+        <section class="section" id="projects">
             <div class="container">
-                <div class="section-title reveal-up">
-                    <span class="label">Portfolio</span>
-                    <h2>Featured <span>Projects</span></h2>
+                <div class="reveal-up">
+                    <h2 class="section-heading">Projects</h2>
                 </div>
 
                 <div class="project-grid">
@@ -151,16 +166,15 @@
                         <div class="project-media">
                             <img src="website-portfolio/portfolios/portfolio-1.png" alt="Belajar Tajwid Blog">
                             <div class="project-mask">
-                                <a href="https://yukkbelajartajwid.blogspot.com/" target="_blank">View Site</a>
+                                <a href="https://yukkbelajartajwid.blogspot.com/" target="_blank" rel="noopener noreferrer">View Site →</a>
                             </div>
                         </div>
                         <div class="project-data">
                             <h3>Belajar Tajwid Platform</h3>
-                            <p>An educational blogging project providing structured Tajwid lessons for the community.
-                            </p>
-                            <div class="project-icons">
-                                <i class="fa-solid fa-blog"></i>
-                                <i class="fa-brands fa-blogger"></i>
+                            <p>An educational blogging project providing structured Tajwid lessons for the community.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Blogger</span>
+                                <span class="project-tag">Education</span>
                             </div>
                         </div>
                     </div>
@@ -170,15 +184,15 @@
                         <div class="project-media">
                             <img src="website-portfolio/portfolios/portfolio-2.png" alt="Technical Education YouTube">
                             <div class="project-mask">
-                                <a href="https://www.youtube.com/@AkhdaN_Fadhilillah" target="_blank">Watch Now</a>
+                                <a href="https://www.youtube.com/@AkhdaN_Fadhilillah" target="_blank" rel="noopener noreferrer">Watch Now →</a>
                             </div>
                         </div>
                         <div class="project-data">
                             <h3>Technical Edu-Content</h3>
                             <p>Sharing deep-dive tutorials on Network Engineering, TKJ, and Server Administration.</p>
-                            <div class="project-icons">
-                                <i class="fa-brands fa-youtube"></i>
-                                <i class="fa-solid fa-network-wired"></i>
+                            <div class="project-tags">
+                                <span class="project-tag">YouTube</span>
+                                <span class="project-tag">Networking</span>
                             </div>
                         </div>
                     </div>
@@ -188,17 +202,35 @@
                         <div class="project-media">
                             <img src="website-portfolio/portfolios/portfolio-3.png" alt="Nexus Infrastructure">
                             <div class="project-mask">
-                                <a href="#">Explore Infrastructure</a>
+                                <a href="#">Explore Infrastructure →</a>
                             </div>
                         </div>
                         <div class="project-data">
                             <h3>Nexus Cloud & Automation</h3>
-                            <p>Advanced virtualization hub using Proxmox, Debian Server, and n8n automation workflows.
-                            </p>
-                            <div class="project-icons">
-                                <i class="devicon-linux-plain colored"></i>
-                                <i class="devicon-proxmox-plain colored"></i>
-                                <i class="devicon-docker-plain colored"></i>
+                            <p>Advanced virtualization hub using Proxmox, Debian Server, and n8n automation workflows.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Proxmox</span>
+                                <span class="project-tag">Docker</span>
+                                <span class="project-tag">n8n</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proyek 4 -->
+                    <div class="project-card reveal-up">
+                        <div class="project-media">
+                            <img src="website-portfolio/portfolios/portfolio-4.png" alt="Self Hosted Services">
+                            <div class="project-mask">
+                                <a href="#">View Infrastructure →</a>
+                            </div>
+                        </div>
+                        <div class="project-data">
+                            <h3>Self-Hosted Services</h3>
+                            <p>Full-stack self-hosted environment with VPN, reverse proxy, monitoring, and automated backups.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Linux</span>
+                                <span class="project-tag">Nginx</span>
+                                <span class="project-tag">Grafana</span>
                             </div>
                         </div>
                     </div>
@@ -206,81 +238,96 @@
             </div>
         </section>
 
-        <!-- Bagian Sertifikat (Slider Ringkas) -->
-        <section class="section merit-section" id="certificates">
+        <!-- ============================================================
+             CERTIFICATES (SLIDER — pakai versi asli saya)
+        ============================================================ -->
+        <section class="section section-alt" id="certificates">
             <div class="container">
-                <div class="section-title reveal-up">
-                    <span class="label">Credentials</span>
-                    <h2>Certified <span>Excellence</span></h2>
+                <div class="reveal-up">
+                    <h2 class="section-heading">Certificates</h2>
                 </div>
 
                 <div class="merit-wrapper reveal-up">
-                    <button class="slider-arrow prev"><i class="fa-solid fa-chevron-left"></i></button>
-                    <div class="merit-slider">
+                    <button class="slider-arrow prev" id="prevBtn" aria-label="Previous">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+
+                    <div class="merit-slider" id="meritSlider">
                         <!-- Sertifikat 1 -->
                         <div class="merit-slide">
-                            <div class="merit-card">
-                                <img src="website-portfolio/cert/cert1.png" alt="Cisco Networking" loading="lazy">
+                            <div class="merit-card" onclick="openLightbox('website-portfolio/cert/cert1.png', 'Network Addressing & Troubleshooting')">
+                                <div class="merit-thumb">
+                                    <img src="website-portfolio/cert/cert1.png" alt="Cisco Networking" loading="lazy">
+                                </div>
                                 <div class="merit-info">
                                     <h4>Network Addressing & Troubleshooting</h4>
-                                    <p>Cisco certification for routing, switching, and basic connectivity
-                                        troubleshooting.</p>
+                                    <p>Cisco certification for routing, switching, and basic connectivity troubleshooting.</p>
                                 </div>
                             </div>
                         </div>
+
                         <!-- Sertifikat 2 -->
                         <div class="merit-slide">
-                            <div class="merit-card">
-                                <img src="website-portfolio/cert/cert2.png" alt="Computer Communications"
-                                    loading="lazy">
+                            <div class="merit-card" onclick="openLightbox('website-portfolio/cert/cert2.png', 'Computer Communications & Networks')">
+                                <div class="merit-thumb">
+                                    <img src="website-portfolio/cert/cert2.png" alt="Computer Communications" loading="lazy">
+                                </div>
                                 <div class="merit-info">
                                     <h4>Computer Communications & Networks</h4>
                                     <p>Saylor Academy recognition for networking fundamentals and TCP/UDP protocols.</p>
                                 </div>
                             </div>
                         </div>
+
                         <!-- Sertifikat 3 -->
                         <div class="merit-slide">
-                            <div class="merit-card">
-                                <img src="website-portfolio/cert/cert4.png" alt="Linux Unhatched" loading="lazy">
+                            <div class="merit-card" onclick="openLightbox('website-portfolio/cert/cert4.png', 'NDG Linux Unhatched')">
+                                <div class="merit-thumb">
+                                    <img src="website-portfolio/cert/cert4.png" alt="Linux Unhatched" loading="lazy">
+                                </div>
                                 <div class="merit-info">
                                     <h4>NDG Linux Unhatched</h4>
                                     <p>Foundational mastery of Linux software, CLI, and virtual machine interaction.</p>
                                 </div>
                             </div>
                         </div>
+
                         <!-- Sertifikat 4 -->
                         <div class="merit-slide">
-                            <div class="merit-card">
-                                <img src="website-portfolio/cert/cert10.png" alt="Web Development" loading="lazy">
+                            <div class="merit-card" onclick="openLightbox('website-portfolio/cert/cert10.png', 'Web Development for Beginners')">
+                                <div class="merit-thumb">
+                                    <img src="website-portfolio/cert/cert10.png" alt="Web Development" loading="lazy">
+                                </div>
                                 <div class="merit-info">
                                     <h4>Web Development for Beginners</h4>
-                                    <p>Certified understanding of core web technologies, programming languages, and
-                                        accessibility.</p>
+                                    <p>Certified understanding of core web technologies, programming languages, and accessibility.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <button class="slider-arrow next" aria-label="Next"><i
-                            class="fa-solid fa-chevron-right"></i></button>
+
+                    <button class="slider-arrow next" id="nextBtn" aria-label="Next">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
                 </div>
-                <div class="slider-pagination"></div>
+
+                <!-- Titik Pagination -->
+                <div class="slider-pagination" id="sliderPagination"></div>
             </div>
         </section>
 
-        <!-- Bagian Keahlian -->
-        <section class="section skills-section" id="skills">
+        <!-- ============================================================
+             SKILLS (pakai stack teknologi versi saya)
+        ============================================================ -->
+        <section class="section" id="skills">
             <div class="container">
-                <div class="section-title reveal-up">
-                    <span class="label">Capabilities</span>
-                    <h2>Tech <span>Stack</span></h2>
+                <div class="reveal-up">
+                    <h2 class="section-heading">Tech Stack</h2>
                 </div>
 
                 <div class="skills-grid reveal-up">
-                    <div class="skill-item"><i class="devicon-linux-plain colored"></i><span>Linux
-                            (Ubuntu/Debian)</span></div>
-                    <div class="skill-item"><i class="devicon-docker-plain colored"></i><span>Docker & Containers</span>
-                    </div>
+                    <div class="skill-item"><i class="devicon-linux-plain colored"></i><span>Linux (Ubuntu/Debian)</span></div>
+                    <div class="skill-item"><i class="devicon-docker-plain colored"></i><span>Docker & Containers</span></div>
                     <div class="skill-item">
                         <img src="https://cdn.simpleicons.org/mikrotik/293239" alt="Mikrotik" loading="lazy">
                         <span>Mikrotik & Networking</span>
@@ -297,39 +344,44 @@
                         <img src="https://cdn.simpleicons.org/n8n/EA4B71" alt="n8n" loading="lazy">
                         <span>n8n Automation</span>
                     </div>
-                    <div class="skill-item"><i class="devicon-postgresql-plain colored"></i><span>SQL Management</span>
-                    </div>
-                    <div class="skill-item"><i class="devicon-nginx-original colored"></i><span>Reverse Proxy
-                            (Nginx)</span></div>
+                    <div class="skill-item"><i class="devicon-postgresql-plain colored"></i><span>SQL Management</span></div>
+                    <div class="skill-item"><i class="devicon-nginx-original colored"></i><span>Reverse Proxy (Nginx)</span></div>
                 </div>
             </div>
         </section>
 
-        <!-- Bagian Kontak -->
-        <section class="section contact-section" id="contact">
+        <!-- ============================================================
+             CONTACT
+        ============================================================ -->
+        <section class="section section-alt" id="contact">
             <div class="container">
-                <div class="contact-wrapper reveal-up">
-                    <div class="contact-info">
-                        <h2>Ready to <span>collaborate?</span></h2>
-                        <p>I'm always open to discussing new projects, creative ideas or original opportunities to be
-                            part of your visions.</p>
+                <div class="reveal-up">
+                    <h2 class="section-heading">Contact</h2>
+                </div>
+
+                <div class="contact-wrapper">
+                    <!-- Kiri: Info Kontak -->
+                    <div class="contact-info reveal-up">
+                        <h2>Get in <span>Touch</span></h2>
+                        <p>I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
+
                         <div class="contact-methods">
                             <a href="mailto:akhdansutiar@gmail.com" class="method-card" rel="noopener noreferrer">
-                                <i class="fa-solid fa-envelope"></i>
+                                <div class="method-icon"><i class="fa-solid fa-envelope"></i></div>
                                 <div>
-                                    <h5>Email Saya</h5>
+                                    <h5>Email</h5>
                                     <p>akhdansutiar@gmail.com</p>
                                 </div>
                             </a>
                             <div class="method-card">
-                                <i class="fa-solid fa-phone"></i>
+                                <div class="method-icon"><i class="fa-solid fa-phone"></i></div>
                                 <div>
-                                    <h5>Call Me</h5>
+                                    <h5>Telepon</h5>
                                     <p>+62 899-8730-771</p>
                                 </div>
                             </div>
                             <div class="method-card">
-                                <i class="fa-solid fa-location-dot"></i>
+                                <div class="method-icon"><i class="fa-solid fa-location-dot"></i></div>
                                 <div>
                                     <h5>Location</h5>
                                     <p>Tangerang, Indonesia</p>
@@ -337,31 +389,32 @@
                             </div>
                         </div>
                     </div>
-                    <div class="contact-form-box">
+
+                    <!-- Kanan: Formulir Kontak -->
+                    <div class="contact-form-box reveal-up">
                         <form class="elite-form" action="https://formspree.io/f/xrgnyjaq" method="POST">
                             <div class="input-row">
                                 <div class="input-group">
-                                    <label>FULL NAME</label>
+                                    <label>Full Name</label>
                                     <input type="text" placeholder="Enter your full name" name="name" required>
                                 </div>
                                 <div class="input-group">
-                                    <label>EMAIL ADDRESS</label>
+                                    <label>Email Address</label>
                                     <input type="email" placeholder="Enter your email address" name="email" required>
                                 </div>
                             </div>
                             <div class="input-group-msg">
-                                <label>YOUR MESSAGE</label>
-                                <textarea name="message" placeholder="Tell me about your project or how I can help..."
-                                    required></textarea>
+                                <label>Your Message</label>
+                                <textarea name="message" placeholder="Tell me about your project or how I can help..." required></textarea>
                             </div>
-                            <button type="submit" class="btn-submit">Launch Communication <i
-                                    class="fa-solid fa-paper-plane"></i></button>
+                            <button type="submit" class="btn-submit">
+                                Send Message <i class="fa-solid fa-paper-plane"></i>
+                            </button>
                         </form>
                     </div>
                 </div>
             </div>
         </section>
-
     </main>
 
     <!-- Footer -->
@@ -369,21 +422,17 @@
         <div class="container footer-inner">
             <div class="footer-copy">&copy; 2024-2026 Akhdan Fadhilillah. Engineered for Excellence.</div>
             <div class="footer-social">
-                <a href="https://github.com/dnhmyy" target="_blank" rel="noopener noreferrer"><i
-                        class="fa-brands fa-github"></i></a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><i
-                        class="fa-brands fa-linkedin"></i></a>
-                <a href="https://www.instagram.com/danhmeyy" target="_blank" rel="noopener noreferrer"><i
-                        class="fa-brands fa-instagram"></i></a>
+                <a href="https://github.com/dnhmyy" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/danhmeyy" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
             </div>
         </div>
     </footer>
 
-    <!-- Lightbox Modal (Sertifikat) -->
+    <!-- Lightbox Modal Sertifikat -->
     <div id="lightbox" class="lightbox">
-        <span class="lightbox-close">&times;</span>
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
         <img class="lightbox-content" id="lightbox-img" alt="Certificate View">
-        <div id="caption"></div>
     </div>
 
     <!-- Skrip Utama -->
