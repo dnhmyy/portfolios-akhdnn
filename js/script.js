@@ -136,19 +136,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Tambahkan delay per urutan elemen dalam parent
+                // Tambahkan delay per urutan elemen dalam parent (Staggered Delay)
                 const siblings = Array.from(entry.target.parentElement.querySelectorAll(".reveal-up"));
                 const index = siblings.indexOf(entry.target);
-                entry.target.style.transitionDelay = `${index * 0.05}s`;
+                entry.target.style.transitionDelay = `${index * 0.1}s`;
                 entry.target.classList.add("in-view");
             } else {
                 entry.target.style.transitionDelay = "0s";
                 entry.target.classList.remove("in-view");
             }
         });
-    }, { threshold: 0.12, rootMargin: "0px 0px -20px 0px" });
+    }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
 
     revealEls.forEach(el => observer.observe(el));
+
 
     /* ====================================================================
        SLIDER SERTIFIKAT — Navigasi dengan panah dan titik pagination
@@ -160,69 +162,50 @@ document.addEventListener("DOMContentLoaded", () => {
     const pagination  = document.getElementById("sliderPagination");
 
     if (sliderEl && slides.length > 0) {
-        let active = 0;
-
-        // Buat satu dot per SLIDE
+        // Create Dots - One dot per slide (Original Logic)
         slides.forEach((_, i) => {
-            const dot = document.createElement("button");
-            dot.className = `dot${i === 0 ? " active" : ""}`;
-            dot.setAttribute("aria-label", `Sertifikat ${i + 1}`);
-            dot.addEventListener("click", () => goTo(i));
+            const dot = document.createElement("div");
+            dot.className = `dot ${i === 0 ? "active" : ""}`;
+            dot.addEventListener("click", () => {
+                sliderEl.scrollTo({
+                    left: slides[i].offsetLeft - sliderEl.offsetLeft,
+                    behavior: "smooth"
+                });
+            });
             pagination.appendChild(dot);
         });
 
-        const getAllDots = () => pagination.querySelectorAll(".dot");
+        // Sync Dots with scroll
+        sliderEl.addEventListener("scroll", () => {
+            const scrollPos = sliderEl.scrollLeft;
+            const itemWidth = slides[0].offsetWidth + 24; // slide + gap (24px in current css)
+            const index = Math.round(scrollPos / itemWidth);
+            
+            pagination.querySelectorAll(".dot").forEach((dot, i) => {
+                dot.classList.toggle("active", i === index);
+            });
 
-        const updateUI = (idx) => {
-            // Aktifkan dot
-            getAllDots().forEach((d, i) => d.classList.toggle("active", i === idx));
-            // Aktifkan card (border biru)
+            // Update border biru pada card aktif
             slides.forEach((slide, i) => {
                 const card = slide.querySelector(".merit-card");
-                if (card) card.classList.toggle("active", i === idx);
+                if (card) card.classList.toggle("active", i === index);
             });
-        };
-
-        const goTo = (idx) => {
-            active = Math.max(0, Math.min(slides.length - 1, idx));
-            slides[active].scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
-            updateUI(active);
-        };
-
-        prevBtn?.addEventListener("click", () => goTo(active - 1));
-        nextBtn?.addEventListener("click", () => goTo(active + 1));
-
-        // Sinkronisasi dot saat swipe/scroll manual
-        // Gunakan getBoundingClientRect agar akurat secara visual
-        let scrollTimer;
-        sliderEl.addEventListener("scroll", () => {
-            clearTimeout(scrollTimer);
-            scrollTimer = setTimeout(() => {
-                const sliderRect = sliderEl.getBoundingClientRect();
-                const sliderCenter = sliderRect.left + sliderRect.width / 2;
-
-                let closest = 0;
-                let closestDist = Infinity;
-                slides.forEach((slide, i) => {
-                    const rect = slide.getBoundingClientRect();
-                    const slideCenter = rect.left + rect.width / 2;
-                    const dist = Math.abs(slideCenter - sliderCenter);
-                    if (dist < closestDist) {
-                        closestDist = dist;
-                        closest = i;
-                    }
-                });
-
-                if (closest !== active) {
-                    active = closest;
-                    updateUI(active);
-                }
-            }, 60);
         }, { passive: true });
 
-        // Inisialisasi
-        updateUI(0);
+        // Arrow Controls
+        nextBtn?.addEventListener("click", () => {
+            const itemWidth = slides[0].offsetWidth + 24;
+            sliderEl.scrollBy({ left: itemWidth, behavior: "smooth" });
+        });
+        prevBtn?.addEventListener("click", () => {
+            const itemWidth = slides[0].offsetWidth + 24;
+            sliderEl.scrollBy({ left: -itemWidth, behavior: "smooth" });
+        });
+
+        // Initialize first card
+        slides[0].querySelector(".merit-card")?.classList.add("active");
     }
+
 
 
     /* ====================================================================
