@@ -81,22 +81,47 @@
             <div class="hero-orb hero-orb-1"></div>
             <div class="hero-orb hero-orb-2"></div>
 
-            <!-- Konten utama hero -->
-            <div class="hero-inner">
-                <span class="hero-badge">System Infrastructure Engineer</span>
+            <!-- Konten utama hero — Layout dua kolom -->
+            <div class="hero-inner hero-two-col">
+                <!-- Kolom kiri: Teks -->
+                <div class="hero-text">
+                    <span class="hero-badge">IT Support & Infrastructure Engineer</span>
 
-                <h1 class="hero-title">
-                    The Harmonious <span class="accent-txt">Architect</span>
-                </h1>
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="accent-txt">Akhdan</span> —<br>
+                        Building Systems<br>That <span class="accent-txt">Never Sleep</span>
+                    </h1>
 
-                <p class="hero-sub">
-                    Evolving from a Networking and Sysadmin enthusiast into a DevOps professional.
-                    I design, deploy, and optimize scalable IT ecosystems.
-                </p>
+                    <p class="hero-sub">
+                        Passionate about architecting resilient IT infrastructure — from wiring MikroTik networks
+                        and spinning up Proxmox clusters, to containerizing services with Docker and
+                        automating workflows with n8n. Currently an IT Support Specialist by day,
+                        a self-hosted cloud builder by night.
+                    </p>
 
-                <div class="hero-btns">
-                    <a href="#contact" class="btn-primary">Get in Touch</a>
-                    <a href="#projects" class="btn-outline">View Projects</a>
+                    <div class="hero-btns">
+                        <a href="#contact" class="btn-primary">Get in Touch</a>
+                        <a href="#projects" class="btn-outline">View Projects</a>
+                    </div>
+                </div>
+
+                <!-- Kolom kanan: Foto Profil -->
+                <div class="hero-photo-wrap">
+                    <div class="hero-avatar">
+                        <!-- Ganti src dengan path foto profil Anda, contoh: website-portfolio/photo.jpg -->
+                        <img src="website-portfolio/photo.jpg" alt="Akhdan Fadhilillah"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <!-- Fallback avatar inisial jika foto belum ada -->
+                        <div class="avatar-initials">AF</div>
+                    </div>
+                    <!-- Cincin dekorasi -->
+                    <div class="avatar-ring avatar-ring-1"></div>
+                    <div class="avatar-ring avatar-ring-2"></div>
+                    <!-- Badge status online -->
+                    <div class="avatar-status">
+                        <span class="status-dot"></span>
+                        <span class="status-txt">Open to Opportunities</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -172,9 +197,9 @@
                         <div class="project-data">
                             <h3>Belajar Tajwid Platform</h3>
                             <p>An educational blogging project providing structured Tajwid lessons for the community.</p>
-                            <div class="project-tags">
-                                <span class="project-tag">Blogger</span>
-                                <span class="project-tag">Education</span>
+                            <div class="project-tech-icons">
+                                <i class="fa-solid fa-blog" title="Blog"></i>
+                                <i class="fa-brands fa-blogger" title="Blogger"></i>
                             </div>
                         </div>
                     </div>
@@ -190,9 +215,9 @@
                         <div class="project-data">
                             <h3>Technical Edu-Content</h3>
                             <p>Sharing deep-dive tutorials on Network Engineering, TKJ, and Server Administration.</p>
-                            <div class="project-tags">
-                                <span class="project-tag">YouTube</span>
-                                <span class="project-tag">Networking</span>
+                            <div class="project-tech-icons">
+                                <i class="fa-brands fa-youtube" title="YouTube"></i>
+                                <i class="fa-solid fa-network-wired" title="Networking"></i>
                             </div>
                         </div>
                     </div>
@@ -208,10 +233,10 @@
                         <div class="project-data">
                             <h3>Nexus Cloud & Automation</h3>
                             <p>Advanced virtualization hub using Proxmox, Debian Server, and n8n automation workflows.</p>
-                            <div class="project-tags">
-                                <span class="project-tag">Proxmox</span>
-                                <span class="project-tag">Docker</span>
-                                <span class="project-tag">n8n</span>
+                            <div class="project-tech-icons">
+                                <i class="devicon-proxmox-plain colored" title="Proxmox"></i>
+                                <i class="devicon-docker-plain colored" title="Docker"></i>
+                                <img src="https://cdn.simpleicons.org/n8n/EA4B71" alt="n8n" title="n8n" class="proj-icon-img">
                             </div>
                         </div>
                     </div>
@@ -227,10 +252,10 @@
                         <div class="project-data">
                             <h3>Self-Hosted Services</h3>
                             <p>Full-stack self-hosted environment with VPN, reverse proxy, monitoring, and automated backups.</p>
-                            <div class="project-tags">
-                                <span class="project-tag">Linux</span>
-                                <span class="project-tag">Nginx</span>
-                                <span class="project-tag">Grafana</span>
+                            <div class="project-tech-icons">
+                                <i class="devicon-linux-plain colored" title="Linux"></i>
+                                <i class="devicon-nginx-original colored" title="Nginx"></i>
+                                <img src="https://cdn.simpleicons.org/grafana/F46800" alt="Grafana" title="Grafana" class="proj-icon-img">
                             </div>
                         </div>
                     </div>
@@ -301,6 +326,19 @@
                                 <div class="merit-info">
                                     <h4>Web Development for Beginners</h4>
                                     <p>Certified understanding of core web technologies, programming languages, and accessibility.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sertifikat 5 -->
+                        <div class="merit-slide">
+                            <div class="merit-card" onclick="openLightbox('website-portfolio/cert/cert3.png', 'Introduction to Cybersecurity')">
+                                <div class="merit-thumb">
+                                    <img src="website-portfolio/cert/cert3.png" alt="Cybersecurity" loading="lazy">
+                                </div>
+                                <div class="merit-info">
+                                    <h4>Introduction to Cybersecurity</h4>
+                                    <p>Cisco networking academy course on cybersecurity threats, vulnerabilities, and best practices.</p>
                                 </div>
                             </div>
                         </div>
@@ -390,7 +428,7 @@
                         </div>
                     </div>
 
-                    <!-- Kanan: Formulir Kontak -->
+                    <!-- Kanan: Formulir Kontak — Disejajarkan dengan info kontak -->
                     <div class="contact-form-box reveal-up">
                         <form class="elite-form" action="https://formspree.io/f/xrgnyjaq" method="POST">
                             <div class="input-row">
@@ -407,9 +445,11 @@
                                 <label>Your Message</label>
                                 <textarea name="message" placeholder="Tell me about your project or how I can help..." required></textarea>
                             </div>
-                            <button type="submit" class="btn-submit">
-                                Send Message <i class="fa-solid fa-paper-plane"></i>
-                            </button>
+                            <div class="form-footer">
+                                <button type="submit" class="btn-submit">
+                                    Send Message <i class="fa-solid fa-paper-plane"></i>
+                                </button>
+                            </div>
                         </form>
                     </div>
                 </div>
