@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (sliderEl && slides.length > 0) {
         let active = 0;
 
-        // Buat titik pagination
+        // Buat satu dot per SLIDE
         slides.forEach((_, i) => {
             const dot = document.createElement("button");
             dot.className = `dot${i === 0 ? " active" : ""}`;
@@ -171,45 +171,59 @@ document.addEventListener("DOMContentLoaded", () => {
             pagination.appendChild(dot);
         });
 
-        const dots = () => pagination.querySelectorAll(".dot");
+        const getAllDots = () => pagination.querySelectorAll(".dot");
 
-        const updateDots = (idx) => {
-            dots().forEach((d, i) => d.classList.toggle("active", i === idx));
-        };
-
-        const updateCards = (idx) => {
-            document.querySelectorAll(".merit-card").forEach((c, i) => {
-                c.classList.toggle("active", i === idx);
+        const updateUI = (idx) => {
+            // Aktifkan dot
+            getAllDots().forEach((d, i) => d.classList.toggle("active", i === idx));
+            // Aktifkan card (border biru)
+            slides.forEach((slide, i) => {
+                const card = slide.querySelector(".merit-card");
+                if (card) card.classList.toggle("active", i === idx);
             });
         };
 
         const goTo = (idx) => {
             active = Math.max(0, Math.min(slides.length - 1, idx));
             slides[active].scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
-            updateDots(active);
-            updateCards(active);
+            updateUI(active);
         };
 
         prevBtn?.addEventListener("click", () => goTo(active - 1));
         nextBtn?.addEventListener("click", () => goTo(active + 1));
 
-        // Sinkronisasi titik saat slider discroll manual
+        // Sinkronisasi dot saat swipe/scroll manual
+        // Gunakan getBoundingClientRect agar akurat secara visual
+        let scrollTimer;
         sliderEl.addEventListener("scroll", () => {
-            const mid = sliderEl.scrollLeft + sliderEl.offsetWidth / 2;
-            slides.forEach((slide, i) => {
-                const left = slide.offsetLeft;
-                const right = left + slide.offsetWidth;
-                if (mid >= left && mid <= right) {
-                    active = i;
-                    updateDots(i);
-                    updateCards(i);
+            clearTimeout(scrollTimer);
+            scrollTimer = setTimeout(() => {
+                const sliderRect = sliderEl.getBoundingClientRect();
+                const sliderCenter = sliderRect.left + sliderRect.width / 2;
+
+                let closest = 0;
+                let closestDist = Infinity;
+                slides.forEach((slide, i) => {
+                    const rect = slide.getBoundingClientRect();
+                    const slideCenter = rect.left + rect.width / 2;
+                    const dist = Math.abs(slideCenter - sliderCenter);
+                    if (dist < closestDist) {
+                        closestDist = dist;
+                        closest = i;
+                    }
+                });
+
+                if (closest !== active) {
+                    active = closest;
+                    updateUI(active);
                 }
-            });
+            }, 60);
         }, { passive: true });
 
-        // Inisialisasi kartu pertama sebagai aktif
-        updateCards(0);
+        // Inisialisasi
+        updateUI(0);
     }
+
 
     /* ====================================================================
        LIGHTBOX SERTIFIKAT — Buka/Tutup tampilan sertifikat
