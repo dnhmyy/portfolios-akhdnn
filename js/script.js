@@ -1,12 +1,8 @@
-/* --------------------------------------------------------------------------
-   ARCHITECT GLOW — LOGIKA UTAMA
--------------------------------------------------------------------------- */
+// Main Logic
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* ====================================================================
-       NAVIGASI — Scroll & Burger
-    ==================================================================== */
+    // Nav & Burger
     const navbar  = document.getElementById("navbar");
     const burger  = document.getElementById("burger");
     const mobileMenu = document.getElementById("mobileMenu");
@@ -48,18 +44,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }, { passive: true });
 
-    /* ====================================================================
-       MOUSE SPOTLIGHT — Cahaya mengikuti kursor
-    ==================================================================== */
+    // Spotlight Cursor
     const mouselight = document.getElementById("mouselight");
     window.addEventListener("mousemove", (e) => {
         mouselight.style.background =
             `radial-gradient(600px circle at ${e.clientX}px ${e.clientY}px, hsla(220,100%,50%,0.04), transparent 60%)`;
     }, { passive: true });
 
-    /* ====================================================================
-       CANVAS PARTIKEL — Efek jaringan IT (Hero section)
-    ==================================================================== */
+    // Hero Particles
     const canvas = document.getElementById("hero-canvas");
     if (canvas) {
         const ctx = canvas.getContext("2d");
@@ -128,9 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
         window.addEventListener("resize", init, { passive: true });
     }
 
-    /* ====================================================================
-       SCROLL REVEAL — Animasi muncul berulang saat scroll
-    ==================================================================== */
+    // Scroll Reveal
     const revealEls = document.querySelectorAll(".reveal-up");
 
     const observer = new IntersectionObserver((entries) => {
@@ -152,9 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
     revealEls.forEach(el => observer.observe(el));
 
 
-    /* ====================================================================
-       SLIDER SERTIFIKAT — Navigasi dengan panah dan titik pagination
-    ==================================================================== */
+    // Cert Slider
     const sliderEl   = document.getElementById("meritSlider");
     const slides      = document.querySelectorAll(".merit-slide");
     const prevBtn     = document.getElementById("prevBtn");
@@ -208,9 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    /* ====================================================================
-       LIGHTBOX SERTIFIKAT — Buka/Tutup tampilan sertifikat
-    ==================================================================== */
+    // Lightbox
     const lightbox    = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
 

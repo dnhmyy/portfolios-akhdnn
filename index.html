@@ -5,31 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akhdan Fadhilillah Ps | System & Network Infrastructure</title>
-    <link rel="icon" href="website-portfolio/icon.png" type="image/png">
+    <link rel="icon" href="website-portfolio/favicon.webp" type="image/webp">
 
-    <!-- Meta Tag SEO -->
+    <!-- SEO -->
     <meta name="description"
         content="Portfolio of Akhdan Fadhilillah Ps, an IT Support & Infrastructure Engineer specializing in networking, virtualization, and DevOps automation.">
     <meta name="keywords"
         content="Akhdan Fadhilillah, IT Support, Infrastructure Engineer, Networking, Mikrotik, Proxmox, Docker, DevOps, IT Portfolio">
     <meta name="author" content="Akhdan Fadhilillah">
 
-    <!-- OpenGraph untuk Media Sosial -->
+    <!-- OpenGraph -->
     <meta property="og:title" content="Akhdan Fadhilillah Ps | IT Support & Infrastructure Engineer">
     <meta property="og:description"
         content="Evolving from a Networking and Sysadmin enthusiast into a DevOps professional.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://akhdnn.pages.dev/">
-    <meta property="og:image" content="website-portfolio/portfolios/portfolio-1.png">
+    <meta property="og:image" content="website-portfolio/portfolios/project-1.webp">
 
-    <!-- Tipografi: Unbounded untuk Judul, Space Grotesk untuk Body, JetBrains untuk Teknis -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
         rel="stylesheet">
 
-    <!-- Aset Visual -->
+    <!-- Styles & Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -37,10 +37,37 @@
 
 <body>
 
-    <!-- Sorotan Kursor Mouse -->
+    <!-- Mouse Light -->
     <div id="mouselight"></div>
 
-    <!-- Navigasi -->
+    <!-- Social Sidebar -->
+    <aside class="social-sidebar">
+        <div class="sidebar-track">
+            <a href="https://github.com/dnhmyy" target="_blank" rel="noopener noreferrer" class="sidebar-link"
+                title="GitHub">
+                <img src="https://cdn.simpleicons.org/github/currentColor" alt="GitHub">
+            </a>
+            <a href="https://www.linkedin.com/in/akhdan-fadhilillah/" target="_blank" rel="noopener noreferrer"
+                class="sidebar-link" title="LinkedIn">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://www.skills.google/public_profiles/8b69d912-f166-4d33-bda0-920796a44a29" target="_blank"
+                rel="noopener noreferrer" class="sidebar-link" title="Google Cloud Skills">
+                <img src="https://cdn.simpleicons.org/googlecloud/currentColor" alt="Google Cloud">
+            </a>
+            <a href="https://www.credly.com/users/akhdan-fadhilillah-pratama-sutiar" target="_blank"
+                rel="noopener noreferrer" class="sidebar-link sidebar-credly" title="Credly">
+                <img src="https://cdn.simpleicons.org/credly/currentColor" alt="Credly">
+            </a>
+            <a href="https://www.instagram.com/danhmeyy" target="_blank" rel="noopener noreferrer" class="sidebar-link"
+                title="Instagram">
+                <img src="https://cdn.simpleicons.org/instagram/currentColor" alt="Instagram">
+            </a>
+            <div class="sidebar-line"></div>
+        </div>
+    </aside>
+
+    <!-- Navbar -->
     <nav class="nav-elite" id="navbar">
         <div class="container nav-content">
             <div class="logo">A <span>F.</span></div>
@@ -60,7 +87,7 @@
                 </button>
             </div>
         </div>
-        <!-- Menu Mobile -->
+        <!-- Mobile Nav -->
         <div class="nav-mobile-menu" id="mobileMenu">
             <a href="#home" class="nav-link">Home</a>
             <a href="#experience" class="nav-link">Experience</a>
@@ -68,24 +95,40 @@
             <a href="#certificates" class="nav-link">Certificates</a>
             <a href="#skills" class="nav-link">Skills</a>
             <a href="#contact" class="nav-link">Contact</a>
+            
+            <div class="mobile-nav-social">
+                <a href="https://github.com/dnhmyy" target="_blank" rel="noopener noreferrer">
+                    <img src="https://cdn.simpleicons.org/github/currentColor" alt="GitHub">
+                </a>
+                <a href="https://www.linkedin.com/in/akhdan-fadhilillah/" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://www.skills.google/public_profiles/8b69d912-f166-4d33-bda0-920796a44a29" target="_blank" rel="noopener noreferrer">
+                    <img src="https://cdn.simpleicons.org/googlecloud/currentColor" alt="Google Cloud">
+                </a>
+                <a href="https://www.credly.com/users/akhdan-fadhilillah-pratama-sutiar" target="_blank" rel="noopener noreferrer" class="mobile-credly">
+                    <img src="https://cdn.simpleicons.org/credly/currentColor" alt="Credly">
+                </a>
+                <a href="https://www.instagram.com/danhmeyy" target="_blank" rel="noopener noreferrer">
+                    <img src="https://cdn.simpleicons.org/instagram/currentColor" alt="Instagram">
+                </a>
+            </div>
         </div>
     </nav>
 
     <main>
-        <!-- ============================================================
-             HERO SECTION
-        ============================================================ -->
+        <!-- HERO SECTION -->
         <section class="hero-section" id="home">
-            <!-- Canvas partikel bergerak (IT Network Feel) -->
+            <!-- Partikel BG -->
             <canvas id="hero-canvas"></canvas>
 
-            <!-- Bola pencahayaan latar -->
+            <!-- Lampu BG -->
             <div class="hero-orb hero-orb-1"></div>
             <div class="hero-orb hero-orb-2"></div>
 
-            <!-- Konten utama hero — Layout dua kolom -->
+            <!-- Isi Hero -->
             <div class="hero-inner hero-two-col">
-                <!-- Kolom kiri: Teks -->
+                <!-- Text -->
                 <div class="hero-text">
                     <span class="hero-badge">Systems & Network Infrastructure Engineer</span>
 
@@ -115,12 +158,12 @@
                     </div>
                 </div>
 
-                <!-- Kolom kanan: Foto Profil -->
+                <!-- Foto -->
                 <div class="hero-photo-wrap">
                     <div class="avatar-group">
                         <div class="hero-avatar">
                             <!-- Ganti src dengan path foto profil Anda -->
-                            <img src="website-portfolio/akhdan.jpeg" alt="Akhdan Fadhilillah"
+                            <img src="website-portfolio/profile-photo.webp" alt="Akhdan Fadhilillah"
                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                             <!-- Fallback avatar inisial -->
                             <div class="avatar-initials">AF</div>
@@ -134,10 +177,29 @@
                         <span class="status-dot"></span>
                         <span class="status-txt">Open to Opportunities</span>
                     </div>
+
+                    <!-- Hero Social (Mobile Presence) -->
+                    <div class="hero-social">
+                        <a href="https://github.com/dnhmyy" target="_blank" rel="noopener noreferrer" title="GitHub">
+                            <img src="https://cdn.simpleicons.org/github/currentColor" alt="GitHub">
+                        </a>
+                        <a href="https://www.linkedin.com/in/akhdan-fadhilillah/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.skills.google/public_profiles/8b69d912-f166-4d33-bda0-920796a44a29" target="_blank" rel="noopener noreferrer" title="Google Cloud Credits">
+                            <img src="https://cdn.simpleicons.org/googlecloud/currentColor" alt="Google Cloud">
+                        </a>
+                        <a href="https://www.credly.com/users/akhdan-fadhilillah-pratama-sutiar" target="_blank" rel="noopener noreferrer" title="Credly" class="hero-credly">
+                            <img src="https://cdn.simpleicons.org/credly/currentColor" alt="Credly">
+                        </a>
+                        <a href="https://www.instagram.com/danhmeyy" target="_blank" rel="noopener noreferrer" title="Instagram">
+                            <img src="https://cdn.simpleicons.org/instagram/currentColor" alt="Instagram">
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Penunjuk Scroll (Halus) -->
+            <!-- Scroll Down -->
             <div class="scroll-indicator">
                 <div class="scroll-line"></div>
                 <span class="scroll-txt">Scroll to explore</span>
@@ -145,9 +207,7 @@
 
         </section>
 
-        <!-- ============================================================
-             EXPERIENCE (TIMELINE)
-        ============================================================ -->
+        <!-- EXPERIENCE -->
         <section class="section section-alt" id="experience">
             <div class="container">
                 <div class="section-header reveal-up">
@@ -197,9 +257,7 @@
             </div>
         </section>
 
-        <!-- ============================================================
-             PROJECTS
-        ============================================================ -->
+        <!-- PROJECTS -->
         <section class="section" id="projects">
             <div class="container">
                 <div class="section-header reveal-up">
@@ -209,10 +267,10 @@
                 </div>
 
                 <div class="project-grid">
-                    <!-- Proyek 1 -->
+                    <!-- Project 1 -->
                     <div class="project-card reveal-up">
                         <div class="project-media">
-                            <img src="website-portfolio/portfolios/portfolio-1.png" alt="Belajar Tajwid Blog">
+                            <img src="website-portfolio/portfolios/project-1.webp" alt="Belajar Tajwid Blog">
                             <div class="project-mask"></div>
                         </div>
                         <div class="project-data">
@@ -232,10 +290,10 @@
                         </div>
                     </div>
 
-                    <!-- Proyek 2 -->
+                    <!-- Project 2 -->
                     <div class="project-card reveal-up">
                         <div class="project-media">
-                            <img src="website-portfolio/portfolios/portfolio-2.png" alt="Technical Education YouTube">
+                            <img src="website-portfolio/portfolios/project-2.webp" alt="Technical Education YouTube">
                             <div class="project-mask"></div>
                         </div>
                         <div class="project-data">
@@ -254,10 +312,10 @@
                         </div>
                     </div>
 
-                    <!-- Proyek 3 -->
+                    <!-- Project 3 -->
                     <div class="project-card reveal-up">
                         <div class="project-media">
-                            <img src="website-portfolio/portfolios/portfolio-3.png" alt="Nexus Infrastructure">
+                            <img src="website-portfolio/portfolios/project-3.webp" alt="Nexus Infrastructure">
                             <div class="project-mask"></div>
                         </div>
                         <div class="project-data">
@@ -281,9 +339,7 @@
             </div>
         </section>
 
-        <!-- ============================================================
-             CERTIFICATES (SLIDER — pakai versi asli saya)
-        ============================================================ -->
+        <!-- CERTIFICATES -->
         <section class="section section-alt" id="certificates">
             <div class="container">
                 <div class="section-header reveal-up">
@@ -301,9 +357,9 @@
                         <!-- Sertifikat 1 -->
                         <div class="merit-slide">
                             <div class="merit-card"
-                                onclick="openLightbox('website-portfolio/cert/cert1.png', 'Network Addressing & Troubleshooting')">
+                                onclick="openLightbox('website-portfolio/cert/cisco-troubleshooting.webp', 'Network Addressing & Troubleshooting')">
                                 <div class="merit-thumb">
-                                    <img src="website-portfolio/cert/cert1.png" alt="Cisco Networking" loading="lazy">
+                                    <img src="website-portfolio/cert/cisco-troubleshooting.webp" alt="Cisco Networking" loading="lazy">
                                 </div>
                                 <div class="merit-info">
                                     <h4>Network Addressing & Troubleshooting</h4>
@@ -316,9 +372,9 @@
                         <!-- Sertifikat 2 -->
                         <div class="merit-slide">
                             <div class="merit-card"
-                                onclick="openLightbox('website-portfolio/cert/cert2.png', 'Computer Communications & Networks')">
+                                onclick="openLightbox('website-portfolio/cert/saylor-networks.webp', 'Computer Communications & Networks')">
                                 <div class="merit-thumb">
-                                    <img src="website-portfolio/cert/cert2.png" alt="Computer Communications"
+                                    <img src="website-portfolio/cert/saylor-networks.webp" alt="Computer Communications"
                                         loading="lazy">
                                 </div>
                                 <div class="merit-info">
@@ -331,9 +387,9 @@
                         <!-- Sertifikat 3 -->
                         <div class="merit-slide">
                             <div class="merit-card"
-                                onclick="openLightbox('website-portfolio/cert/cert4.png', 'NDG Linux Unhatched')">
+                                onclick="openLightbox('website-portfolio/cert/linux-unhatched.webp', 'NDG Linux Unhatched')">
                                 <div class="merit-thumb">
-                                    <img src="website-portfolio/cert/cert4.png" alt="Linux Unhatched" loading="lazy">
+                                    <img src="website-portfolio/cert/linux-unhatched.webp" alt="Linux Unhatched" loading="lazy">
                                 </div>
                                 <div class="merit-info">
                                     <h4>NDG Linux Unhatched</h4>
@@ -345,9 +401,9 @@
                         <!-- Sertifikat 4 -->
                         <div class="merit-slide">
                             <div class="merit-card"
-                                onclick="openLightbox('website-portfolio/cert/cert10.png', 'Web Development for Beginners')">
+                                onclick="openLightbox('website-portfolio/cert/web-dev-beginners.webp', 'Web Development for Beginners')">
                                 <div class="merit-thumb">
-                                    <img src="website-portfolio/cert/cert10.png" alt="Web Development" loading="lazy">
+                                    <img src="website-portfolio/cert/web-dev-beginners.webp" alt="Web Development" loading="lazy">
                                 </div>
                                 <div class="merit-info">
                                     <h4>Web Development for Beginners</h4>
@@ -360,15 +416,109 @@
                         <!-- Sertifikat 5 -->
                         <div class="merit-slide">
                             <div class="merit-card"
-                                onclick="openLightbox('website-portfolio/cert/cert3.png', 'Introduction to Cybersecurity')">
+                                onclick="openLightbox('website-portfolio/cert/cisco-cybersecurity.webp', 'Introduction to Cybersecurity')">
                                 <div class="merit-thumb">
-                                    <img src="website-portfolio/cert/cert3.png" alt="Cybersecurity" loading="lazy">
+                                    <img src="website-portfolio/cert/cisco-cybersecurity.webp" alt="Cybersecurity" loading="lazy">
                                 </div>
                                 <div class="merit-info">
                                     <h4>Introduction to Cybersecurity</h4>
                                     <p>Cisco networking academy course on cybersecurity threats, vulnerabilities, and
                                         best practices.</p>
                                 </div>
+                            </div>
+                        </div>
+
+                        <!-- Sertifikat 6 -->
+                        <div class="merit-slide">
+                            <div class="merit-card"
+                                onclick="openLightbox('website-portfolio/cert/google-it-support.webp', 'Google IT Support Professional')">
+                                <div class="merit-thumb">
+                                    <img src="website-portfolio/cert/google-it-support.webp" alt="IT Support" loading="lazy">
+                                </div>
+                                <div class="merit-info">
+                                    <h4>Google IT Support</h4>
+                                    <p>Foundational professional training in troubleshooting, networking, and system administration.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sertifikat 7 -->
+                        <div class="merit-slide">
+                            <div class="merit-card"
+                                onclick="openLightbox('website-portfolio/cert/cisco-networking.webp', 'Cisco Networking Essentials')">
+                                <div class="merit-thumb">
+                                    <img src="website-portfolio/cert/cisco-networking.webp" alt="Networking" loading="lazy">
+                                </div>
+                                <div class="merit-info">
+                                    <h4>Cisco Networking Academy</h4>
+                                    <p>Comprehensive training on network infrastructure, protocols, and security.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sertifikat 8 -->
+                        <div class="merit-slide">
+                            <div class="merit-card"
+                                onclick="openLightbox('website-portfolio/cert/komdigi-digital.webp', 'Literasi Digital Kominfo')">
+                                <div class="merit-thumb">
+                                    <img src="website-portfolio/cert/komdigi-digital.webp" alt="Digital Literacy" loading="lazy">
+                                </div>
+                                <div class="merit-info">
+                                    <h4>Literasi Digital Komdigi</h4>
+                                    <p>Certification for digital competence and safe internet practices.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sertifikat 9 -->
+                        <div class="merit-slide">
+                            <div class="merit-card"
+                                onclick="openLightbox('website-portfolio/cert/networking-basics.webp', 'Networking Fundamentals')">
+                                <div class="merit-thumb">
+                                    <img src="website-portfolio/cert/networking-basics.webp" alt="Networking Basics" loading="lazy">
+                                </div>
+                                <div class="merit-info">
+                                    <h4>Networking Fundamentals</h4>
+                                    <p>Mastery of basic computer networking concepts and connectivity.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sertifikat 10-15 (Professional Training) -->
+                        <div class="merit-slide">
+                            <div class="merit-card" onclick="openLightbox('website-portfolio/cert/prof-training-1.webp', 'Professional Training I')">
+                                <div class="merit-thumb"><img src="website-portfolio/cert/prof-training-1.webp" alt="Training" loading="lazy"></div>
+                                <div class="merit-info"><h4>Professional Training I</h4><p>Specialized technical development program.</p></div>
+                            </div>
+                        </div>
+                        <div class="merit-slide">
+                            <div class="merit-card" onclick="openLightbox('website-portfolio/cert/prof-training-2.webp', 'Professional Training II')">
+                                <div class="merit-thumb"><img src="website-portfolio/cert/prof-training-2.webp" alt="Training" loading="lazy"></div>
+                                <div class="merit-info"><h4>Professional Training II</h4><p>Advanced technical skill enhancement.</p></div>
+                            </div>
+                        </div>
+                        <div class="merit-slide">
+                            <div class="merit-card" onclick="openLightbox('website-portfolio/cert/prof-training-3.webp', 'Professional Training III')">
+                                <div class="merit-thumb"><img src="website-portfolio/cert/prof-training-3.webp" alt="Training" loading="lazy"></div>
+                                <div class="merit-info"><h4>Professional Training III</h4><p>Infrastructure & Systems workshops.</p></div>
+                            </div>
+                        </div>
+                        <div class="merit-slide">
+                            <div class="merit-card" onclick="openLightbox('website-portfolio/cert/prof-training-4.webp', 'Professional Training IV')">
+                                <div class="merit-thumb"><img src="website-portfolio/cert/prof-training-4.webp" alt="Training" loading="lazy"></div>
+                                <div class="merit-info"><h4>Professional Training IV</h4><p>Network security and administration series.</p></div>
+                            </div>
+                        </div>
+                        <div class="merit-slide">
+                            <div class="merit-card" onclick="openLightbox('website-portfolio/cert/prof-training-5.webp', 'Professional Training V')">
+                                <div class="merit-thumb"><img src="website-portfolio/cert/prof-training-5.webp" alt="Training" loading="lazy"></div>
+                                <div class="merit-info"><h4>Professional Training V</h4><p>Cloud & Virtualization deployment training.</p></div>
+                            </div>
+                        </div>
+                        <div class="merit-slide">
+                            <div class="merit-card" onclick="openLightbox('website-portfolio/cert/prof-training-6.webp', 'Professional Training VI')">
+                                <div class="merit-thumb"><img src="website-portfolio/cert/prof-training-6.webp" alt="Training" loading="lazy"></div>
+                                <div class="merit-info"><h4>Professional Training VI</h4><p>Final technical competency certification.</p></div>
                             </div>
                         </div>
                     </div>
@@ -383,9 +533,7 @@
             </div>
         </section>
 
-        <!-- ============================================================
-             SKILLS (pakai stack teknologi versi saya)
-        ============================================================ -->
+        <!-- SKILLS -->
         <section class="section" id="skills">
             <div class="container">
                 <div class="section-header reveal-up">
@@ -423,9 +571,7 @@
             </div>
         </section>
 
-        <!-- ============================================================
-             CONTACT
-        ============================================================ -->
+        <!-- CONTACT -->
         <section class="section section-alt" id="contact">
             <div class="container">
                 <div class="section-header reveal-up">
@@ -435,7 +581,7 @@
                 </div>
 
                 <div class="contact-wrapper">
-                    <!-- Kiri: Info Kontak -->
+                    <!-- Info -->
                     <div class="contact-info reveal-up">
                         <h2>Let's <span>Connect</span></h2>
                         <p>I'm always open to discussing new projects, creative ideas or opportunities to be part of
@@ -466,7 +612,7 @@
                         </div>
                     </div>
 
-                    <!-- Kanan: Formulir Kontak — Disejajarkan dengan info kontak -->
+                    <!-- Form -->
                     <div class="contact-form-box reveal-up">
                         <form class="elite-form" action="https://formspree.io/f/mdawgjgd" method="POST">
                             <div class="input-row">
@@ -500,27 +646,17 @@
     <footer class="footer-elite">
         <div class="container footer-inner">
             <div class="footer-copy">Akhdan Fadhilillah Ps <br> Systems & Network Infrastructure.</div>
-            <div class="footer-social-wrapper">
-                <div class="footer-social">
-                    <a href="https://github.com/dnhmyy" target="_blank" rel="noopener noreferrer"><i
-                            class="fa-brands fa-github"></i></a>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><i
-                            class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://www.instagram.com/danhmeyy" target="_blank" rel="noopener noreferrer"><i
-                            class="fa-brands fa-instagram"></i></a>
-                </div>
-                <div class="footer-copyright-mini">&copy; 2024 - 2026 Akhdan F.</div>
-            </div>
+            <div class="footer-copyright-info">&copy; 2024 - 2026 Akhdan F. &bull; Tangerang, Indonesia</div>
         </div>
     </footer>
 
-    <!-- Lightbox Modal Sertifikat -->
+    <!-- Lightbox -->
     <div id="lightbox" class="lightbox">
         <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
         <img class="lightbox-content" id="lightbox-img" alt="Certificate View">
     </div>
 
-    <!-- Skrip Utama -->
+    <!-- JS -->
     <script src="js/script.js"></script>
 </body>
 

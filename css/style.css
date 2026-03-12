@@ -1,6 +1,4 @@
-/* --------------------------------------------------------------------------
-   ARCHITECT GLOW — SISTEM DESAIN (PORTING DARI LOVABLE)
--------------------------------------------------------------------------- */
+/* Main Design System */
 
 /* --- Variabel Warna & Desain --- */
 :root {
@@ -101,9 +99,7 @@ a {
     padding: 0 24px;
 }
 
-/* ===================================================================
-   HELPER CLASSES
-=================================================================== */
+/* HELPER CLASSES */
 
 /* Bayangan Kartu */
 .card-shadow {
@@ -138,9 +134,7 @@ a {
     box-shadow: 0 0 20px hsla(220, 100%, 50%, 0.3);
 }
 
-/* ===================================================================
-   SCROLL REVEAL ANIMATION
-=================================================================== */
+/* SCROLL REVEAL */
 
 /* Status awal: tersembunyi di bawah */
 .reveal-up {
@@ -155,9 +149,7 @@ a {
     transform: translateY(0);
 }
 
-/* ===================================================================
-   NAVIGASI
-=================================================================== */
+/* NAVBAR */
 
 .nav-elite {
     position: fixed;
@@ -320,9 +312,7 @@ a {
     color: var(--primary);
 }
 
-/* ===================================================================
-   SECTIONS (Umum)
-=================================================================== */
+/* SECTIONS */
 
 .section {
     padding: 96px 0;
@@ -371,9 +361,7 @@ a {
     box-shadow: 0 2px 10px var(--primary-10);
 }
 
-/* ===================================================================
-   HERO SECTION
-=================================================================== */
+/* HERO */
 
 .hero-section {
     position: relative;
@@ -821,9 +809,7 @@ a {
     }
 }
 
-/* ===================================================================
-   EXPERIENCE — TIMELINE
-=================================================================== */
+/* EXPERIENCE TIMELINE */
 
 .path-timeline {
     position: relative;
@@ -960,9 +946,7 @@ a {
     color: var(--primary);
 }
 
-/* ===================================================================
-   PROJECTS
-=================================================================== */
+/* PROJECTS */
 
 .project-grid {
     display: grid;
@@ -1128,9 +1112,7 @@ a {
     border: 1px solid var(--primary-20);
 }
 
-/* ===================================================================
-   CERTIFICATES — SLIDER
-=================================================================== */
+/* CERTIFICATES */
 
 .merit-wrapper {
     position: relative;
@@ -1293,9 +1275,7 @@ a {
     box-shadow: 0 0 20px hsla(220, 100%, 50%, 0.3);
 }
 
-/* ===================================================================
-   SKILLS
-=================================================================== */
+/* SKILLS */
 
 .skills-grid {
     display: grid;
@@ -1343,9 +1323,7 @@ a {
     line-height: 1.3;
 }
 
-/* ===================================================================
-   CONTACT
-=================================================================== */
+/* CONTACT */
 
 .contact-wrapper {
     display: grid;
@@ -1512,9 +1490,7 @@ a {
     color: var(--primary-fg);
 }
 
-/* ===================================================================
-   FOOTER
-=================================================================== */
+/* FOOTER */
 
 .footer-elite {
     background: var(--card);
@@ -1542,20 +1518,19 @@ a {
     gap: 12px;
 }
 
-.footer-social {
-    display: flex;
-    gap: 20px;
-    font-size: 1.1rem;
-}
-
-.footer-social a {
+.footer-copy {
+    font-size: 0.875rem;
     color: var(--fg-muted);
-    transition: color var(--t-fast), transform var(--t-fast);
 }
 
-.footer-social a:hover {
-    color: var(--primary);
-    transform: translateY(-3px);
+.footer-copyright-info {
+    font-size: 0.75rem;
+    color: var(--fg-muted);
+    opacity: 0.6;
+}
+
+.footer-social a:hover .footer-icon-svg {
+    filter: brightness(0) saturate(100%) invert(45%) sepia(93%) saturate(1352%) hue-rotate(201deg) brightness(101%) contrast(101%);
 }
 
 .footer-copyright-mini {
@@ -1573,9 +1548,7 @@ a {
     }
 }
 
-/* ===================================================================
-   LIGHTBOX
-=================================================================== */
+/* LIGHTBOX */
 
 .lightbox {
     display: none;
@@ -1689,21 +1662,28 @@ a {
     .hero-photo-wrap {
         order: 1;
         padding: 0;
-        margin-bottom: 20px;
+        margin-bottom: 24px;
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .avatar-group {
-        width: 300px;
-        height: 300px;
+        width: 280px;
+        height: 280px;
     }
 
     .avatar-status {
         position: relative;
         bottom: 0px;
-        margin-top: 10px;
         transform: none;
         left: 0;
+    }
+
+    .hero-social {
+        margin-top: 20px;
+        justify-content: center;
     }
 }
 
@@ -1796,5 +1776,153 @@ a {
     .avatar-ring-2 {
         width: 260px;
         height: 260px;
+    }
+}
+
+/* SOCIAL SIDEBAR (Desktop Centered) */
+
+.social-sidebar {
+    position: fixed;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+    z-index: 100;
+    display: none;
+    animation: sidebarEntry 1s var(--ease) 1s both;
+}
+
+@media (min-width: 1024px) {
+    .social-sidebar {
+        display: block;
+    }
+}
+
+.sidebar-track {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    color: var(--fg-muted);
+    transition: all var(--t-fast);
+}
+
+.sidebar-link i {
+    font-size: 1.25rem;
+}
+
+.sidebar-link img {
+    width: 1.1rem;
+    height: 1.1rem;
+    filter: brightness(0) saturate(100%) invert(46%) sepia(10%) saturate(1000%) hue-rotate(185deg) brightness(92%) contrast(88%);
+    transition: filter var(--t-fast);
+}
+
+.sidebar-link:hover {
+    color: var(--primary);
+    transform: translateY(-4px);
+}
+
+.sidebar-link:hover img {
+    filter: brightness(0) saturate(100%) invert(45%) sepia(93%) saturate(1352%) hue-rotate(201deg) brightness(101%) contrast(101%);
+}
+
+.sidebar-line {
+    width: 1px;
+    height: 100px;
+    background: var(--border);
+}
+
+/* Specific scale for Credly in sidebar */
+.sidebar-credly img {
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+/* HERO SOCIAL (Initially hidden on desktop, shown on mobile via query above) */
+
+.hero-social {
+    display: none;
+    gap: 20px;
+    animation: heroFadeIn 0.8s ease 0.7s both;
+}
+
+.hero-social a {
+    color: var(--fg-muted);
+    font-size: 1.2rem;
+    transition: all var(--t-fast);
+}
+
+.hero-social img {
+    width: 1.2rem;
+    height: 1.2rem;
+    filter: brightness(0) saturate(100%) invert(46%) sepia(10%) saturate(1000%) hue-rotate(185deg) brightness(92%) contrast(88%);
+    transition: filter var(--t-fast);
+}
+
+.hero-social a:hover {
+    color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.hero-social a:hover img {
+    filter: brightness(0) saturate(100) invert(45%) sepia(93%) saturate(1352%) hue-rotate(201deg) brightness(101%) contrast(101%);
+}
+
+/* Specific scale for Credly in Hero */
+.hero-credly img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+    .hero-social {
+        display: flex;
+    }
+}
+
+/* MOBILE NAV SOCIAL */
+
+.mobile-nav-social {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+}
+
+.mobile-nav-social a {
+    color: var(--fg-muted);
+    font-size: 1.25rem;
+}
+
+.mobile-nav-social img {
+    width: 1.25rem;
+    height: 1.25rem;
+    filter: brightness(0) saturate(100%) invert(46%) sepia(10%) saturate(1000%) hue-rotate(185deg) brightness(92%) contrast(88%);
+}
+
+.mobile-credly img {
+    width: 1.6rem !important;
+    height: 1.6rem !important;
+}
+
+@keyframes sidebarEntry {
+    from {
+        opacity: 0;
+        transform: translateY(-40%) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(-50%) scale(1);
     }
 }
