@@ -332,25 +332,43 @@ a {
     background: var(--bg-alt);
 }
 
-/* Judul seksi terpusat */
+/* Header seksi terpusat & premium */
+.section-header {
+    text-align: center;
+    margin-bottom: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-label {
+    display: block;
+    font-family: var(--f-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--primary);
+    margin-bottom: 12px;
+    opacity: 0.8;
+}
+
 .section-heading {
     font-family: var(--f-display);
     font-weight: 900;
     font-size: clamp(1.75rem, 4vw, 2.5rem);
     text-align: center;
-    margin-bottom: 64px;
+    margin-bottom: 0;
+    position: relative;
 }
 
-/* Label kategori kecil */
-.section-label {
-    display: block;
-    font-family: var(--f-mono);
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.25em;
-    color: var(--primary);
-    margin-bottom: 12px;
+.header-accent {
+    width: 48px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--glow-sec));
+    border-radius: 10px;
+    margin-top: 16px;
+    box-shadow: 0 2px 10px var(--primary-10);
 }
 
 /* ===================================================================
@@ -551,10 +569,20 @@ a {
 .hero-photo-wrap {
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px;
+    padding: 20px;
     animation: heroFadeIn 0.8s ease 0.5s both;
+}
+
+.avatar-group {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 380px;
+    height: 380px;
 }
 
 /* Lingkaran foto */
@@ -576,7 +604,7 @@ a {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: top center;
+    object-position: 45% 50%;
     display: block;
 }
 
@@ -600,6 +628,9 @@ a {
 /* Cincin-cincin dekoratif */
 .avatar-ring {
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 50%;
     border: 1px solid var(--primary-20);
     animation: spinRing 12s linear infinite;
@@ -623,11 +654,11 @@ a {
 
 @keyframes spinRing {
     from {
-        transform: rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg);
     }
 
     to {
-        transform: rotate(360deg);
+        transform: translate(-50%, -50%) rotate(360deg);
     }
 }
 
@@ -981,35 +1012,7 @@ a {
 
 /* Overlay "View Live" */
 .project-mask {
-    position: absolute;
-    inset: 0;
-    background: hsla(220, 20%, 10%, 0.72);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity var(--t-med);
-}
-
-.project-card:hover .project-mask {
-    opacity: 1;
-}
-
-.project-mask a {
-    font-family: var(--f-display);
-    font-weight: 700;
-    font-size: 0.875rem;
-    color: #fff;
-    letter-spacing: 0.05em;
-    padding: 12px 24px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 8px;
-    backdrop-filter: blur(4px);
-    transition: background var(--t-fast);
-}
-
-.project-mask a:hover {
-    background: rgba(255, 255, 255, 0.1);
+    display: none;
 }
 
 /* Nomor proyek di tengah media tanpa gambar */
@@ -1037,14 +1040,51 @@ a {
     font-size: 0.875rem;
     color: var(--fg-muted);
     line-height: 1.6;
-    margin-bottom: 16px;
+    margin-bottom: 0px;
 }
 
-/* Icon teknologi di project card (hanya icon, bukan badge teks) */
+/* Footer project: Icon di kiri, Button di kanan */
+.project-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Icon teknologi di project card */
 .project-tech-icons {
     display: flex;
     align-items: center;
     gap: 14px;
+}
+
+/* Button "View Site" modern */
+.btn-project {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--f-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--primary);
+    padding: 8px 14px;
+    border-radius: 6px;
+    background: var(--primary-10);
+    border: 1px solid var(--primary-20);
+    transition: all var(--t-fast);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.btn-project:hover {
+    background: var(--primary);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--primary-20);
+}
+
+.btn-project i {
+    font-size: 0.8rem;
 }
 
 .project-tech-icons i {
@@ -1495,6 +1535,13 @@ a {
     color: var(--fg-muted);
 }
 
+.footer-social-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+}
+
 .footer-social {
     display: flex;
     gap: 20px;
@@ -1509,6 +1556,21 @@ a {
 .footer-social a:hover {
     color: var(--primary);
     transform: translateY(-3px);
+}
+
+.footer-copyright-mini {
+    font-size: 0.65rem;
+    color: var(--fg-muted);
+    opacity: 0.5;
+    letter-spacing: 0.02em;
+}
+
+@media (max-width: 860px) {
+    .footer-social-wrapper {
+        align-items: center;
+        width: 100%;
+        margin-top: 10px;
+    }
 }
 
 /* ===================================================================
@@ -1579,6 +1641,11 @@ a {
         height: 210px;
     }
 
+    .avatar-group {
+        width: 320px;
+        height: 320px;
+    }
+
     .avatar-ring-1 {
         width: 255px;
         height: 255px;
@@ -1596,11 +1663,12 @@ a {
     .hero-two-col {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 20px;
     }
 
     .hero-text {
-        align-items: flex-start;
-        text-align: left;
+        align-items: center;
+        text-align: center;
         order: 2;
     }
 
@@ -1609,24 +1677,33 @@ a {
     }
 
     .hero-text .hero-sub {
-        margin: 0 0 24px 0;
+        margin: 0 auto 24px;
     }
 
     .hero-signature {
-        align-items: flex-start;
-        text-align: left;
+        align-items: center;
+        text-align: center;
         margin-bottom: 40px;
     }
 
     .hero-photo-wrap {
         order: 1;
-        padding: 30px 0 10px;
+        padding: 0;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .avatar-group {
+        width: 300px;
+        height: 300px;
     }
 
     .avatar-status {
-        position: static;
+        position: relative;
+        bottom: 0px;
+        margin-top: 10px;
         transform: none;
-        margin-top: 12px;
+        left: 0;
     }
 }
 
