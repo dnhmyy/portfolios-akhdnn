@@ -1,4 +1,5 @@
 // Main Logic
+console.log("Script.js v2 - Active");
 
 document.addEventListener("DOMContentLoaded", () => {
 
