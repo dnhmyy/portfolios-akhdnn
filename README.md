@@ -2,8 +2,6 @@
 
 Welcome to my portfolio! This project showcases my journey and expertise as a **Systems & Network Infrastructure Engineer**. It highlights my experience in networking, Linux systems, and my ongoing transition into the DevOps world.
 
-![Portfolio Preview](website-portfolio/portfolios/project-1.webp)
-
 ## 🚀 Vision
 
 Evolving from a Networking and Sysadmin enthusiast into a DevOps professional. I focus on building reliable networks and robust Linux systems that power modern digital infrastructure.
