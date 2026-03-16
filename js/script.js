@@ -7,13 +7,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const burger  = document.getElementById("burger");
     const mobileMenu = document.getElementById("mobileMenu");
 
+    // Debugging (Remove in production if needed)
+    if (!navbar) console.warn("Element with id 'navbar' not found.");
+    if (!burger) console.warn("Element with id 'burger' not found.");
+    if (!mobileMenu) console.warn("Element with id 'mobileMenu' not found.");
+
     // Handle navbar styling on scroll
     window.addEventListener("scroll", () => {
-        navbar.classList.toggle("scrolled", window.scrollY > 20);
+        navbar?.classList.toggle("scrolled", window.scrollY > 20);
     });
 
     // Mobile menu toggle logic
-    if (burger) {
+    if (burger && mobileMenu) {
         burger.addEventListener("click", () => {
             burger.classList.toggle("active");
             mobileMenu.classList.toggle("open");
