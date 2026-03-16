@@ -1122,6 +1122,19 @@ a {
     transform: scale(1.15);
 }
 
+.project-tech-icons img {
+    width: 1.5rem;
+    height: 1.5rem;
+    object-fit: contain;
+    opacity: 0.75;
+    transition: opacity var(--t-med), transform var(--t-fast);
+}
+
+.project-tech-icons img:hover {
+    opacity: 1;
+    transform: scale(1.15);
+}
+
 .proj-icon-img {
     width: 1.5rem;
     height: 1.5rem;
@@ -1340,6 +1353,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 12px;
     padding: 24px 16px;
     background: var(--card);
@@ -1359,13 +1373,17 @@ a {
 .skill-item img {
     font-size: 2.2rem;
     height: 2.2rem;
-    width: auto;
+    width: 2.2rem;
+    object-fit: contain;
+    flex-shrink: 0;
     color: var(--fg-muted);
-    transition: color var(--t-med);
+    transition: color var(--t-med), transform var(--t-fast);
 }
 
-.skill-item:hover i {
+.skill-item:hover i,
+.skill-item:hover img {
     color: var(--primary);
+    transform: translateY(-2px);
 }
 
 .skill-item span {
@@ -1374,6 +1392,7 @@ a {
     font-weight: 500;
     text-align: center;
     line-height: 1.3;
+    width: 100%;
 }
 
 /* CONTACT */
