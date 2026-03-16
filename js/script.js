@@ -7,12 +7,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const burger  = document.getElementById("burger");
     const mobileMenu = document.getElementById("mobileMenu");
 
-    // Tambahkan class "scrolled" saat pengguna scroll ke bawah
+    // Handle navbar styling on scroll
     window.addEventListener("scroll", () => {
         navbar.classList.toggle("scrolled", window.scrollY > 20);
     });
 
-    // Kontrol burger mobile
+    // Mobile menu toggle logic
     if (burger) {
         burger.addEventListener("click", () => {
             burger.classList.toggle("active");
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Tutup menu mobile saat link diklik
+    // Close mobile menu when a navigation link is clicked
     document.querySelectorAll(".nav-link").forEach(link => {
         link.addEventListener("click", () => {
             burger?.classList.remove("active");
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const draw = () => {
             ctx.clearRect(0, 0, canvas.offsetWidth, canvas.offsetHeight);
 
-            // Gambar garis penghubung antar partikel (efek jaringan)
+            // Render particle connections (network effect)
             for (let i = 0; i < particles.length; i++) {
                 for (let j = i + 1; j < particles.length; j++) {
                     const dx = particles[i].x - particles[j].x;
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
 
-            // Gambar titik partikel
+            // Render individual particles
             particles.forEach(p => {
                 p.x += p.vx;
                 p.y += p.vy;
@@ -120,13 +120,12 @@ document.addEventListener("DOMContentLoaded", () => {
         window.addEventListener("resize", init, { passive: true });
     }
 
-    // Scroll Reveal
     const revealEls = document.querySelectorAll(".reveal-up");
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Tambahkan delay per urutan elemen dalam parent (Staggered Delay)
+                // Apply staggered delay based on sibling index
                 const siblings = Array.from(entry.target.parentElement.querySelectorAll(".reveal-up"));
                 const index = siblings.indexOf(entry.target);
                 entry.target.style.transitionDelay = `${index * 0.1}s`;
@@ -173,7 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 dot.classList.toggle("active", i === index);
             });
 
-            // Update border biru pada card aktif
+            // Update active state on current merit card
             slides.forEach((slide, i) => {
                 const card = slide.querySelector(".merit-card");
                 if (card) card.classList.toggle("active", i === index);
@@ -212,12 +211,12 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.style.overflow = "";
     };
 
-    // Tutup lightbox jika klik di luar gambar
+    // Close lightbox on backdrop click
     lightbox?.addEventListener("click", (e) => {
         if (e.target === lightbox) window.closeLightbox();
     });
 
-    // Tutup lightbox dengan tombol Escape
+    // Close lightbox on Escape key
     document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") window.closeLightbox();
     });
