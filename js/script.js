@@ -4,8 +4,8 @@ console.log("Script.js v2 - Active");
 document.addEventListener("DOMContentLoaded", () => {
 
     // Nav & Burger
-    const navbar  = document.getElementById("navbar");
-    const burger  = document.getElementById("burger");
+    const navbar = document.getElementById("navbar");
+    const burger = document.getElementById("burger");
     const mobileMenu = document.getElementById("mobileMenu");
 
     // Debugging (Remove in production if needed)
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const particles = [];
 
         const resize = () => {
-            canvas.width  = canvas.offsetWidth  * (window.devicePixelRatio || 1);
+            canvas.width = canvas.offsetWidth * (window.devicePixelRatio || 1);
             canvas.height = canvas.offsetHeight * (window.devicePixelRatio || 1);
             ctx.scale(window.devicePixelRatio || 1, window.devicePixelRatio || 1);
         };
@@ -76,12 +76,12 @@ document.addEventListener("DOMContentLoaded", () => {
             particles.length = 0;
             for (let i = 0; i < count; i++) {
                 particles.push({
-                    x:  Math.random() * canvas.offsetWidth,
-                    y:  Math.random() * canvas.offsetHeight,
+                    x: Math.random() * canvas.offsetWidth,
+                    y: Math.random() * canvas.offsetHeight,
                     vx: (Math.random() - 0.5) * 0.3,
                     vy: (Math.random() - 0.5) * 0.3,
-                    r:  Math.random() * 2 + 1,
-                    o:  Math.random() * 0.4 + 0.1,
+                    r: Math.random() * 2 + 1,
+                    o: Math.random() * 0.4 + 0.1,
                 });
             }
         };
@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
             particles.forEach(p => {
                 p.x += p.vx;
                 p.y += p.vy;
-                if (p.x < 0 || p.x > canvas.offsetWidth)  p.vx *= -1;
+                if (p.x < 0 || p.x > canvas.offsetWidth) p.vx *= -1;
                 if (p.y < 0 || p.y > canvas.offsetHeight) p.vy *= -1;
                 ctx.beginPath();
                 ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
@@ -148,11 +148,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // Cert Slider
-    const sliderEl   = document.getElementById("meritSlider");
-    const slides      = document.querySelectorAll(".merit-slide");
-    const prevBtn     = document.getElementById("prevBtn");
-    const nextBtn     = document.getElementById("nextBtn");
-    const pagination  = document.getElementById("sliderPagination");
+    const sliderEl = document.getElementById("meritSlider");
+    const slides = document.querySelectorAll(".merit-slide");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const pagination = document.getElementById("sliderPagination");
 
     if (sliderEl && slides.length > 0) {
         // Create Dots - One dot per slide (Original Logic)
@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const scrollPos = sliderEl.scrollLeft;
             const itemWidth = slides[0].offsetWidth + 24; // slide + gap (24px in current css)
             const index = Math.round(scrollPos / itemWidth);
-            
+
             pagination.querySelectorAll(".dot").forEach((dot, i) => {
                 dot.classList.toggle("active", i === index);
             });
@@ -202,7 +202,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // Lightbox
-    const lightbox    = document.getElementById("lightbox");
+    const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
 
     window.openLightbox = (src, alt) => {
@@ -225,6 +225,73 @@ document.addEventListener("DOMContentLoaded", () => {
     // Close lightbox on Escape key
     document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") window.closeLightbox();
+    });
+
+    // Development Notice Logic
+    const devModal = document.getElementById("dev-modal");
+    const devLink = document.getElementById("dev-modal-link");
+
+    window.openDevNotice = (url) => {
+        console.log("Opening dev notice for:", url);
+        if (devModal && devLink) {
+            devLink.href = url;
+            devModal.classList.add("open");
+            document.body.style.overflow = "hidden";
+        }
+    };
+
+    window.closeDevNotice = () => {
+        devModal?.classList.remove("open");
+        document.body.style.overflow = "";
+    };
+
+    // --- Contact Form AJAX Submission ---
+    const contactForm = document.getElementById("contact-form");
+    const contactModal = document.getElementById("contact-modal");
+
+    if (contactForm) {
+        contactForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const submitBtn = contactForm.querySelector(".btn-submit");
+            const originalBtnText = submitBtn.innerHTML;
+
+            // Loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+
+            try {
+                const formData = new FormData(contactForm);
+                const response = await fetch(contactForm.action, {
+                    method: "POST",
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    // Success
+                    contactModal?.classList.add("open");
+                    document.body.style.overflow = "hidden";
+                    contactForm.reset();
+                } else {
+                    alert("Oops! Ada masalah saat mengirim pesan. Silakan coba lagi.");
+                }
+            } catch (error) {
+                alert("Terjadi kesalahan koneksi. Silakan cek koneksi internet Anda.");
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+            }
+        });
+    }
+
+    window.closeContactModal = () => {
+        contactModal?.classList.remove("open");
+        document.body.style.overflow = "";
+    };
+
+    // Close on backdrop click
+    devModal?.addEventListener("click", (e) => {
+        if (e.target === devModal) window.closeDevNotice();
     });
 
 });

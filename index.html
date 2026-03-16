@@ -32,13 +32,16 @@
     <!-- Styles & Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css?v=2">
+    <link rel="stylesheet" href="css/style.css?v=5">
 </head>
 
 <body>
 
     <!-- Mouse Light -->
     <div id="mouselight"></div>
+
+    <!-- JS -->
+    <script src="js/script.js?v=4"></script>
 
     <!-- Social Sidebar -->
     <aside class="social-sidebar">
@@ -306,7 +309,7 @@
                                     <i class="devicon-postgresql-plain colored" title="PostgreSQL"></i>
                                     <i class="devicon-docker-plain colored" title="Docker"></i>
                                 </div>
-                                <a href="https://rotikebanggaan.com/" target="_blank" rel="noopener noreferrer"
+                                <a href="javascript:void(0)" onclick="openDevNotice('https://demo.rotikebanggaan.com/')"
                                     class="btn-project">
                                     View Site <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </a>
@@ -730,7 +733,8 @@
 
                     <!-- Form -->
                     <div class="contact-form-box reveal-up">
-                        <form class="elite-form" action="https://formspree.io/f/mdawgjgd" method="POST">
+                        <form id="contact-form" class="elite-form" action="https://formspree.io/f/mdawgjgd"
+                            method="POST">
                             <div class="input-row">
                                 <div class="input-group">
                                     <label>Full Name</label>
@@ -772,8 +776,35 @@
         <img class="lightbox-content" id="lightbox-img" alt="Certificate View">
     </div>
 
-    <!-- JS -->
-    <script src="js/script.js?v=2"></script>
+    <!-- Development Notice Modal -->
+    <div id="dev-modal" class="modal-elite">
+        <div class="modal-content-box">
+            <div class="modal-icon"><i class="fa-solid fa-code"></i></div>
+            <h3>Under Development</h3>
+            <p>Situs ini masih dalam tahap pengembangan dan persetujuan. Beberapa fitur mungkin belum berfungsi
+                sempurna.</p>
+            <div class="modal-actions">
+                <button class="btn-cancel" onclick="closeDevNotice()">Close</button>
+                <a id="dev-modal-link" href="#" target="_blank" rel="noopener noreferrer" class="btn-proceed"
+                    onclick="closeDevNotice()">Continue anyway</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Success Modal -->
+    <div id="contact-modal" class="modal-elite">
+        <div class="modal-content-box">
+            <div class="modal-icon" style="background: rgba(34, 197, 94, 0.1); color: #22c55e;">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3>Message Sent!</h3>
+            <p>Terima kasih! Pesan Anda telah berhasil dikirim. Saya akan segera menghubungi Anda kembali.</p>
+            <div class="modal-actions">
+                <button class="btn-proceed" style="background: #22c55e; flex: 1;" onclick="closeContactModal()">Got
+                    it!</button>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
