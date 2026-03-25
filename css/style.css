@@ -8,14 +8,14 @@
 
     /* Typography */
     --fg: hsl(220, 20%, 10%);
-    --fg-muted: hsl(220, 10%, 46%);
+    --fg-muted: hsl(220, 10%, 40%);
 
     /* Primary Accent Color (Blue) */
-    --primary: hsl(220, 100%, 50%);
+    --primary: hsl(220, 100%, 45%);
     --primary-fg: hsl(0, 0%, 100%);
-    --primary-10: hsla(220, 100%, 50%, 0.1);
-    --primary-20: hsla(220, 100%, 50%, 0.2);
-    --primary-30: hsla(220, 100%, 50%, 0.3);
+    --primary-10: hsla(220, 100%, 45%, 0.1);
+    --primary-20: hsla(220, 100%, 45%, 0.2);
+    --primary-30: hsla(220, 100%, 45%, 0.3);
 
     /* Secondary Glow (Purple) */
     --glow-sec: hsl(260, 80%, 60%);
@@ -1093,7 +1093,7 @@ a {
     border-radius: 6px;
     background: var(--primary-10);
     border: 1px solid var(--primary-20);
-    transition: all var(--t-fast);
+    transition: transform var(--t-fast), border-color var(--t-fast), background-color var(--t-fast), color var(--t-fast), box-shadow var(--t-fast), filter var(--t-fast), opacity var(--t-fast);
     text-transform: uppercase;
     letter-spacing: 0.02em;
 }
@@ -1255,12 +1255,12 @@ a {
     justify-content: center;
 }
 
-.merit-info h4 {
-    font-family: var(--f-display);
-    font-weight: 700;
-    font-size: 0.8rem;
+.merit-info h3 {
+    font-family: var(--f-body);
+    font-weight: 600;
+    font-size: 0.9rem;
     margin-bottom: 0;
-    line-height: 1.3;
+    line-height: 1.4;
 }
 
 .merit-info p,
@@ -1459,16 +1459,18 @@ a {
     flex-shrink: 0;
 }
 
-.method-card h5 {
+.method-card h3 {
     font-family: var(--f-body);
-    font-size: 0.75rem;
-    color: var(--fg-muted);
-    margin-bottom: 2px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--fg);
+    margin-bottom: 4px;
 }
 
 .method-card p {
     font-family: var(--f-mono);
-    font-size: 0.875rem;
+    font-size: 0.85rem;
+    color: var(--fg-muted);
 }
 
 /* Form kontak — sejajar dengan info kontak */
@@ -1903,7 +1905,7 @@ a {
     width: 20px;
     height: 20px;
     color: var(--fg-muted);
-    transition: all var(--t-fast);
+    transition: transform var(--t-fast), border-color var(--t-fast), background-color var(--t-fast), color var(--t-fast), box-shadow var(--t-fast), filter var(--t-fast), opacity var(--t-fast);
 }
 
 .sidebar-link i {
@@ -1949,7 +1951,7 @@ a {
 .hero-social a {
     color: var(--fg-muted);
     font-size: 1.2rem;
-    transition: all var(--t-fast);
+    transition: transform var(--t-fast), border-color var(--t-fast), background-color var(--t-fast), color var(--t-fast), box-shadow var(--t-fast), filter var(--t-fast), opacity var(--t-fast);
 }
 
 .hero-social img {
@@ -2048,7 +2050,7 @@ a {
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
     transform: scale(0.9);
     opacity: 0;
-    transition: all 0.4s var(--ease);
+    transition: transform 0.4s var(--ease), opacity 0.4s var(--ease);
 }
 
 .modal-elite.open .modal-content-box {
@@ -2098,7 +2100,7 @@ a {
     font-family: var(--f-body);
     font-weight: 600;
     cursor: pointer;
-    transition: all var(--t-fast);
+    transition: transform var(--t-fast), border-color var(--t-fast), background-color var(--t-fast), color var(--t-fast), box-shadow var(--t-fast), filter var(--t-fast), opacity var(--t-fast);
 }
 
 .btn-proceed {
@@ -2114,7 +2116,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all var(--t-fast);
+    transition: transform var(--t-fast), border-color var(--t-fast), background-color var(--t-fast), color var(--t-fast), box-shadow var(--t-fast), filter var(--t-fast), opacity var(--t-fast);
 }
 
 .btn-cancel:hover {

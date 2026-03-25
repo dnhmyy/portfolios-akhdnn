@@ -19,7 +19,7 @@
     <meta property="og:description"
         content="Evolving from a Networking and Sysadmin enthusiast into a DevOps professional.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://akhdnn.pages.dev/">
+    <meta property="og:url" content="https://akhdnn.web.id/">
     <meta property="og:image" content="website-portfolio/portfolios/project-1.webp">
 
     <!-- Google Fonts -->
@@ -29,10 +29,21 @@
         href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
         rel="stylesheet">
 
-    <!-- Styles & Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css?v=5">
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="website-portfolio/profile-photo.webp" as="image" fetchpriority="high">
+    <link rel="preload" href="css/style.min.css?v=6" as="style">
+
+    <!-- Styles & Icons (Deferred) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" media="print"
+        onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/style.min.css?v=6">
+
+    <noscript>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    </noscript>
 </head>
 
 <body>
@@ -41,7 +52,7 @@
     <div id="mouselight"></div>
 
     <!-- JS -->
-    <script src="js/script.js?v=4"></script>
+    <script src="js/script.js?v=4" defer></script>
 
     <!-- Social Sidebar -->
     <aside class="social-sidebar">
@@ -168,7 +179,8 @@
                     <div class="avatar-group">
                         <div class="hero-avatar">
                             <!-- Profile image -->
-                            <img src="website-portfolio/profile-photo.webp" alt="Akhdan Fadhilillah"
+                            <img src="website-portfolio/profile-photo.webp" alt="Akhdan Fadhilillah" width="997"
+                                height="1280" fetchpriority="high"
                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                             <!-- Initials fallback -->
                             <div class="avatar-initials">AF</div>
@@ -293,7 +305,7 @@
                     <div class="project-card reveal-up">
                         <div class="project-media">
                             <img src="website-portfolio/portfolios/roti-kebanggaan.webp"
-                                alt="Roti Kebanggaan Landing Page" loading="lazy">
+                                alt="Roti Kebanggaan Landing Page" width="1894" height="907" loading="lazy">
                             <div class="project-mask"></div>
                         </div>
                         <div class="project-data">
@@ -309,7 +321,8 @@
                                     <i class="devicon-postgresql-plain colored" title="PostgreSQL"></i>
                                     <i class="devicon-docker-plain colored" title="Docker"></i>
                                 </div>
-                                <a href="javascript:void(0)" onclick="openDevNotice('https://demo.rotikebanggaan.com/')"
+                                <a href="https://rotikebanggaan.com/"
+                                    onclick="event.preventDefault(); openDevNotice('https://rotikebanggaan.com/')"
                                     class="btn-project">
                                     View Site <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </a>
@@ -320,8 +333,8 @@
                     <!-- Project 2 (HRIS) -->
                     <div class="project-card reveal-up">
                         <div class="project-media">
-                            <img src="website-portfolio/portfolios/hris.webp" alt="HRIS ADMS Integration"
-                                loading="lazy">
+                            <img src="website-portfolio/portfolios/hris.webp" alt="HRIS ADMS Integration" width="1774"
+                                height="902" loading="lazy">
                             <div class="project-mask"></div>
                         </div>
                         <div class="project-data">
@@ -350,7 +363,7 @@
                     <div class="project-card reveal-up">
                         <div class="project-media">
                             <img src="website-portfolio/portfolios/label.webp" alt="Production Label System"
-                                loading="lazy">
+                                width="1373" height="799" loading="lazy">
                             <div class="project-mask"></div>
                         </div>
                         <div class="project-data">
@@ -375,7 +388,7 @@
                     <div class="project-card reveal-up">
                         <div class="project-media">
                             <img src="website-portfolio/portfolios/project-1.webp" alt="Belajar Tajwid Blog"
-                                loading="lazy">
+                                width="1362" height="630" loading="lazy">
                             <div class="project-mask"></div>
                         </div>
                         <div class="project-data">
@@ -399,7 +412,7 @@
                     <div class="project-card reveal-up">
                         <div class="project-media">
                             <img src="website-portfolio/portfolios/project-2.webp" alt="Technical Education YouTube"
-                                loading="lazy">
+                                width="1121" height="585" loading="lazy">
                             <div class="project-mask"></div>
                         </div>
                         <div class="project-data">
@@ -441,11 +454,11 @@
                             <div class="merit-card"
                                 onclick="openLightbox('website-portfolio/cert/google-it-support.webp', 'Google IT Support Professional')">
                                 <div class="merit-thumb">
-                                    <img src="website-portfolio/cert/google-it-support.webp" alt="Google IT"
-                                        loading="lazy">
+                                    <img width="3300" height="2550" src="website-portfolio/cert/google-it-support.webp"
+                                        alt="Google IT" loading="lazy">
                                 </div>
                                 <div class="merit-info">
-                                    <h4>Google IT Support</h4>
+                                    <h3>Google IT Support</h3>
                                 </div>
                             </div>
                         </div>
@@ -455,11 +468,11 @@
                             <div class="merit-card"
                                 onclick="openLightbox('website-portfolio/cert/junior-network.webp', 'Junior Network Administrator')">
                                 <div class="merit-thumb">
-                                    <img src="website-portfolio/cert/junior-network.webp" alt="Junior Network"
-                                        loading="lazy">
+                                    <img width="3508" height="2480" src="website-portfolio/cert/junior-network.webp"
+                                        alt="Junior Network" loading="lazy">
                                 </div>
                                 <div class="merit-info">
-                                    <h4>Junior Network Administrator</h4>
+                                    <h3>Junior Network Administrator</h3>
                                 </div>
                             </div>
                         </div>
@@ -469,10 +482,11 @@
                             <div class="merit-card"
                                 onclick="openLightbox('website-portfolio/cert/linux-unhatched.webp', 'NDG Linux Unhatched')">
                                 <div class="merit-thumb">
-                                    <img src="website-portfolio/cert/linux-unhatched.webp" alt="Linux" loading="lazy">
+                                    <img width="3508" height="2480" src="website-portfolio/cert/linux-unhatched.webp"
+                                        alt="Linux" loading="lazy">
                                 </div>
                                 <div class="merit-info">
-                                    <h4>NDG Linux</h4>
+                                    <h3>NDG Linux</h3>
                                 </div>
                             </div>
                         </div>
@@ -482,11 +496,11 @@
                             <div class="merit-card"
                                 onclick="openLightbox('website-portfolio/cert/cisco-networking.webp', 'Cisco Networking Essentials')">
                                 <div class="merit-thumb">
-                                    <img src="website-portfolio/cert/cisco-networking.webp" alt="Cisco Networking"
-                                        loading="lazy">
+                                    <img width="3300" height="2550" src="website-portfolio/cert/cisco-networking.webp"
+                                        alt="Cisco Networking" loading="lazy">
                                 </div>
                                 <div class="merit-info">
-                                    <h4>Networking Addressing and Basic Troubleshooting</h4>
+                                    <h3>Networking Addressing and Basic Troubleshooting</h3>
                                 </div>
                             </div>
                         </div>
@@ -496,11 +510,11 @@
                             <div class="merit-card"
                                 onclick="openLightbox('website-portfolio/cert/networking-basics.webp', 'Networking Basics')">
                                 <div class="merit-thumb">
-                                    <img src="website-portfolio/cert/networking-basics.webp" alt="Networking"
-                                        loading="lazy">
+                                    <img width="3300" height="2550" src="website-portfolio/cert/networking-basics.webp"
+                                        alt="Networking" loading="lazy">
                                 </div>
                                 <div class="merit-info">
-                                    <h4>Networking Basics</h4>
+                                    <h3>Networking Basics</h3>
                                 </div>
                             </div>
                         </div>
@@ -510,10 +524,11 @@
                             <div class="merit-card"
                                 onclick="openLightbox('website-portfolio/cert/saylor-networks.webp', 'Saylor Computer Communications')">
                                 <div class="merit-thumb">
-                                    <img src="website-portfolio/cert/saylor-networks.webp" alt="Saylor" loading="lazy">
+                                    <img width="3295" height="2551" src="website-portfolio/cert/saylor-networks.webp"
+                                        alt="Saylor" loading="lazy">
                                 </div>
                                 <div class="merit-info">
-                                    <h4>CS402: Computer Communications and Networks</h4>
+                                    <h3>CS402: Computer Communications and Networks</h3>
                                 </div>
                             </div>
                         </div>
@@ -523,11 +538,11 @@
                             <div class="merit-card"
                                 onclick="openLightbox('website-portfolio/cert/career-essentials.webp', 'Career Essentials')">
                                 <div class="merit-thumb">
-                                    <img src="website-portfolio/cert/career-essentials.webp" alt="Career"
-                                        loading="lazy">
+                                    <img width="1280" height="989" src="website-portfolio/cert/career-essentials.webp"
+                                        alt="Career" loading="lazy">
                                 </div>
                                 <div class="merit-info">
-                                    <h4>Career Essentials in System Administration</h4>
+                                    <h3>Career Essentials in System Administration</h3>
                                 </div>
                             </div>
                         </div>
@@ -537,10 +552,11 @@
                             <div class="merit-card"
                                 onclick="openLightbox('website-portfolio/cert/cisco-ccna.webp', 'Cisco CCNA Prep')">
                                 <div class="merit-thumb">
-                                    <img src="website-portfolio/cert/cisco-ccna.webp" alt="Cisco CCNA" loading="lazy">
+                                    <img width="1280" height="989" src="website-portfolio/cert/cisco-ccna.webp"
+                                        alt="Cisco CCNA" loading="lazy">
                                 </div>
                                 <div class="merit-info">
-                                    <h4>Cisco CCNA (200-301) Cert Prep:3</h4>
+                                    <h3>Cisco CCNA (200-301) Cert Prep:3</h3>
                                 </div>
                             </div>
                         </div>
@@ -550,10 +566,11 @@
                             <div class="merit-card"
                                 onclick="openLightbox('website-portfolio/cert/ccst-cisco.webp', 'Cisco CCST Cybersecurity')">
                                 <div class="merit-thumb">
-                                    <img src="website-portfolio/cert/ccst-cisco.webp" alt="Cisco CCST" loading="lazy">
+                                    <img width="1280" height="989" src="website-portfolio/cert/ccst-cisco.webp"
+                                        alt="Cisco CCST" loading="lazy">
                                 </div>
                                 <div class="merit-info">
-                                    <h4>Cisco Certified Support Technician (CCST) Networking</h4>
+                                    <h3>Cisco Certified Support Technician (CCST) Networking</h3>
                                 </div>
                             </div>
                         </div>
@@ -563,11 +580,12 @@
                             <div class="merit-card"
                                 onclick="openLightbox('website-portfolio/cert/network-fundamental.webp', 'Networking Fundamentals')">
                                 <div class="merit-thumb">
-                                    <img src="website-portfolio/cert/network-fundamental.webp" alt="Fundamentals"
+                                    <img width="3508" height="2479"
+                                        src="website-portfolio/cert/network-fundamental.webp" alt="Fundamentals"
                                         loading="lazy">
                                 </div>
                                 <div class="merit-info">
-                                    <h4>Network Fundamental</h4>
+                                    <h3>Network Fundamental</h3>
                                 </div>
                             </div>
                         </div>
@@ -577,10 +595,11 @@
                             <div class="merit-card"
                                 onclick="openLightbox('website-portfolio/cert/it-basics.webp', 'IT Fundamentals')">
                                 <div class="merit-thumb">
-                                    <img src="website-portfolio/cert/it-basics.webp" alt="IT Basics" loading="lazy">
+                                    <img width="3508" height="2480" src="website-portfolio/cert/it-basics.webp"
+                                        alt="IT Basics" loading="lazy">
                                 </div>
                                 <div class="merit-info">
-                                    <h4>IT Basics</h4>
+                                    <h3>IT Basics</h3>
                                 </div>
                             </div>
                         </div>
@@ -590,10 +609,11 @@
                             <div class="merit-card"
                                 onclick="openLightbox('website-portfolio/cert/building-html.webp', 'Building with HTML & CSS')">
                                 <div class="merit-thumb">
-                                    <img src="website-portfolio/cert/building-html.webp" alt="HTML" loading="lazy">
+                                    <img width="3508" height="2479" src="website-portfolio/cert/building-html.webp"
+                                        alt="HTML" loading="lazy">
                                 </div>
                                 <div class="merit-info">
-                                    <h4>Building Web Pages With HTML and CSS</h4>
+                                    <h3>Building Web Pages With HTML and CSS</h3>
                                 </div>
                             </div>
                         </div>
@@ -603,10 +623,11 @@
                             <div class="merit-card"
                                 onclick="openLightbox('website-portfolio/cert/web-developer.webp', 'Professional Web Developer')">
                                 <div class="merit-thumb">
-                                    <img src="website-portfolio/cert/web-developer.webp" alt="Developer" loading="lazy">
+                                    <img width="3508" height="2479" src="website-portfolio/cert/web-developer.webp"
+                                        alt="Developer" loading="lazy">
                                 </div>
                                 <div class="merit-info">
-                                    <h4>Web Development for Beginners</h4>
+                                    <h3>Web Development for Beginners</h3>
                                 </div>
                             </div>
                         </div>
@@ -616,11 +637,11 @@
                             <div class="merit-card"
                                 onclick="openLightbox('website-portfolio/cert/google-analytics.webp', 'Google Data Analytics')">
                                 <div class="merit-thumb">
-                                    <img src="website-portfolio/cert/google-analytics.webp" alt="Analytics"
-                                        loading="lazy">
+                                    <img width="3508" height="2479" src="website-portfolio/cert/google-analytics.webp"
+                                        alt="Analytics" loading="lazy">
                                 </div>
                                 <div class="merit-info">
-                                    <h4>Google Analytics</h4>
+                                    <h3>Google Analytics</h3>
                                 </div>
                             </div>
                         </div>
@@ -710,21 +731,21 @@
                             <a href="mailto:akhdansutiar@gmail.com" class="method-card" rel="noopener noreferrer">
                                 <div class="method-icon"><i class="fa-solid fa-envelope"></i></div>
                                 <div>
-                                    <h5>Email</h5>
+                                    <h3>Email</h3>
                                     <p>akhdansutiar@gmail.com</p>
                                 </div>
                             </a>
                             <div class="method-card">
                                 <div class="method-icon"><i class="fa-solid fa-phone"></i></div>
                                 <div>
-                                    <h5>Telepon</h5>
+                                    <h3>Telepon</h3>
                                     <p>+62 899-8730-771</p>
                                 </div>
                             </div>
                             <div class="method-card">
                                 <div class="method-icon"><i class="fa-solid fa-location-dot"></i></div>
                                 <div>
-                                    <h5>Location</h5>
+                                    <h3>Location</h3>
                                     <p>Tangerang, Indonesia</p>
                                 </div>
                             </div>

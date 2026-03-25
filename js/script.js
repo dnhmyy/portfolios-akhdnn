@@ -169,20 +169,26 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         // Sync Dots with scroll
+        let isScrolling = false;
         sliderEl.addEventListener("scroll", () => {
-            const scrollPos = sliderEl.scrollLeft;
-            const itemWidth = slides[0].offsetWidth + 24; // slide + gap (24px in current css)
-            const index = Math.round(scrollPos / itemWidth);
+            if (!isScrolling) {
+                window.requestAnimationFrame(() => {
+                    const scrollPos = sliderEl.scrollLeft;
+                    const itemWidth = slides[0].offsetWidth + 24;
+                    const index = Math.round(scrollPos / itemWidth);
 
-            pagination.querySelectorAll(".dot").forEach((dot, i) => {
-                dot.classList.toggle("active", i === index);
-            });
+                    pagination.querySelectorAll(".dot").forEach((dot, i) => {
+                        dot.classList.toggle("active", i === index);
+                    });
 
-            // Update active state on current merit card
-            slides.forEach((slide, i) => {
-                const card = slide.querySelector(".merit-card");
-                if (card) card.classList.toggle("active", i === index);
-            });
+                    slides.forEach((slide, i) => {
+                        const card = slide.querySelector(".merit-card");
+                        if (card) card.classList.toggle("active", i === index);
+                    });
+                    isScrolling = false;
+                });
+                isScrolling = true;
+            }
         }, { passive: true });
 
         // Arrow Controls
