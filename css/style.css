@@ -1000,6 +1000,9 @@ a {
     overflow: hidden;
     box-shadow: 0 1px 3px hsla(220, 20%, 10%, 0.04), 0 8px 24px hsla(220, 20%, 10%, 0.06);
     transition: box-shadow var(--t-med);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .project-card:hover {
@@ -1049,6 +1052,9 @@ a {
 /* Data teks */
 .project-data {
     padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .project-data h3 {
@@ -1070,7 +1076,8 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
+    margin-top: auto;
+    padding-top: 20px;
 }
 
 /* Icon teknologi di project card */
