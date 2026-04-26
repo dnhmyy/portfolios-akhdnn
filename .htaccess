@@ -15,3 +15,20 @@
     Header set Cache-Control "max-age=0, must-revalidate, public"
   </FilesMatch>
 </IfModule>
+<IfModule mod_authz_core.c>
+  <FilesMatch "^(?:README\.md|\.htaccess|wp-config\.php(?:\..*)?)$">
+    Require all denied
+  </FilesMatch>
+</IfModule>
+<IfModule !mod_authz_core.c>
+  <FilesMatch "^(?:README\.md|\.htaccess|wp-config\.php(?:\..*)?)$">
+    Order allow,deny
+    Deny from all
+  </FilesMatch>
+</IfModule>
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule (^|/)\.(?!well-known(?:/|$)) - [F,L]
+  RewriteRule (^|/)(?:README\.md|wp-config\.php(?:\..*)?)$ - [F,L,NC]
+  RewriteRule \.(?:bak|old|orig|save|swp|swo|tmp|temp|dist|sql)(?:~)?$ - [F,L,NC]
+</IfModule>
