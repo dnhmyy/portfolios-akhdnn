@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://akhdnn.web.id/sitemap.xml
