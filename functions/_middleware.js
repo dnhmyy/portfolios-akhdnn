@@ -9,6 +9,16 @@ const BLOCKED_PATHS = [
 export async function onRequest(context) {
   const { pathname } = new URL(context.request.url);
 
+  if (/^\/\.(?!well-known(?:\/|$))/.test(pathname)) {
+    return new Response("Not Found", {
+      status: 404,
+      headers: {
+        "Cache-Control": "no-store",
+        "Content-Type": "text/plain; charset=UTF-8",
+      },
+    });
+  }
+
   for (const pattern of BLOCKED_PATHS) {
     if (pattern.test(pathname)) {
       return new Response("Not Found", {
