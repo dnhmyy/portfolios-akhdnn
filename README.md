@@ -36,17 +36,6 @@ This portfolio is built with a focus on clean code and modern web standards:
 └── README.md        # Project documentation
 ```
 
-## Local Development
-
-To view the portfolio locally:
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/dnhmyy/portfolios-akhdnn.git
-   ```
-2. Open `index.html` in your favorite web browser.
-3. (Optional) Use a local development server like Live Server for the best experience.
-
 ## Contact
 
 I'm always open to discussing new projects or opportunities!
